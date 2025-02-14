@@ -1,11 +1,17 @@
 \documentclass[a4paper,12pt]{report}
 
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+\usepackage{fontenc}
 \usepackage[french]{babel} % If you write in French
 \usepackage{xcolor,graphicx}
-\usepackage[top=0.6in,bottom=0.6in,right=1in,left=1in]{geometry}
-%UNIVERSITE HASSAN 1$^{er}$
+
+
+\usepackage[top=2.5cm,bottom=2.5cm,right=2.5cm,left=2.5cm]{geometry}
 \begin{document}
-  \include{partials/garde}
+%-------------------------------------------------------------------+
+  \include{partials/01-garde}
+%-------------------------------------------------------------------+
+\pagenumbering{Roman}
+
+\include{partials/02-remerciements}
 \end{document}
