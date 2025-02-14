@@ -1,17 +1,43 @@
 \documentclass[a4paper,12pt]{report}
 
 \usepackage[utf8]{inputenc}
-\usepackage{fontenc}
+\usepackage[T1]{fontenc}
 \usepackage[french]{babel} % If you write in French
 \usepackage{xcolor,graphicx}
 
 
-\usepackage[top=2.5cm,bottom=2.5cm,right=2.5cm,left=2.5cm]{geometry}
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=4cm, bottom=4cm}
+\usepackage{titlesec}
+\usepackage{lmodern}
+\usepackage{array}
+
+
+\usepackage[hidelinks]{hyperref} % Permet de rendre les liens cliquables sans les entourer d'un cadre coloré
+
 \begin{document}
+
+
 %-------------------------------------------------------------------+
   \include{partials/01-garde}
 %-------------------------------------------------------------------+
 \pagenumbering{Roman}
+%-------------------------------------------------------------------+
 
 \include{partials/02-remerciements}
+%-------------------------------------------------------------------+
+\include{partials/03-resume}
+%-------------------------------------------------------------------+
+\tableofcontents
+%-------------------------------------------------------------------+
+\include{partials/04-introduction}
+%-------------------------------------------------------------------+
+\include{partials/05-presentation}
+%-------------------------------------------------------------------+
+\include{partials/06-deroulement}
+%-------------------------------------------------------------------+
+\include{partials/07-projet}
+%-------------------------------------------------------------------+
+\include{partials/08-conclusion}
+
 \end{document}
