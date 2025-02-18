@@ -15,6 +15,15 @@
 
 \usepackage[hidelinks]{hyperref} % Permet de rendre les liens cliquables sans les entourer d'un cadre coloré
 
+
+\usepackage{fancyhdr} % Pour personnaliser les en-têtes et pieds de page
+% Configuration des en-têtes et pieds de page
+\pagestyle{fancy}
+\fancyhf{} % Efface les en-têtes et pieds de page par défaut
+\fancyhead[L]{\leftmark} % Affiche le nom du chapitre à gauche
+\fancyfoot[R]{\thepage} % Affiche le numéro de page au centre du pied de page
+
+
 \begin{document}
 
 
@@ -28,8 +37,22 @@
 %-------------------------------------------------------------------+
 \include{partials/03-resume}
 %-------------------------------------------------------------------+
+
 \tableofcontents
+\thispagestyle{empty}
+\clearpage
+
+% \listoffigures
+% \thispagestyle{empty}
+% \clearpage
+
+% \listoftables
+% \thispagestyle{empty}
+% \clearpage
+
 %-------------------------------------------------------------------+
+\pagenumbering{arabic}
+
 \include{partials/04-introduction}
 %-------------------------------------------------------------------+
 \include{partials/05-presentation}

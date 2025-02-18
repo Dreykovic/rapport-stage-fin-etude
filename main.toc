@@ -1,26 +1,27 @@
 \babel@toc {french}{}\relax 
-\contentsline {chapter}{\numberline {1}Introduction Générale}{IV}{chapter.1}%
-\contentsline {section}{\numberline {1.1}contexte}{V}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Objectifs}{V}{section.1.2}%
-\contentsline {chapter}{\numberline {2}Présentation de l'organisme d'acceuil (L'ARCOP)}{VI}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Historique et missions de l’ARCOP}{VII}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}Historique}{VII}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Missions de l’ARCOP}{VII}{subsection.2.1.2}%
-\contentsline {section}{\numberline {2.2}Les organes de l’ARCOP}{VII}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Le Conseil de régulation (CR)}{VIII}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Le Comité de règlement des différends (CRD)}{VIII}{subsection.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}La Direction générale}{VIII}{subsection.2.2.3}%
-\contentsline {chapter}{\numberline {3}Déroulement factuel du stage}{IX}{chapter.3}%
-\contentsline {section}{\numberline {3.1} Prise de fonction et intégration}{X}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Tâches effectuées}{X}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Installation et maintenance des équipements informatiques}{X}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Développement Web}{X}{subsection.3.2.2}%
-\contentsline {subsubsection}{Découverte du projet principal et études préliminaires}{X}{subsubsection*.4}%
-\contentsline {subsubsection}{Développement de la solution numérique}{XI}{subsubsection*.5}%
-\contentsline {subsubsection}{Finalisation du projet et restitution}{XI}{subsubsection*.6}%
-\contentsline {subsection}{\numberline {3.2.3}Débogage du réseau téléphonique IP de l'entreprise}{XI}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Support aux utilisateurs de la plateforme PASSE}{XI}{subsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.2.5}Assistance technique générale}{XII}{subsection.3.2.5}%
-\contentsline {section}{\numberline {3.3}Bilan et conclusion}{XII}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Réalisation des projets}{XIII}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Conclusion Générale}{XIV}{chapter.5}%
+\contentsline {chapter}{Remerciements}{I}{chapter*.1}%
+\contentsline {chapter}{Résumé}{II}{chapter*.2}%
+\contentsline {chapter}{Introduction Générale}{1}{chapter*.4}%
+\contentsline {chapter}{\numberline {1}Présentation de l'organisme d'acceuil (L'ARCOP)}{3}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Historique et missions de l’ARCOP}{4}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Historique}{4}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Missions de l’ARCOP}{4}{subsection.1.1.2}%
+\contentsline {section}{\numberline {1.2}Les organes de l’ARCOP}{4}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Le Conseil de régulation (CR)}{5}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Le Comité de règlement des différends (CRD)}{5}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}La Direction générale}{5}{subsection.1.2.3}%
+\contentsline {chapter}{\numberline {2}Déroulement factuel du stage}{6}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Prise de fonction et intégration}{7}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Tâches effectuées}{7}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Installation et maintenance des équipements informatiques}{7}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Développement Web}{7}{subsection.2.2.2}%
+\contentsline {subsubsection}{Découverte du projet principal et études préliminaires}{7}{subsubsection*.5}%
+\contentsline {subsubsection}{Développement de la solution numérique}{8}{subsubsection*.6}%
+\contentsline {subsubsection}{Finalisation du projet et restitution}{8}{subsubsection*.7}%
+\contentsline {subsection}{\numberline {2.2.3}Débogage du réseau téléphonique IP de l'entreprise}{8}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Support aux utilisateurs de la plateforme PASSE}{8}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Assistance technique générale}{9}{subsection.2.2.5}%
+\contentsline {section}{\numberline {2.3}Remarques et suggestions}{9}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Bilan et conclusion}{9}{section.2.4}%
+\contentsline {chapter}{\numberline {3}Réalisation des projets}{10}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Conclusion Générale}{11}{chapter.4}%
