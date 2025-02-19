@@ -1,0 +1,98 @@
+\chapter{Réalisation des projets}
+\clearpage
+\section{Présentation du projet}
+\subsection{introduction}
+\subsubsection{Objectifs}
+L'objectif de ce projet est de développer un logiciel de gestion des ressources humaines (RH) pour l'Agence Nationale de Régulation de la Commande Publique (ARCOP). Ce logiciel permettra de centraliser et d'automatiser la gestion des congés, des absences, des formations, et des évaluations des employés, en s'adressant directement aux employés et au département de la Gestion des Ressources Humaines (GRH).
+\subsubsection{Public Cible}
+Le logiciel est destiné aux employés de l’ARCOP et au département de la Gestion des Ressources Humaines (GRH), facilitant une gestion efficace des congés, de la formation, et des évaluations.
+
+\subsubsection{Environnement de déploiement}
+Le logiciel sera accessible via une interface web, avec une éventuelle extension vers une application mobile. Il sera intégré aux systèmes internes de l’ARCOP pour un usage optimal.
+
+\subsubsection{Nom du logicièl}
+Le logiciel sera nommé \textbf{OptiHR}, un nom qui allie modernité et professionnalisme, reflétant une gestion
+optimale des ressources humaines.
+\subsection{Fonctionnalités}
+
+
+\subsubsection{Gestion des Congés et Absences}
+\begin{itemize}
+    \item \textbf{Mise à jour en temps réel du planning et du solde des congés :} Le logiciel doit permettre aux employés de l'ARCOP de demander des congés en ligne, avec une mise à jour instantanée du planning et du solde de congés. Les demandes seront soumises au supérieur, puis au DG après approbation du GRH.
+    
+    \item \textbf{Transfert des absences au logiciel de paie sans ressaisie :} Une interface d'intégration avec le logiciel de paie interne à l'ARCOP permettra le transfert automatique des absences approuvées, évitant toute ressaisie manuelle.
+    
+    \item \textbf{Rapports personnalisables :} Le logiciel offrira la possibilité de générer des rapports sur la durée, la fréquence, et les motifs des congés, personnalisables selon les besoins du GRH.
+    
+    \item \textbf{Visualisation des indicateurs RH :} Des tableaux de bord intégrés permettront de visualiser divers indicateurs RH tels que le nombre de jours travaillés, le taux d'absentéisme, etc.
+    
+    \item \textbf{Dossier personnalisé en ligne pour chaque agent :} Un dossier en ligne pour chaque employé de l'ARCOP sera accessible via la version web du logiciel, contenant toutes les informations concernant ses congés, absences, et autres données RH.
+    
+    \item \textbf{Téléchargement des bulletins de paie :} Extraction des bulletins de paie depuis Sage Paie, puis les rendre disponibles aux employés dans l'application après un chargement.
+\end{itemize}
+
+\subsubsection{Gestion de la Formation}
+\begin{itemize}
+    \item \textbf{Identification des besoins de formation :} Le logiciel aidera le GRH à recenser et prioriser les besoins de formation des employés en fonction des compétences requises pour chaque poste.
+    
+    \item \textbf{Évaluation des formations suivies :} Le logiciel intégrera des outils pour évaluer l'efficacité des formations suivies par les employés, en recueillant des feedbacks et en mesurant les résultats obtenus.
+    
+    \item \textbf{Maîtrise du budget de formation :} Un module de gestion du budget suivra les dépenses liées à la formation, garantissant leur respect des limites budgétaires fixées par l'ARCOP.
+\end{itemize}
+
+\subsubsection{Gestion des Évaluations}
+\begin{itemize}
+    \item \textbf{Gestion des critères d'évaluation :} Le logiciel permettra aux employé et à leur supérieur de fixer les objectifs au début de l'année.Ces objectifs permettront à évalué les employées.
+    \item \textbf{Organisation des entretiens :} Le logiciel permettra de planifier les entretiens d'évaluation des employés, avec des notifications automatiques pour rappeler les échéances.
+    
+    \item \textbf{Interaction avec le logiciel de gestion des entretiens :} L'application permettra aux employés de réaliser des auto-évaluations et de remplir la fiche d'évaluation selon leur poste. Le GRH pourra personnaliser ces questionnaires pour évaluer les compétences spécifiques.
+    
+    \item \textbf{Restitution rapide et fiable des entretiens :} Les résultats des entretiens seront facilement accessibles et consultables par le GRH, avec la possibilité de centralisé et de générer des rapports de synthèse.
+    
+    \item \textbf{Visibilité sur les compétences et les besoins de formation :} Le logiciel offrira une vue d'ensemble des compétences des employés et des besoins en formation détectés lors des entretiens, facilitant ainsi la gestion des compétences au sein de l'ARCOP.
+\end{itemize}
+
+\subsection{Exigences Techniques}
+
+\subsubsection{Langages et Technologies}
+\begin{itemize}
+    \item \textbf{Framework :} Laravel pour une gestion efficace de la logique serveur et du backend.
+    \item \textbf{Base de données :} MySQL ou PostgreSQL pour la gestion des données avec Eloquent ORM.
+    \item \textbf{Frontend :} Blade pour une interface utilisateur dynamique et fluide.
+
+\end{itemize}
+
+
+\subsubsection{Sécurité}
+\begin{itemize}
+    \item Chiffrement des données sensibles.
+    \item Gestion des accès par rôles.
+\end{itemize}
+
+\subsubsection{Hébergement}
+\begin{itemize}
+    \item Déploiement sur les serveurs internes de l'ARCOP.
+\end{itemize}
+
+\subsubsection{Maintenance et Support}
+\begin{itemize}
+    \item Mises à jour régulières pour intégrer de nouvelles fonctionnalités et corriger les bugs.
+    \item Support technique disponible via email et téléphone.
+\end{itemize}
+
+\subsection{Contrainte de Déploiement}
+
+\subsubsection{Compatibilité}
+\begin{itemize}
+    \item \textbf{Navigateurs :} Le logiciel doit être compatible avec les dernières versions de Chrome, Firefox, Safari, et Edge.
+    \item \textbf{Mobile :} L'application web doit être responsive et accessible depuis les navigateurs mobiles.
+\end{itemize}
+
+\subsubsection{Scalabilité}
+Le logiciel doit pouvoir gérer un nombre croissant d'utilisateurs et de données sans dégradation des performances.
+
+\subsection{Conclusion}
+Ce cahier des charges définit les fonctionnalités et les exigences techniques d'un logiciel de gestion RH performant et sécurisé pour l'ARCOP. Le logiciel, nommé \textbf{OptiHR}, répondra aux besoins spécifiques du GRH et des employés, en facilitant la gestion des congés, des formations, et des évaluations, d'éditer les bulletins de paie tout en étant évolutif et intégrable aux systèmes existants.
+
+
+\clearpage
