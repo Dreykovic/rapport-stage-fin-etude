@@ -1,19 +1,10 @@
-\chapter{Réalisation des projets}
+\chapter{Expression des besoins}
 \clearpage
-\section{Présentation du projet}
-\subsection{introduction}
-\subsubsection{Objectifs}
+\section{introduction}
+
 L'objectif de ce projet est de développer un logiciel de gestion des ressources humaines (RH) pour l'Agence Nationale de Régulation de la Commande Publique (ARCOP). Ce logiciel permettra de centraliser et d'automatiser la gestion des congés, des absences, des formations, et des évaluations des employés, en s'adressant directement aux employés et au département de la Gestion des Ressources Humaines (GRH).
-\subsubsection{Public Cible}
-Le logiciel est destiné aux employés de l’ARCOP et au département de la Gestion des Ressources Humaines (GRH), facilitant une gestion efficace des congés, de la formation, et des évaluations.
-
-\subsubsection{Environnement de déploiement}
-Le logiciel sera accessible via une interface web, avec une éventuelle extension vers une application mobile. Il sera intégré aux systèmes internes de l’ARCOP pour un usage optimal.
-
-\subsubsection{Nom du logicièl}
-Le logiciel sera nommé \textbf{OptiHR}, un nom qui allie modernité et professionnalisme, reflétant une gestion
-optimale des ressources humaines.
-\subsection{Fonctionnalités}
+\section{Spécifications}
+\subsection{Spécifications Fonctionnelles}
 
 
 \subsubsection{Gestion des Congés et Absences}
@@ -52,7 +43,7 @@ optimale des ressources humaines.
     \item \textbf{Visibilité sur les compétences et les besoins de formation :} Le logiciel offrira une vue d'ensemble des compétences des employés et des besoins en formation détectés lors des entretiens, facilitant ainsi la gestion des compétences au sein de l'ARCOP.
 \end{itemize}
 
-\subsection{Exigences Techniques}
+\subsection{Spécifications techniques}
 
 \subsubsection{Langages et Technologies}
 \begin{itemize}
@@ -73,14 +64,20 @@ optimale des ressources humaines.
 \begin{itemize}
     \item Déploiement sur les serveurs internes de l'ARCOP.
 \end{itemize}
+\subsection{Exigences non fonctionnelles}
 
-\subsubsection{Maintenance et Support}
+
+\subsubsection{Fiabilité}
 \begin{itemize}
-    \item Mises à jour régulières pour intégrer de nouvelles fonctionnalités et corriger les bugs.
-    \item Support technique disponible via email et téléphone.
+    \item Le logiciel doit être disponible 99.9\% du temps, excluant les périodes de maintenance planifiée.
+    \item Les données doivent être sauvegardées quotidiennement avec une possibilité de restauration en cas de panne.
 \end{itemize}
 
-\subsection{Contrainte de Déploiement}
+\subsubsection{Utilisabilité}
+\begin{itemize}
+    \item L'interface utilisateur doit être intuitive et facile à utiliser, avec une courbe d'apprentissage minimale.
+    \item Une documentation utilisateur complète doit être fournie, incluant des guides et des tutoriels.
+\end{itemize}
 
 \subsubsection{Compatibilité}
 \begin{itemize}
@@ -91,8 +88,37 @@ optimale des ressources humaines.
 \subsubsection{Scalabilité}
 Le logiciel doit pouvoir gérer un nombre croissant d'utilisateurs et de données sans dégradation des performances.
 
-\subsection{Conclusion}
-Ce cahier des charges définit les fonctionnalités et les exigences techniques d'un logiciel de gestion RH performant et sécurisé pour l'ARCOP. Le logiciel, nommé \textbf{OptiHR}, répondra aux besoins spécifiques du GRH et des employés, en facilitant la gestion des congés, des formations, et des évaluations, d'éditer les bulletins de paie tout en étant évolutif et intégrable aux systèmes existants.
+
+\subsubsection{Nom du logicièl}
+Le logiciel sera nommé \textbf{OptiHR}, un nom qui allie modernité et professionnalisme, reflétant une gestion
+optimale des ressources humaines.
 
 
+\section{Définition des acteurs systèmes}
+Le logiciel est destiné aux employés de l’ARCOP et au département de la Gestion des Ressources Humaines (GRH), facilitant une gestion efficace des congés, de la formation, et des évaluations.
+Les utilisateurs principaux du systemes sont:
+\begin{itemize}
+    \item Employé 
+    \item GRH 
+    \item DSAF 
+    \item DG 
+\end{itemize}
+\subsection{Employé}
+L'utilisateur \textbf{Employé} désignent un employé de l'ARCOP. Il utilisent le logiciel pour demander des congés, demander des documents, suivre des formations, et participer aux évaluations. Ils accèdent à leur dossier personnel en ligne pour consulter leur solde de congés, leurs absences, et leurs évaluations.
+\subsection{GRH}
+Le \textbf{GRH} désigne le \textbf{Chef division des ressources humaines et services généraux} de l'ARCOP. Il utilise le logiciel pour gérer les demandes de congés,les documents, les formations, et les évaluations des employés. Il peut consulter les rapports RH, planifier les entretiens,publier des notes ou informations, et suivre les indicateurs de performance.
+\subsection{DSAF }
+Le \textbf{DSAF} désigne le \textbf{ Directeur des services administratif et financier} de l'ARCOP. Il utilise le logiciel pour suivre les demandes effectuées par les employées. IL interagite principallement en consultation.
+\subsection{DG}
+Le \textbf{DG} désigne le \textbf{Directeur Général} de l'ARCOP. Il utilise le logiciel pour valider les demandes de congés, les budgets de formation, et les résultats des évaluations. Il peut consulter les rapports RH et financiers pour prendre des décisions stratégiques en matière de ressources humaines.
+
+
+\section{D\'efinition des cas d'utilisation}
+
+Un diagramme de cas d'utilisation est une représentation graphique des interactions entre les acteurs d'un système et ses fonctionnalités. Il permet d'identifier et de structurer les besoins fonctionnels du logiciel en décrivant les actions réalisées par chaque acteur. Ce type de diagramme est particulièrement utile pour comprendre les interactions des utilisateurs avec le système et pour définir clairement les responsabilités de chaque acteur.
+
+Dans ce contexte, nous définissons les cas d'utilisation pour chaque acteur identifié précédemment.
+
+\section{Conclusion}
+Ce cahier des charges définit les fonctionnalités et les exigences techniques d'un logiciel de gestion RH performant et sécurisé pour l'ARCOP. Le logiciel, nommé \textbf{OptiHR}, répondra aux besoins spécifiques du GRH et des employés, en facilitant la gestion des congés, des formations, et des évaluations, d'éditer les bulletins de paie tout en étant évolutif et intégrable aux systèmes existants. La prochaine étape consistera à concevoir l'architecture du système et à élaborer les diagrammes UML pour modéliser les interactions entre les différents modules.
 \clearpage

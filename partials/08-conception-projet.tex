@@ -1,0 +1,68 @@
+\chapter{Phase de conception}
+
+\subsection{Introduction}
+La phase de conception constitue une étape essentielle dans le cycle de développement d'un projet. Elle permet de définir l'architecture globale, les composants principaux et les interactions entre les différents modules du système. Elle implique également l'identification des acteurs du système, c'est-à-dire les utilisateurs et les entités interagissant avec le système, afin de mieux adapter les fonctionnalités aux besoins réels. Cette phase vise à assurer une organisation claire et efficace du projet afin d'en faciliter la mise en œuvre et la maintenance.
+
+\subsection{Objectifs}
+Les objectifs de la phase de conception sont les suivants :
+\begin{itemize}
+    \item Identifier et structurer les différents composants du système.
+    \item Définir l'architecture logicielle en fonction des besoins du projet.
+    \item Spécifier les interactions entre les modules pour assurer une cohérence globale.
+    \item Concevoir les diagrammes UML, y compris les diagrammes de classes et de processus, afin de modéliser clairement la structure et le fonctionnement du système.
+    \item Optimiser la conception en tenant compte des performances et de la scalabilité.
+    \item Assurer la conformité aux standards et bonnes pratiques du développement logiciel.
+\end{itemize}
+
+\subsection{Architecture du système}
+L'architecture du système repose sur une structure modulaire facilitant l'évolutivité et la maintenance. Elle se compose principalement des éléments suivants :
+\begin{itemize}
+    \item Un backend géré par Laravel pour la logique métier et les interactions avec la base de données.
+    \item Un frontend basé sur Blade pour l'affichage et l'interaction avec l'utilisateur.
+    \item Une base de données PostgreSQL pour stocker les informations essentielles.
+    \item Des API facilitant la communication entre les différents composants.
+\end{itemize}
+
+\subsection{Modélisation et diagrammes}
+
+\subsubsection{Modélisation des données}
+La modélisation des données repose sur une approche relationnelle en raison de l'utilisation de PostgreSQL. Elle inclut :
+\begin{itemize}
+    \item La définition des entités principales et de leurs relations.
+    \item L'organisation des tables et des clés primaires/secondaires.
+    \item L'utilisation des migrations Laravel pour gérer la structure de la base de données.
+\end{itemize}
+
+\subsubsection{Dictionnaire de données}
+Le dictionnaire de données décrit en détail les attributs des entités de la base de données, y compris leurs types, leurs rôles et leurs relations. Ce dictionnaire permet d'assurer la cohérence et la bonne structuration des informations stockées. Voici le dictionnaire des données utilisé pour la modélisation du projet Optirh.
+
+\subsubsection{Diagramme de classes}
+Le diagramme de classes permet de représenter les différentes entités du système et leurs relations. Il offre une vision claire de la structure et facilite la compréhension des interactions entre les objets.
+
+\paragraph{Description des classes}
+Cette section décrit les classes principales du système, leurs attributs et leurs méthodes.
+
+\paragraph{Description des relations entre les classes}
+Explication des associations, héritages et dépendances entre les classes du système.
+
+\subsubsection{Diagramme de processus}
+Le diagramme de processus modélise les étapes d'exécution de certaines fonctionnalités clés du système. Voici trois ou quatre processus importants accompagnés de leurs explications détaillées :
+\begin{itemize}
+    \item **Inscription d'un utilisateur** : Ce processus décrit les étapes depuis la saisie des informations par l'utilisateur jusqu'à la validation et l'enregistrement dans la base de données.
+    \item **Authentification et gestion de session** : Il détaille les étapes de connexion, de vérification des informations d'identification et de création de session.
+    \item **Publication d'un contenu** : Ce processus explique comment un utilisateur peut créer et publier du contenu dans l'application, en passant par la validation des données et l'enregistrement dans la base.
+    \item **Gestion des droits d'accès** : Il présente les différents rôles utilisateurs et la manière dont les droits sont attribués selon les privilèges.
+\end{itemize}
+
+\subsection{Technologies et outils}
+Le choix des technologies et outils est un aspect crucial de la phase de conception. Il prend en compte les critères suivants :
+\begin{itemize}
+    \item Langages de programmation (PHP pour Laravel, HTML/CSS/JavaScript pour Blade).
+    \item Frameworks et bibliothèques (Laravel pour le backend, Blade pour le templating).
+    \item Systèmes de gestion de bases de données (PostgreSQL).
+    \item Outils de développement et d’intégration (Git, Docker, CI/CD, etc.).
+\end{itemize}
+
+\subsection{Conclusion}
+La phase de conception pose les bases essentielles du projet en structurant l'architecture et en précisant les technologies et les modèles de données adoptés. Une conception rigoureuse permet de garantir un développement fluide et efficace, tout en assurant la maintenance et l'évolutivité du système sur le long terme.
+

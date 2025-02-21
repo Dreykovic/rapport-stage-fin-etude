@@ -24,6 +24,16 @@
 \fancyfoot[R]{\thepage} % Affiche le numéro de page au centre du pied de page
 
 
+\usepackage{enumitem}
+% Uniquement le premier niveau
+\setlist[itemize,1]{label={.}}
+% Deuxième niveau avec un point gras
+\setlist[itemize,2]{label={\boldmath$\cdot$}}
+
+
+\usepackage{booktabs} % Pour un meilleur rendu du tableau
+
+
 \begin{document}
 
 
@@ -46,9 +56,9 @@
 % \thispagestyle{empty}
 % \clearpage
 
-% \listoftables
-% \thispagestyle{empty}
-% \clearpage
+\listoftables
+\thispagestyle{empty}
+\clearpage
 
 %-------------------------------------------------------------------+
 \pagenumbering{arabic}
@@ -60,6 +70,8 @@
 \include{partials/06-deroulement}
 %-------------------------------------------------------------------+
 \include{partials/07-presentation-projet}
+%-------------------------------------------------------------------+
+\include{partials/08-conception-projet}
 %-------------------------------------------------------------------+
 \include{partials/08-conclusion}
 
