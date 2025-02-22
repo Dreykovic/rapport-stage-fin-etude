@@ -1,7 +1,7 @@
 \babel@toc {french}{}\relax 
 \contentsline {chapter}{Remerciements}{I}{chapter*.1}%
 \contentsline {chapter}{Résumé}{II}{chapter*.2}%
-\contentsline {chapter}{Introduction Générale}{1}{chapter*.5}%
+\contentsline {chapter}{Introduction Générale}{1}{chapter*.6}%
 \contentsline {chapter}{\numberline {1}Présentation de l'organisme d'acceuil (L'ARCOP)}{3}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Historique et missions de l’ARCOP}{4}{section.1.1}%
 \contentsline {subsection}{\numberline {1.1.1}Historique}{4}{subsection.1.1.1}%
@@ -15,9 +15,9 @@
 \contentsline {section}{\numberline {2.2}Tâches effectuées}{7}{section.2.2}%
 \contentsline {subsection}{\numberline {2.2.1}Installation et maintenance des équipements informatiques}{7}{subsection.2.2.1}%
 \contentsline {subsection}{\numberline {2.2.2}Développement Web}{7}{subsection.2.2.2}%
-\contentsline {subsubsection}{Découverte du projet principal et études préliminaires}{7}{subsubsection*.6}%
-\contentsline {subsubsection}{Développement de la solution numérique}{8}{subsubsection*.7}%
-\contentsline {subsubsection}{Finalisation du projet et restitution}{8}{subsubsection*.8}%
+\contentsline {subsubsection}{Découverte du projet principal et études préliminaires}{7}{subsubsection*.7}%
+\contentsline {subsubsection}{Développement de la solution numérique}{8}{subsubsection*.8}%
+\contentsline {subsubsection}{Finalisation du projet et restitution}{8}{subsubsection*.9}%
 \contentsline {subsection}{\numberline {2.2.3}Débogage du réseau téléphonique IP de l'entreprise}{8}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}Support aux utilisateurs de la plateforme PASSE}{9}{subsection.2.2.4}%
 \contentsline {subsection}{\numberline {2.2.5}Assistance technique générale}{9}{subsection.2.2.5}%
@@ -27,37 +27,52 @@
 \contentsline {section}{\numberline {3.1}introduction}{11}{section.3.1}%
 \contentsline {section}{\numberline {3.2}Spécifications}{11}{section.3.2}%
 \contentsline {subsection}{\numberline {3.2.1}Spécifications Fonctionnelles}{11}{subsection.3.2.1}%
-\contentsline {subsubsection}{Gestion des Congés et Absences}{11}{subsubsection*.9}%
-\contentsline {subsubsection}{Gestion de la Formation}{11}{subsubsection*.10}%
-\contentsline {subsubsection}{Gestion des Évaluations}{12}{subsubsection*.11}%
+\contentsline {subsubsection}{Gestion des Congés et Absences}{11}{subsubsection*.10}%
+\contentsline {subsubsection}{Gestion des dossiers}{11}{subsubsection*.11}%
+\contentsline {subsubsection}{Publication des notes et informations}{11}{subsubsection*.12}%
 \contentsline {subsection}{\numberline {3.2.2}Spécifications techniques}{12}{subsection.3.2.2}%
-\contentsline {subsubsection}{Langages et Technologies}{12}{subsubsection*.12}%
-\contentsline {subsubsection}{Sécurité}{12}{subsubsection*.13}%
-\contentsline {subsubsection}{Hébergement}{12}{subsubsection*.14}%
-\contentsline {subsection}{\numberline {3.2.3}Exigences non fonctionnelles}{13}{subsection.3.2.3}%
-\contentsline {subsubsection}{Fiabilité}{13}{subsubsection*.15}%
-\contentsline {subsubsection}{Utilisabilité}{13}{subsubsection*.16}%
-\contentsline {subsubsection}{Compatibilité}{13}{subsubsection*.17}%
-\contentsline {subsubsection}{Scalabilité}{13}{subsubsection*.18}%
-\contentsline {subsubsection}{Nom du logicièl}{13}{subsubsection*.19}%
+\contentsline {subsubsection}{Langages et Technologies}{12}{subsubsection*.13}%
+\contentsline {subsubsection}{Sécurité}{12}{subsubsection*.14}%
+\contentsline {subsubsection}{Hébergement}{12}{subsubsection*.15}%
+\contentsline {subsection}{\numberline {3.2.3}Exigences non fonctionnelles}{12}{subsection.3.2.3}%
+\contentsline {subsubsection}{Fiabilité}{12}{subsubsection*.16}%
+\contentsline {subsubsection}{Utilisabilité}{12}{subsubsection*.17}%
+\contentsline {subsubsection}{Compatibilité}{12}{subsubsection*.18}%
+\contentsline {subsubsection}{Scalabilité}{13}{subsubsection*.19}%
+\contentsline {subsubsection}{Nom du logicièl}{13}{subsubsection*.20}%
 \contentsline {section}{\numberline {3.3}Définition des acteurs systèmes}{13}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}Employé}{14}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}GRH}{14}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}DSAF }{14}{subsection.3.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Employé}{13}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}GRH}{13}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}DSAF }{13}{subsection.3.3.3}%
 \contentsline {subsection}{\numberline {3.3.4}DG}{14}{subsection.3.3.4}%
 \contentsline {section}{\numberline {3.4}D\'efinition des cas d'utilisation}{14}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Conclusion}{14}{section.3.5}%
-\contentsline {chapter}{\numberline {4}Phase de conception}{16}{chapter.4}%
-\contentsline {subsection}{\numberline {4.0.1}Introduction}{16}{subsection.4.0.1}%
-\contentsline {subsection}{\numberline {4.0.2}Objectifs}{16}{subsection.4.0.2}%
-\contentsline {subsection}{\numberline {4.0.3}Architecture du système}{16}{subsection.4.0.3}%
-\contentsline {subsection}{\numberline {4.0.4}Modélisation et diagrammes}{17}{subsection.4.0.4}%
-\contentsline {subsubsection}{Modélisation des données}{17}{subsubsection*.20}%
-\contentsline {subsubsection}{Dictionnaire de données}{17}{subsubsection*.21}%
-\contentsline {subsubsection}{Diagramme de classes}{17}{subsubsection*.22}%
-\contentsline {paragraph}{Description des classes}{17}{paragraph*.23}%
-\contentsline {paragraph}{Description des relations entre les classes}{17}{paragraph*.24}%
-\contentsline {subsubsection}{Diagramme de processus}{17}{subsubsection*.25}%
-\contentsline {subsection}{\numberline {4.0.5}Technologies et outils}{18}{subsection.4.0.5}%
-\contentsline {subsection}{\numberline {4.0.6}Conclusion}{18}{subsection.4.0.6}%
-\contentsline {chapter}{\numberline {5}Conclusion Générale}{19}{chapter.5}%
+\contentsline {subsection}{\numberline {3.4.1}Gestion des Congés et Absences}{14}{subsection.3.4.1}%
+\contentsline {subsubsection}{Description de la fonctionnalité}{14}{subsubsection*.21}%
+\contentsline {subsubsection}{Description des cas d'utilisation}{14}{subsubsection*.22}%
+\contentsline {subsubsection}{Diagramme de cas d'utilisation}{16}{subsubsection*.23}%
+\contentsline {subsubsection}{Diagramme de processus}{17}{subsubsection*.24}%
+\contentsline {subsection}{\numberline {3.4.2}Gestion des dossiers}{19}{subsection.3.4.2}%
+\contentsline {subsubsection}{Description de la fonctionnalité}{19}{subsubsection*.25}%
+\contentsline {subsubsection}{Description des cas d'utilisation}{19}{subsubsection*.26}%
+\contentsline {subsubsection}{Diagramme de cas d'utilisation}{19}{subsubsection*.27}%
+\contentsline {subsubsection}{Diagramme de processus}{19}{subsubsection*.28}%
+\contentsline {subsection}{\numberline {3.4.3}Publication des notes et informations}{20}{subsection.3.4.3}%
+\contentsline {subsubsection}{Description de la fonctionnalité}{20}{subsubsection*.29}%
+\contentsline {subsubsection}{Description des cas d'utilisation}{20}{subsubsection*.30}%
+\contentsline {subsubsection}{Diagramme de cas d'utilisation}{21}{subsubsection*.31}%
+\contentsline {subsubsection}{Diagramme de processus}{21}{subsubsection*.32}%
+\contentsline {section}{\numberline {3.5}Conclusion}{22}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Phase de conception}{23}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Introduction}{23}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Objectifs}{23}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Architecture du système}{23}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Modélisation et diagrammes}{24}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Modélisation des données}{24}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Dictionnaire de données}{24}{subsection.4.4.2}%
+\contentsline {subsection}{\numberline {4.4.3}Diagramme de classes}{24}{subsection.4.4.3}%
+\contentsline {subsubsection}{Description des classes}{24}{subsubsection*.33}%
+\contentsline {subsubsection}{Description des relations entre les classes}{24}{subsubsection*.34}%
+\contentsline {subsection}{\numberline {4.4.4}Diagramme de processus}{24}{subsection.4.4.4}%
+\contentsline {section}{\numberline {4.5}Technologies et outils}{25}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Conclusion}{25}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Conclusion Générale}{26}{chapter.5}%

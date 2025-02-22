@@ -9,38 +9,29 @@ L'objectif de ce projet est de développer un logiciel de gestion des ressources
 
 \subsubsection{Gestion des Congés et Absences}
 \begin{itemize}
-    \item \textbf{Mise à jour en temps réel du planning et du solde des congés :} Le logiciel doit permettre aux employés de l'ARCOP de demander des congés en ligne, avec une mise à jour instantanée du planning et du solde de congés. Les demandes seront soumises au supérieur, puis au DG après approbation du GRH.
-    
-    \item \textbf{Transfert des absences au logiciel de paie sans ressaisie :} Une interface d'intégration avec le logiciel de paie interne à l'ARCOP permettra le transfert automatique des absences approuvées, évitant toute ressaisie manuelle.
+    \item \textbf{Mise à jour du planning et du solde des congés :} Le logiciel doit permettre aux employés de l'ARCOP de demander des congés en ligne, avec une mise à jour du planning et du solde de congés. Les demandes seront soumises au supérieur, puis au DG après approbation du GRH.
+
     
     \item \textbf{Rapports personnalisables :} Le logiciel offrira la possibilité de générer des rapports sur la durée, la fréquence, et les motifs des congés, personnalisables selon les besoins du GRH.
     
-    \item \textbf{Visualisation des indicateurs RH :} Des tableaux de bord intégrés permettront de visualiser divers indicateurs RH tels que le nombre de jours travaillés, le taux d'absentéisme, etc.
+
     
+  
+\end{itemize}
+
+\subsubsection{Gestion des dossiers}
+\begin{itemize}
     \item \textbf{Dossier personnalisé en ligne pour chaque agent :} Un dossier en ligne pour chaque employé de l'ARCOP sera accessible via la version web du logiciel, contenant toutes les informations concernant ses congés, absences, et autres données RH.
     
     \item \textbf{Téléchargement des bulletins de paie :} Extraction des bulletins de paie depuis Sage Paie, puis les rendre disponibles aux employés dans l'application après un chargement.
+    \item \textbf{Demande de documents administratifs :} Les employés
+    pourront demander des documents administratifs en ligne, tels que des attestations de travail, des certificats de travail.
 \end{itemize}
 
-\subsubsection{Gestion de la Formation}
+\subsubsection{Publication des notes et informations}
 \begin{itemize}
-    \item \textbf{Identification des besoins de formation :} Le logiciel aidera le GRH à recenser et prioriser les besoins de formation des employés en fonction des compétences requises pour chaque poste.
-    
-    \item \textbf{Évaluation des formations suivies :} Le logiciel intégrera des outils pour évaluer l'efficacité des formations suivies par les employés, en recueillant des feedbacks et en mesurant les résultats obtenus.
-    
-    \item \textbf{Maîtrise du budget de formation :} Un module de gestion du budget suivra les dépenses liées à la formation, garantissant leur respect des limites budgétaires fixées par l'ARCOP.
-\end{itemize}
-
-\subsubsection{Gestion des Évaluations}
-\begin{itemize}
-    \item \textbf{Gestion des critères d'évaluation :} Le logiciel permettra aux employé et à leur supérieur de fixer les objectifs au début de l'année.Ces objectifs permettront à évalué les employées.
-    \item \textbf{Organisation des entretiens :} Le logiciel permettra de planifier les entretiens d'évaluation des employés, avec des notifications automatiques pour rappeler les échéances.
-    
-    \item \textbf{Interaction avec le logiciel de gestion des entretiens :} L'application permettra aux employés de réaliser des auto-évaluations et de remplir la fiche d'évaluation selon leur poste. Le GRH pourra personnaliser ces questionnaires pour évaluer les compétences spécifiques.
-    
-    \item \textbf{Restitution rapide et fiable des entretiens :} Les résultats des entretiens seront facilement accessibles et consultables par le GRH, avec la possibilité de centralisé et de générer des rapports de synthèse.
-    
-    \item \textbf{Visibilité sur les compétences et les besoins de formation :} Le logiciel offrira une vue d'ensemble des compétences des employés et des besoins en formation détectés lors des entretiens, facilitant ainsi la gestion des compétences au sein de l'ARCOP.
+    \item \textbf{Publication des notes et informations :} Le GRH pourra publier des notes, des informations, et des documents RH pour les employés, accessibles via l'interface web du logiciel.
+    \item \textbf{Alertes et notifications :} Les employés recevront des alertes et des notifications pour les rappeler des échéances, des actions sur les demandes.
 \end{itemize}
 
 \subsection{Spécifications techniques}
@@ -117,7 +108,85 @@ Le \textbf{DG} désigne le \textbf{Directeur Général} de l'ARCOP. Il utilise l
 
 Un diagramme de cas d'utilisation est une représentation graphique des interactions entre les acteurs d'un système et ses fonctionnalités. Il permet d'identifier et de structurer les besoins fonctionnels du logiciel en décrivant les actions réalisées par chaque acteur. Ce type de diagramme est particulièrement utile pour comprendre les interactions des utilisateurs avec le système et pour définir clairement les responsabilités de chaque acteur.
 
-Dans ce contexte, nous définissons les cas d'utilisation pour chaque acteur identifié précédemment.
+Dans ce contexte, nous définissons les cas d'utilisation pour chaque fonctionnalités énoncés précédemment.
+\subsection{Gestion des Congés et Absences}
+\subsubsection{Description de la fonctionnalité}
+La gestion des congés et des absences est une fonctionnalité essentielle du logiciel, permettant aux employés de demander des congés en ligne, de consulter leur solde de congés, et de générer des rapports sur les congés et les absences.
+\subsubsection{Description des cas d'utilisation}
+\begin{itemize}
+    \item \textbf{Demande de congé :} L'employé peut demander un congé en ligne, en précisant la date, la durée, et le motif.
+    \item \textbf{Annulation de la demande de congé :} L'employé peut annuler sa demande de congé en ligne tant que son supérieur hiérarchique n'a pas encore effectué d'action.
+    \item \textbf{approbation du supérieur :} Le supérieur hiérarchique peut valider ou refuser la demande de congé de l'employé.
+    \item \textbf{Approbation du GRH :} Le GRH peut valider ou refuser la demande de congé après approbation du supérieur.
+    \item \textbf{Validation du DG :} Le DG peut valider ou refuser la demande de congé après approbation du GRH.
+    \item \textbf{Consultation du solde de congés :} L'employé peut consulter son solde de congés et les congés déjà pris.
+    \item \textbf{Génération de rapports :} Le GRH peut générer des rapports sur les congés, les absences, et les motifs.
+    \item \textbf{Télécharger le document de validation :} L'employé peut télécharger le pdf de validation de la demande de congés ou absences.
+\end{itemize}
+\subsubsection{Diagramme de cas d'utilisation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/diagrammes/use-cases/conges.png}
+    \caption{Diagramme de cas d'utilisation Gestion des Congés et Absences}
+    \label{fig:use_case_gestion_conges}
+
+\end{figure}
+\subsubsection{Diagramme de processus}
+Le diagramme de processus modélise les étapes d'exécution de certaines fonctionnalités clés du système. Le diagramme de processus pour la gestion des congés et des absences est le suivant :
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/diagrammes/flowcharts/conges.png}
+    \caption{Diagramme de processus Gestion des Congés et Absences}
+    \label{fig:flow_gestion_conges}
+\end{figure}
+
+\subsection{Gestion des dossiers}
+\subsubsection{Description de la fonctionnalité}
+La gestion des dossiers permet aux employés de consulter leur dossier personnel en ligne, de télécharger des bulletins de paie, et de demander des documents administratifs.
+\subsubsection{Description des cas d'utilisation}
+\begin{itemize}
+    \item \textbf{Consultation du dossier personnel :} L'employé peut consulter son dossier personnel en ligne, contenant ses congés, absences, formations, et évaluations.
+    \item \textbf{Téléchargement des bulletins de paie :} L'employé peut télécharger ses bulletins de paie depuis l'application.
+    \item \textbf{Demande de documents administratifs :} L'employé peut demander des documents administratifs en ligne, tels que des attestations de travail, des certificats de travail.
+\end{itemize}
+\subsubsection{Diagramme de cas d'utilisation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/diagrammes/use-cases/dossiers.png}
+    \caption{Diagramme de cas d'utilisation Gestion des dossiers}
+    \label{fig:use_case_gestion_dossiers}
+\end{figure}
+\subsubsection{Diagramme de processus}
+Le diagramme de processus pour la gestion des dossiers est le suivant :
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/diagrammes/flowcharts/dossiers.png}
+    \caption{Diagramme de processus Gestion des dossiers}
+    \label{fig:flow_gestion_dossiers}
+\end{figure}
+\subsection{Publication des notes et informations}
+\subsubsection{Description de la fonctionnalité}
+La publication des notes et des informations permet au GRH de publier des notes, des informations, et des documents RH pour les employés, avec des alertes et des notifications pour les rappeler des échéances.
+\subsubsection{Description des cas d'utilisation}   
+\begin{itemize}
+    \item \textbf{Publication des notes et informations :} Le GRH peut publier des notes, des informations, et des documents RH pour les employés.
+    \item \textbf{Alertes et notifications :} Les employés reçoivent des alertes et des notifications pour les rappeler des échéances, des actions sur les demandes.
+\end{itemize}
+\subsubsection{Diagramme de cas d'utilisation}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/diagrammes/use-cases/note.png}
+    \caption{Diagramme de cas d'utilisation Publication des notes et informations}
+    \label{fig:use_case_publication}
+\end{figure}
+\subsubsection{Diagramme de processus}
+Le diagramme de processus pour la publication des notes et des informations est le suivant :
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/diagrammes/flowcharts/note.png}
+    \caption{Diagramme de processus Publication des notes et informations}
+    \label{fig:flow_publication}
+\end{figure}
 
 \section{Conclusion}
 Ce cahier des charges définit les fonctionnalités et les exigences techniques d'un logiciel de gestion RH performant et sécurisé pour l'ARCOP. Le logiciel, nommé \textbf{OptiHR}, répondra aux besoins spécifiques du GRH et des employés, en facilitant la gestion des congés, des formations, et des évaluations, d'éditer les bulletins de paie tout en étant évolutif et intégrable aux systèmes existants. La prochaine étape consistera à concevoir l'architecture du système et à élaborer les diagrammes UML pour modéliser les interactions entre les différents modules.
