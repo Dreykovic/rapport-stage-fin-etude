@@ -1,0 +1,78 @@
+\chapter{Réalisation}
+\clearpage
+\section{Introduction}
+Cette section détaille la mise en œuvre technique du projet \textbf{OptiHR}. Après la phase de conception, il est essentiel de transformer les modèles et les spécifications en un système fonctionnel. Cette phase couvre l'implémentation des différentes fonctionnalités, les choix technologiques adoptés ainsi que l'organisation du code et du développement.
+
+\section{Choix technologiques}
+Pour assurer la performance, la maintenabilité et l’évolutivité du système, les technologies suivantes ont été utilisées :
+\begin{itemize}
+    \item \textbf{Backend} : Laravel, un framework PHP robuste facilitant le développement d’applications web grâce à son architecture MVC.
+    \item \textbf{Base de données} : PostgreSQL, un SGBD relationnel offrant une gestion avancée des données.
+    \item \textbf{Frontend} : Blade, le moteur de template de Laravel, permettant de structurer l'affichage des interfaces utilisateur.
+    \item \textbf{Versioning} : Git, avec un workflow basé sur GitHub pour la gestion collaborative du code source.
+    \item \textbf{API} : Des endpoints RESTful ont été développés pour permettre la communication entre le frontend et le backend.
+\end{itemize}
+
+\section{Architecture et organisation du projet}
+Le projet est organisé selon une architecture MVC (Modèle-Vue-Contrôleur) qui permet de séparer les différentes responsabilités et d'améliorer la maintenabilité du code :
+\begin{itemize}
+    \item \textbf{Modèle} : Définit les entités de la base de données et leur relation.
+    \item \textbf{Vue} : Gère l’affichage des pages à l’aide de Blade.
+    \item \textbf{Contrôleur} : Traite les requêtes et interagit avec les modèles pour retourner les bonnes réponses.
+\end{itemize}
+
+Le projet est structuré comme suit :
+\begin{itemize}
+    \item \textbf{/app} : Contient les modèles et les contrôleurs.
+    \item \textbf{/resources/views} : Contient les vues Blade.
+    \item \textbf{/routes} : Définit les routes du projet (web et API).
+    \item \textbf{/database/migrations} : Contient les fichiers de migration pour la gestion de la base de données.
+\end{itemize}
+
+\section{Implémentation des fonctionnalités}
+Les principales fonctionnalités implémentées sont :
+\subsection{Gestion des utilisateurs}
+\begin{itemize}
+    \item Authentification des utilisateurs (inscription, connexion, déconnexion).
+    \item Gestion des rôles et permissions.
+\end{itemize}
+
+\subsection{Gestion des employés}
+\begin{itemize}
+    \item Création, modification et suppression des employés.
+    \item Attribution d’un poste et d’un département à chaque employé.
+\end{itemize}
+
+\subsection{Gestion des absences}
+\begin{itemize}
+    \item Saisie et validation des demandes d'absence.
+    \item Suivi des statuts des absences.
+\end{itemize}
+
+\subsection{Gestion des fichiers et documents}
+\begin{itemize}
+    \item Upload et gestion des fichiers associés aux employés.
+    \item Stockage sécurisé des documents dans le serveur.
+\end{itemize}
+
+\section{Tests et validation}
+Pour garantir la fiabilité du système, plusieurs tests ont été réalisés :
+\begin{itemize}
+    \item \textbf{Tests unitaires} : Vérification des fonctionnalités des modèles et des contrôleurs.
+    \item \textbf{Tests fonctionnels} : Vérification du bon fonctionnement des fonctionnalités majeures.
+    \item \textbf{Tests d'intégration} : Vérification des interactions entre les différents modules.
+    \item \textbf{Tests utilisateurs} : Validation des fonctionnalités par des tests en conditions réelles.
+\end{itemize}
+
+\section{Déploiement}
+Le déploiement du projet a été effectué selon les étapes suivantes :
+\begin{itemize}
+    \item Configuration du serveur et installation des dépendances.
+    \item Migration de la base de données et initialisation des données.
+    \item Déploiement sur un serveur web avec Nginx et Laravel.
+    \item Configuration des sauvegardes et de la sécurité.
+\end{itemize}
+
+\section{Conclusion}
+La phase de réalisation a permis d'implémenter les fonctionnalités prévues et d'assurer la mise en production d'un système fonctionnel et performant. Grâce à une approche modulaire et une gestion rigoureuse du code, le projet OptiHR est désormais prêt à être utilisé par les utilisateurs finaux.
+\clearpage

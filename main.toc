@@ -65,25 +65,36 @@
 \contentsline {chapter}{\numberline {4}Conception}{23}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Introduction}{24}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Objectifs}{24}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Architecture du système}{24}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Modélisation et diagrammes}{24}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Modélisation des données}{24}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Dictionnaire de données}{25}{subsection.4.4.2}%
-\contentsline {subsection}{\numberline {4.4.3}Diagramme de classes}{26}{subsection.4.4.3}%
-\contentsline {section}{\numberline {4.5}Description des entités et relations}{27}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Entités principales}{27}{subsection.4.5.1}%
+\contentsline {section}{\numberline {4.3}Modélisation et diagrammes}{24}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Modélisation des données}{24}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Dictionnaire de données}{24}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Diagramme de classes}{26}{subsection.4.3.3}%
+\contentsline {section}{\numberline {4.4}Description des entités et relations}{27}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Entités principales}{27}{subsection.4.4.1}%
 \contentsline {subsubsection}{User (Utilisateur)}{27}{subsubsection*.33}%
 \contentsline {subsubsection}{Employee (Employé)}{27}{subsubsection*.34}%
 \contentsline {subsubsection}{Department (Département)}{28}{subsubsection*.35}%
 \contentsline {subsubsection}{Role (Rôle)}{28}{subsubsection*.36}%
 \contentsline {subsubsection}{Permission (Permission)}{28}{subsubsection*.37}%
-\contentsline {subsubsection}{File (Fichier)}{29}{subsubsection*.38}%
-\contentsline {subsubsection}{Duty (Tâche/Mission)}{29}{subsubsection*.39}%
+\contentsline {subsubsection}{File (Fichier)}{28}{subsubsection*.38}%
+\contentsline {subsubsection}{Duty (Tâche/Mission)}{28}{subsubsection*.39}%
 \contentsline {subsubsection}{Job (Poste)}{29}{subsubsection*.40}%
 \contentsline {subsubsection}{Absence (Absence)}{29}{subsubsection*.41}%
-\contentsline {subsubsection}{Note (Note)}{30}{subsubsection*.42}%
-\contentsline {subsubsection}{Decision (Décision)}{30}{subsubsection*.43}%
+\contentsline {subsubsection}{Note (Note)}{29}{subsubsection*.42}%
+\contentsline {subsubsection}{Decision (Décision)}{29}{subsubsection*.43}%
 \contentsline {subsubsection}{Image (Image)}{30}{subsubsection*.44}%
-\contentsline {section}{\numberline {4.6}Technologies et outils}{30}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Conclusion}{31}{section.4.7}%
-\contentsline {chapter}{\numberline {5}Conclusion Générale}{32}{chapter.5}%
+\contentsline {section}{\numberline {4.5}Technologies et outils}{30}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Conclusion}{30}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Réalisation}{31}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Introduction}{32}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Choix technologiques}{32}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Architecture et organisation du projet}{32}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Implémentation des fonctionnalités}{33}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Gestion des utilisateurs}{33}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Gestion des employés}{33}{subsection.5.4.2}%
+\contentsline {subsection}{\numberline {5.4.3}Gestion des absences}{33}{subsection.5.4.3}%
+\contentsline {subsection}{\numberline {5.4.4}Gestion des fichiers et documents}{33}{subsection.5.4.4}%
+\contentsline {section}{\numberline {5.5}Tests et validation}{33}{section.5.5}%
+\contentsline {section}{\numberline {5.6}Déploiement}{33}{section.5.6}%
+\contentsline {section}{\numberline {5.7}Conclusion}{34}{section.5.7}%
+\contentsline {chapter}{\numberline {6}Bilan}{35}{chapter.6}%
