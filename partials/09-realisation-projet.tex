@@ -1,78 +1,139 @@
 \chapter{Réalisation}
 \clearpage
 \section{Introduction}
-Cette section détaille la mise en œuvre technique du projet \textbf{OptiHR}. Après la phase de conception, il est essentiel de transformer les modèles et les spécifications en un système fonctionnel. Cette phase couvre l'implémentation des différentes fonctionnalités, les choix technologiques adoptés ainsi que l'organisation du code et du développement.
+Dans ce chapitre, nous décrivons la mise en œuvre du projet, en détaillant l'architecture choisie, les technologies utilisées ainsi que les différentes étapes de développement.
 
-\section{Choix technologiques}
-Pour assurer la performance, la maintenabilité et l’évolutivité du système, les technologies suivantes ont été utilisées :
-\begin{itemize}
-    \item \textbf{Backend} : Laravel, un framework PHP robuste facilitant le développement d’applications web grâce à son architecture MVC.
-    \item \textbf{Base de données} : PostgreSQL, un SGBD relationnel offrant une gestion avancée des données.
-    \item \textbf{Frontend} : Blade, le moteur de template de Laravel, permettant de structurer l'affichage des interfaces utilisateur.
-    \item \textbf{Versioning} : Git, avec un workflow basé sur GitHub pour la gestion collaborative du code source.
-    \item \textbf{API} : Des endpoints RESTful ont été développés pour permettre la communication entre le frontend et le backend.
-\end{itemize}
+\section{Architecture du projet}
+\subsection{Présentation de l'architecture globale}
+% Décrire l'architecture générale (monolithe, microservices, MVC, etc.)
 
-\section{Architecture et organisation du projet}
-Le projet est organisé selon une architecture MVC (Modèle-Vue-Contrôleur) qui permet de séparer les différentes responsabilités et d'améliorer la maintenabilité du code :
-\begin{itemize}
-    \item \textbf{Modèle} : Définit les entités de la base de données et leur relation.
-    \item \textbf{Vue} : Gère l’affichage des pages à l’aide de Blade.
-    \item \textbf{Contrôleur} : Traite les requêtes et interagit avec les modèles pour retourner les bonnes réponses.
-\end{itemize}
+\subsection{Choix des technologies et outils}
+% Expliquer les choix technologiques (Node.js, Vue.js, React.js, PostgreSQL, etc.)
+% Justifier ces choix en fonction des besoins du projet
 
-Le projet est structuré comme suit :
-\begin{itemize}
-    \item \textbf{/app} : Contient les modèles et les contrôleurs.
-    \item \textbf{/resources/views} : Contient les vues Blade.
-    \item \textbf{/routes} : Définit les routes du projet (web et API).
-    \item \textbf{/database/migrations} : Contient les fichiers de migration pour la gestion de la base de données.
-\end{itemize}
+Dans cette section, nous présentons les principales technologies utilisées pour le développement du projet. Chaque technologie a été sélectionnée pour ses performances, sa robustesse et sa facilité d’intégration dans notre stack.
 
-\section{Implémentation des fonctionnalités}
-Les principales fonctionnalités implémentées sont :
-\subsection{Gestion des utilisateurs}
-\begin{itemize}
-    \item Authentification des utilisateurs (inscription, connexion, déconnexion).
-    \item Gestion des rôles et permissions.
-\end{itemize}
+\vspace{1cm} % Ajoute un espace vertical
 
-\subsection{Gestion des employés}
-\begin{itemize}
-    \item Création, modification et suppression des employés.
-    \item Attribution d’un poste et d’un département à chaque employé.
-\end{itemize}
 
-\subsection{Gestion des absences}
-\begin{itemize}
-    \item Saisie et validation des demandes d'absence.
-    \item Suivi des statuts des absences.
-\end{itemize}
+\begin{longtable}{|m{4cm}|m{10cm}|}
+    \hline
+    \textbf{Technologie} & \textbf{Description} \\
+    \hline
+    \endfirsthead
 
-\subsection{Gestion des fichiers et documents}
-\begin{itemize}
-    \item Upload et gestion des fichiers associés aux employés.
-    \item Stockage sécurisé des documents dans le serveur.
-\end{itemize}
+    \hline
+    \textbf{Technologie} & \textbf{Description} \\
+    \hline
+    \endhead
+
+    \hline
+    \endfoot
+
+    \hline
+    \includegraphics[width=3cm]{images/logo/laravel.png} & 
+    \textbf{Laravel - Framework Backend} : Laravel est un framework PHP moderne basé sur l’architecture MVC (Modèle-Vue-Contrôleur). Il offre de nombreuses fonctionnalités telles que :  
+    \begin{itemize}
+        \item Un ORM puissant (Eloquent) pour la gestion de la base de données.
+        \item Un système de migration et de seeders pour faciliter le développement.
+        \item Un mécanisme de routage avancé et un middleware intégré pour la gestion des requêtes HTTP.
+    \end{itemize}
+    Grâce à Laravel, nous avons pu structurer le projet de manière efficace et évolutive. \\
+    \hline
+
+    \includegraphics[width=3cm]{images/logo/blade.png} & 
+    \textbf{Blade - Moteur de Templating} : Blade est le moteur de templates natif de Laravel. Il permet de créer des vues dynamiques avec une syntaxe claire et fluide. Ses principales caractéristiques sont :
+    \begin{itemize}
+        \item Une syntaxe simplifiée pour l'affichage des données et les structures de contrôle (`@if`, `@foreach`, etc.).
+        \item La possibilité d’étendre des layouts grâce à l’héritage de templates.
+        \item Une mise en cache automatique pour améliorer les performances.
+    \end{itemize}\\
+    \hline
+
+    \includegraphics[width=3cm]{images/logo/postgresql.png} & 
+    \textbf{PostgreSQL - Base de Données Relationnelle} : PostgreSQL est un système de gestion de base de données relationnelle open-source reconnu pour sa stabilité et ses performances. Il a été choisi pour :  
+    \begin{itemize}
+        \item Son support avancé des types de données et des transactions ACID.
+        \item Sa capacité à gérer de gros volumes de données efficacement.
+        \item Son intégration facile avec Laravel via l'ORM Eloquent.
+    \end{itemize}\\
+    \hline
+
+    \includegraphics[width=3cm]{images/logo/bootstrap.png} & 
+    \textbf{Bootstrap - Framework CSS} : Bootstrap est un framework CSS populaire utilisé pour concevoir une interface utilisateur réactive et attrayante. Il nous a permis de :  
+    \begin{itemize}
+        \item Utiliser un système de grille pour une mise en page responsive.
+        \item Accélérer le développement avec des composants préconçus (modals, boutons, alertes, etc.).
+        \item Assurer une compatibilité avec tous les navigateurs modernes.
+    \end{itemize}\\
+    \hline
+
+    \includegraphics[width=3cm]{images/logo/javascript.png} & 
+    \textbf{JavaScript - Langage de Programmation Frontend} : JavaScript est un langage de programmation utilisé pour ajouter des interactions dynamiques à l'interface utilisateur. Il a été employé pour :  
+    \begin{itemize}
+        \item Gérer les interactions utilisateur (événements, animations).
+        \item Améliorer l'expérience avec des requêtes asynchrones (AJAX, Fetch API).
+        \item Dynamiser le rendu des composants sans recharger la page.
+    \end{itemize}\\
+    \hline
+
+    \includegraphics[width=3cm]{images/logo/git.png}  
+    \includegraphics[width=3cm]{images/logo/github.png} & 
+    \textbf{Git et GitHub - Outils de Gestion de Version} : Pour la gestion du code source, nous avons utilisé **Git** et **GitHub** :  
+    \begin{itemize}
+        \item **Git** permet de suivre l'évolution du projet grâce à un système de versionnement performant.
+        \item **GitHub** facilite la collaboration et l’hébergement du code en ligne, avec des fonctionnalités comme les pull requests et les issues.
+    \end{itemize}
+    Ces outils nous ont permis de travailler efficacement en équipe et d’assurer la stabilité du code tout au long du développement.\\
+    \hline
+
+\end{longtable}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+L’utilisation de ces technologies nous a permis de construire une application performante, maintenable et évolutive. Le choix de Laravel avec Blade pour le backend, PostgreSQL pour la base de données et Bootstrap avec JavaScript pour le frontend a facilité l’implémentation et l’optimisation du projet. Enfin, l’utilisation de Git et GitHub a renforcé la gestion du code et le travail collaboratif.
+
+
+\section{Développement et implémentation}
+\subsection{Mise en place de l’environnement de développement}
+% Décrire la configuration initiale du projet (installation des dépendances, structuration du code)
+
+\subsection{Développement des fonctionnalités principales}
+% Présenter les fonctionnalités principales du projet et leur implémentation
+
+\subsubsection{Feature 1 : [Nom de la fonctionnalité]}
+% Détailler le développement d’une fonctionnalité clé
+
+\subsubsection{Feature 2 : [Nom de la fonctionnalité]}
+% Détailler une autre fonctionnalité clé
+
+\section{Problèmes rencontrés et solutions adoptées}
+\subsection{Difficultés techniques}
+% Problèmes liés aux technologies utilisées, performances, compatibilité
+
+\subsection{Optimisation et amélioration du code}
+% Améliorations mises en place pour optimiser le projet
 
 \section{Tests et validation}
-Pour garantir la fiabilité du système, plusieurs tests ont été réalisés :
-\begin{itemize}
-    \item \textbf{Tests unitaires} : Vérification des fonctionnalités des modèles et des contrôleurs.
-    \item \textbf{Tests fonctionnels} : Vérification du bon fonctionnement des fonctionnalités majeures.
-    \item \textbf{Tests d'intégration} : Vérification des interactions entre les différents modules.
-    \item \textbf{Tests utilisateurs} : Validation des fonctionnalités par des tests en conditions réelles.
-\end{itemize}
+\subsection{Stratégie de test}
+% Présentation des tests utilisés (unitaires, intégration, end-to-end)
 
-\section{Déploiement}
-Le déploiement du projet a été effectué selon les étapes suivantes :
-\begin{itemize}
-    \item Configuration du serveur et installation des dépendances.
-    \item Migration de la base de données et initialisation des données.
-    \item Déploiement sur un serveur web avec Nginx et Laravel.
-    \item Configuration des sauvegardes et de la sécurité.
-\end{itemize}
+\subsection{Résultats des tests}
+% Analyse des résultats des tests et validation du bon fonctionnement
 
 \section{Conclusion}
-La phase de réalisation a permis d'implémenter les fonctionnalités prévues et d'assurer la mise en production d'un système fonctionnel et performant. Grâce à une approche modulaire et une gestion rigoureuse du code, le projet OptiHR est désormais prêt à être utilisé par les utilisateurs finaux.
+% Résumer les étapes clés de la réalisation et l’impact des choix technologiques
 \clearpage
