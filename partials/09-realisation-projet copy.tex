@@ -2,12 +2,10 @@
 \clearpage
 \section{Introduction}
 Dans ce chapitre, nous décrivons la mise en œuvre du projet, en détaillant l'architecture choisie, les technologies utilisées ainsi que les différentes étapes de développement.
-%===========================================================================================================
 
 \section{Architecture du projet}
 \subsection{Présentation de l'architecture globale}
 % Décrire l'architecture générale (monolithe, microservices, MVC, etc.)
-%===========================================================================================================
 
 \subsection{Choix des technologies et outils}
 % Expliquer les choix technologiques (Node.js, Vue.js, React.js, PostgreSQL, etc.)
@@ -97,11 +95,11 @@ L’utilisation de ces technologies nous a permis de construire une application 
 \section{Développement et implémentation}
 \subsection{Mise en place de l’environnement de développement}
 % Décrire la configuration initiale du projet (installation des dépendances, structuration du code)
-
+\section{Mise en place de l’environnement de développement}
 
 Pour assurer un développement fluide et efficace, un environnement de travail stable et bien configuré a été mis en place sous **Ubuntu 24**. Cette section détaille les étapes suivies pour l’installation et la configuration des outils nécessaires.
 
-\subsubsection{Prérequis}
+\subsection{Prérequis}
 Les outils suivants ont été utilisés :
 \begin{itemize}
     \item Système d’exploitation : \textbf{Ubuntu 24}
@@ -112,98 +110,110 @@ Les outils suivants ont été utilisés :
     \item Système de versionnement : \textbf{Git et GitHub}
 \end{itemize}
 
-\subsubsection{Installation des outils}
+\subsection{Installation des outils}
 
-\subsubsection*{Installation de PHP 8.2 et Apache}
+\subsubsection{Installation de PHP 8.2 et Apache}
 Ubuntu 24 ne propose pas PHP 8.2 par défaut. Pour l’installer avec Apache :
-\begin{tcolorbox}[colback=black, coltext=white, title=Installation de PHP 8.2 et Apache, fonttitle=\bfseries]
-\texttt{sudo apt update \&\& sudo apt upgrade -y} \\
-\texttt{sudo apt install apache2 php8.2 libapache2-mod-php8.2 php8.2-cli php8.2-mbstring php8.2-xml php8.2-curl php8.2-pgsql unzip -y}
-\end{tcolorbox}
+\begin{verbatim}
+sudo apt update && sudo apt upgrade -y
+sudo apt install apache2 php8.2 libapache2-mod-php8.2 php8.2-cli php8.2-mbstring php8.2-xml php8.2-curl php8.2-pgsql unzip -y
+\end{verbatim}
+Redémarrer Apache après l’installation :
+\begin{verbatim}
+sudo systemctl restart apache2
+\end{verbatim}
+Vérifier l’installation de PHP :
+\begin{verbatim}
+php -v
+\end{verbatim}
 
-Une fois l’installation terminée, redémarrer Apache :
+\subsubsection{Installation de Composer}
+Composer est essentiel pour la gestion des dépendances PHP. Il peut être installé avec :
+\begin{verbatim}
+curl -sS https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+composer -V
+\end{verbatim}
 
-\begin{tcolorbox}[colback=black, coltext=white, title=Redémarrage du serveur Apache, fonttitle=\bfseries]
-\texttt{sudo systemctl restart apache2}
-\end{tcolorbox}
+\subsubsection{Installation de PostgreSQL}
+Pour installer PostgreSQL et son interface de gestion :
+\begin{verbatim}
+sudo apt install postgresql postgresql-contrib -y
+\end{verbatim}
+Démarrer et vérifier PostgreSQL :
+\begin{verbatim}
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+psql --version
+\end{verbatim}
+Créer un utilisateur et une base de données :
+\begin{verbatim}
+sudo -u postgres createuser -P mon_utilisateur
+sudo -u postgres createdb -O mon_utilisateur nom_du_projet
+\end{verbatim}
+Configurer Laravel pour PostgreSQL en modifiant le fichier `.env` :
+\begin{verbatim}
+DB_CONNECTION=pgsql
+DB_HOST=127.0.0.1
+DB_PORT=5432
+DB_DATABASE=nom_du_projet
+DB_USERNAME=mon_utilisateur
+DB_PASSWORD=motdepasse
+\end{verbatim}
 
-Vérifier que PHP est bien installé :
-
-\begin{tcolorbox}[colback=black, coltext=white, title=Vérification de la version de PHP, fonttitle=\bfseries]
-\texttt{php -v}
-\end{tcolorbox}
-
-\subsubsection*{Installation de Composer}
-Composer est indispensable pour gérer les dépendances PHP :
-
-\begin{tcolorbox}[colback=black, coltext=white, title=Installation de Composer, fonttitle=\bfseries]
-\texttt{curl -sS https://getcomposer.org/installer | php} \\
-\texttt{sudo mv composer.phar /usr/local/bin/composer} \\
-\texttt{composer -V}
-\end{tcolorbox}
-
-\subsubsection{Installation et configuration de PostgreSQL}
-PostgreSQL est utilisé comme base de données :
-
-\begin{tcolorbox}[colback=black, coltext=white, title=Installation de PostgreSQL, fonttitle=\bfseries]
-\texttt{sudo apt install postgresql postgresql-contrib -y}
-\end{tcolorbox}
-
-Démarrer PostgreSQL et vérifier son installation :
-
-\begin{tcolorbox}[colback=black, coltext=white, title=Démarrage et vérification, fonttitle=\bfseries]
-\texttt{sudo systemctl start postgresql} \\
-\texttt{sudo systemctl enable postgresql} \\
-\texttt{psql --version}
-\end{tcolorbox}
-
-\subsubsection*{Installation de Laravel}
+\subsubsection{Installation de Laravel}
 Créer un projet Laravel :
+\begin{verbatim}
+composer create-project --prefer-dist laravel/laravel nom_du_projet
+\end{verbatim}
+Entrer dans le dossier et générer la clé d’application :
+\begin{verbatim}
+cd nom_du_projet
+php artisan key:generate
+\end{verbatim}
 
-\begin{tcolorbox}[colback=black, coltext=white, title=Création d’un projet Laravel, fonttitle=\bfseries]
-\texttt{composer create-project --prefer-dist laravel/laravel:\^10.0 nom\_du\_projet}
-\end{tcolorbox}
-
-Générer la clé d’application :
-
-\begin{tcolorbox}[colback=black, coltext=white, title=Génération de la clé d’application, fonttitle=\bfseries]
-\texttt{php artisan key:generate}
-\end{tcolorbox}
-
-\subsubsection{Configuration de Git et clonage du projet}
+\subsection{Configuration de Git et clonage du projet}
 Vérifier si Git est installé :
-
-\begin{tcolorbox}[colback=black, coltext=white, title=Vérification de Git, fonttitle=\bfseries]
-\texttt{git --version}
-\end{tcolorbox}
-
-Si Git n’est pas installé, l’ajouter avec :
-
-\begin{tcolorbox}[colback=black, coltext=white, title=Installation de Git, fonttitle=\bfseries]
-\texttt{sudo apt install git -y}
-\end{tcolorbox}
-
+\begin{verbatim}
+git --version
+\end{verbatim}
+Si nécessaire, l’installer avec :
+\begin{verbatim}
+sudo apt install git -y
+\end{verbatim}
+Configurer Git avec son identité :
+\begin{verbatim}
+git config --global user.name "Votre Nom"
+git config --global user.email "votre@email.com"
+\end{verbatim}
 Cloner le projet depuis GitHub :
+\begin{verbatim}
+git clone https://github.com/utilisateur/nom_du_projet.git
+cd nom_du_projet
+\end{verbatim}
 
-\begin{tcolorbox}[colback=black, coltext=white, title=Clonage du projet, fonttitle=\bfseries]
-\texttt{git clone https://github.com/utilisateur/nom\_du\_projet.git} \\
-\texttt{cd nom\_du\_projet}
-\end{tcolorbox}
+\subsection{Configuration de Visual Studio Code}
+Visual Studio Code peut être installé avec :
+\begin{verbatim}
+sudo snap install --classic code
+\end{verbatim}
+Extensions utiles installées dans VS Code :
+\begin{itemize}
+    \item PHP Intelephense (Auto-complétion PHP)
+    \item Laravel Blade Snippets (Aide pour Blade)
+    \item PostgreSQL (Connexion et requêtes PostgreSQL)
+    \item GitLens (Suivi avancé de Git)
+\end{itemize}
 
-\subsubsection{Lancement du serveur de développement}
-Démarrer Laravel en mode développement :
+\subsection{Lancement du serveur de développement}
+Démarrer le serveur Laravel :
+\begin{verbatim}
+php artisan serve
+\end{verbatim}
+L’application est maintenant accessible à l’adresse `http://127.0.0.1:8000/`.
 
-\begin{tcolorbox}[colback=black, coltext=white, title=Lancement du serveur Laravel, fonttitle=\bfseries]
-\texttt{php artisan serve}
-\end{tcolorbox}
-
-L’application est maintenant accessible à l’adresse :
-
-\begin{tcolorbox}[colback=black, coltext=white, title=URL d’accès, fonttitle=\bfseries]
-\texttt{http://127.0.0.1:8000/}
-\end{tcolorbox}
-
-
+\section{Conclusion}
+L’environnement de développement sous Ubuntu 24 a été configuré avec succès. Cette mise en place garantit une bonne productivité et une gestion efficace du projet.
 
 
 
