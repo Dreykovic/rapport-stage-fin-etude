@@ -40,7 +40,7 @@
 
 \usepackage{booktabs} % Pour un meilleur rendu du tableau
 \usepackage{float}
-
+\usepackage{caption}
 
 
 \usepackage{xcolor}
@@ -50,12 +50,13 @@
 % Définition d'un style de terminal
 \newtcbox{\terminalbox}{on line, colback=black, colframe=black, boxrule=0pt, left=3pt, right=3pt, top=2pt, bottom=2pt, boxsep=3pt, sharp corners, enhanced}
 
+
+\usepackage{acronym}
+
 \begin{document}
 
-
-
 %-------------------------------------------------------------------+
-  \include{partials/01-garde}
+\include{partials/01-garde}
 %-------------------------------------------------------------------+
 \pagenumbering{Roman}
 %-------------------------------------------------------------------+
@@ -77,6 +78,30 @@
 \thispagestyle{empty}
 \clearpage
 
+%-------------------------------------------------------------------+
+\chapter*{Sigles, Acronymes et Abréviations}
+\addcontentsline{toc}{chapter}{Sigles, Acronymes et Abréviations}
+
+\begin{acronym}[ARCOP] % Ajuste la largeur selon le plus long acronyme
+  \acro{ARCOP}{Autorité de Régulation de la Commande Publique}
+  \acro{ARMP}{Autorité de Régulation des Marchés Publiques}
+  \acro{PASSE}{Plateforme de l’ARCOP pour des Services Sécurisés et Electroniques}
+  \acro{IFNTI}{Institut de Formation aux Normes et Technologies de l'Informatique}
+  \acro{RH}{Ressources Humaines}
+
+  %=============================================================
+  \acro{API}{Application Programming Interface}
+  \acro{CSS}{Cascading Style Sheets}
+  \acro{DBMS}{Database Management System}
+  \acro{HTML}{HyperText Markup Language}
+  \acro{JS}{JavaScript}
+  \acro{JSON}{JavaScript Object Notation}
+  \acro{PHP}{Hypertext Preprocessor}
+  \acro{SQL}{Structured Query Language}
+\end{acronym}
+\clearpage
+
+%-------------------------------------------------------------------+
 %-------------------------------------------------------------------+
 \pagenumbering{arabic}
 

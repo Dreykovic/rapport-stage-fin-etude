@@ -2,141 +2,114 @@
 \clearpage
 
 \section{Introduction}
-La phase de conception est une étape essentielle du cycle de développement d'un projet. Elle permet de définir l'architecture globale, les composants principaux et les interactions entre les modules du système. Cette étape inclut également l'identification des acteurs du système, c'est-à-dire les utilisateurs et les entités interagissant avec celui-ci, afin d'adapter les fonctionnalités aux besoins réels. Une conception rigoureuse garantit une meilleure organisation du projet et facilite sa mise en œuvre ainsi que sa maintenance.
+La phase de conception est une étape essentielle du cycle de développement d'un
+projet. Elle permet de définir l'architecture globale, les composants
+principaux et les interactions entre les modules du système. Cette étape inclut
+également l'identification des acteurs du système, c'est-à-dire les
+utilisateurs et les entités interagissant avec celui-ci, afin d'adapter les
+fonctionnalités aux besoins réels. Une conception rigoureuse garantit une
+meilleure organisation du projet et facilite sa mise en œuvre ainsi que sa
+maintenance.
 
 \section{Objectifs}
 Les objectifs de la phase de conception sont les suivants :
 \begin{itemize}
     \item Identifier et structurer les différents composants du système.
     \item Définir l'architecture logicielle en fonction des besoins du projet.
-    \item Spécifier les interactions entre les modules pour assurer une cohérence globale.
-    \item Concevoir les diagrammes UML, y compris les diagrammes de classes et de processus, afin de modéliser clairement la structure et le fonctionnement du système.
+    \item Spécifier les interactions entre les modules pour assurer une cohérence
+          globale.
+    \item Concevoir les diagrammes UML, y compris les diagrammes de classes et de
+          processus, afin de modéliser clairement la structure et le fonctionnement du
+          système.
     \item Optimiser la conception en tenant compte des performances et de l'évolutivité.
-    \item Assurer la conformité aux standards et aux bonnes pratiques du développement logiciel.
+    \item Assurer la conformité aux standards et aux bonnes pratiques du développement
+          logiciel.
 \end{itemize}
-
 
 \section{Modélisation et diagrammes}
 
-
 \subsection{Dictionnaire de données}
-Le dictionnaire de données décrit en détail les attributs des entités de la base de données, y compris leurs types, leurs rôles et leurs relations. Il permet d'assurer la cohérence et la structuration correcte des informations stockées.
+Le dictionnaire de données décrit en détail les attributs des entités de la
+base de données, y compris leurs types, leurs rôles et leurs relations. Il
+permet d'assurer la cohérence et la structuration correcte des informations
+stockées.
 
 \renewcommand{\arraystretch}{1.3} % Améliore l'espacement du tableau
 
 \begin{longtable}{|p{3.5cm}|p{3.5cm}|p{3cm}|p{5cm}|}
     \hline
-    \textbf{Nom de la table} & \textbf{Nom de l'attribut} & \textbf{Type de données} & \textbf{Description} \\
+    \textbf{Nom de la table} & \textbf{Nom de l'attribut} & \textbf{Type de données}    & \textbf{Description} \\
     \hline
     \endfirsthead
 
     \hline
-    \textbf{Nom de la table} & \textbf{Nom de l'attribut} & \textbf{Type de données} & \textbf{Description} \\
+    \textbf{Nom de la table} & \textbf{Nom de l'attribut} & \textbf{Type de données}    & \textbf{Description} \\
     \hline
     \endhead
 
     % User
     \hline
-    User & username & string & Nom d'utilisateur \\
+    User                     & username                   & string                      & Nom d'utilisateur    \\
     \hline
-    User & password & string & Mot de passe \\
+    User                     & password                   & string                      & Mot de passe         \\
     \hline
-    User & active & string & Statut actif/inactif \\
+    User                     & active                     & string                      & Statut actif/inactif \\
     \hline
-    
+
     % Role
-    Role & name & string & Nom du rôle \\
-    \hline
-    
+    Role                     & name                       & string                      & Nom du rôle          \\ \hline
+
     % Permission
-    Permission & name & string & Nom de la permission \\
-    \hline
+    Permission               & name                       & string                      & Nom de la permission \\ \hline
 
     % Employee
-    Employee & first\_name & string & Prénom de l'employé \\
-    \hline
-    Employee & last\_name & string & Nom de famille de l'employé \\
-    \hline
-    Employee & phone\_number & string & Numéro de téléphone \\
-    \hline
-    Employee & email & string & Adresse email \\
-    \hline
-    Employee & address1 & string & Adresse principale \\
-    \hline
-    Employee & address2 & string & Adresse secondaire \\
-    \hline
-    Employee & city & string & Ville \\
-    \hline
-    Employee & country & string & Pays \\
-    \hline
-    Employee & state & string & Région ou état \\
-    \hline
-    Employee & bank\_name & string & Nom de la banque \\
-    \hline
-    Employee & rib & string & Relevé d'identité bancaire \\
-    \hline
+    Employee                 & first\_name                & string                      & Prénom de l'employé  \\ \hline Employee &
+    last\_name               & string                     & Nom de famille de l'employé                        \\ \hline Employee &
+    phone\_number            & string                     & Numéro de téléphone                                \\ \hline Employee & email                             &
+    string                   & Adresse email                                                                   \\ \hline Employee & address1 & string & Adresse
+    principale                                                                                                 \\ \hline Employee & address2 & string & Adresse secondaire \\
+    \hline Employee          & city                       & string                      & Ville                \\ \hline Employee & country & string &
+    Pays                                                                                                       \\ \hline Employee & state & string & Région ou état \\ \hline Employee &
+    bank\_name               & string                     & Nom de la banque                                   \\ \hline Employee & rib & string &
+    Relevé d'identité bancaire                                                                                 \\ \hline
 
     % Department
-    Department & name & string & Nom du département \\
-    \hline
+    Department               & name                       & string                      & Nom du département   \\ \hline
 
     % File
-    File & name & string & Nom du fichier \\
-    \hline
-    File & url & string & URL du fichier \\
-    \hline
-    File & mime\_type & string & Type MIME \\
-    \hline
-    File & path & string & Chemin d'accès \\
-    \hline
-    File & upload\_date & string & Date d'upload \\
-    \hline
+    File                     & name                       & string                      & Nom du fichier       \\ \hline File & url & string & URL du
+    fichier                                                                                                    \\ \hline File & mime\_type & string & Type MIME \\ \hline File & path
+                             & string                     & Chemin d'accès                                     \\ \hline File & upload\_date & string & Date
+    d'upload                                                                                                   \\ \hline
 
     % Duty
-    Duty & duration & string & Durée de la mission \\
-    \hline
-    Duty & begin\_date & string & Date de début \\
-    \hline
-    Duty & type & string & Type de mission \\
-    \hline
-    Duty & etat & string & État de la mission \\
-    \hline
+    Duty                     & duration                   & string                      & Durée de la mission  \\ \hline Duty & begin\_date                       &
+    string                   & Date de début                                                                   \\ \hline Duty & type & string & Type de mission \\
+    \hline Duty              & etat                       & string                      & État de la mission   \\ \hline
 
     % Job
-    Job & title & string & Intitulé du poste \\
-    \hline
+    Job                      & title                      & string                      & Intitulé du poste    \\ \hline
 
     % Absence
-    Absence & day\_requested & string & Jour demandé \\
-    \hline
-    Absence & start\_date & string & Date de début \\
-    \hline
-    Absence & end\_date & string & Date de fin \\
-    \hline
-    Absence & address & string & Adresse \\
-    \hline
-    Absence & date\_of\_application & string & Date de la demande \\
-    \hline
-    Absence & status & string & Statut de l'absence \\
-    \hline
-    Absence & date\_of\_approval & string & Date d'approbation \\
-    \hline
-    Absence & type\_of\_absence & string & Type d'absence \\
-    \hline
-    Absence & reasons & string & Raisons de l'absence \\
-    \hline
-    Absence & proof & string & Justificatif \\
-    \hline
-    Absence & comment & string & Commentaire \\
-    \hline
+    Absence                  & day\_requested             & string                      & Jour demandé         \\ \hline Absence &
+    start\_date              & string                     & Date de début                                      \\ \hline Absence & end\_date & string &
+    Date de fin                                                                                                \\ \hline Absence & address & string & Adresse \\ \hline Absence        &
+    date\_of\_application    & string                     & Date de la demande                                 \\ \hline Absence & status
+                             & string                     & Statut de l'absence                                \\ \hline Absence & date\_of\_approval                    & string
+                             & Date d'approbation                                                              \\ \hline Absence & type\_of\_absence & string & Type
+    d'absence                                                                                                  \\ \hline Absence & reasons & string & Raisons de l'absence \\ \hline
+    Absence                  & proof                      & string                      & Justificatif         \\ \hline Absence & comment & string &
+    Commentaire                                                                                                \\ \hline
 
 \end{longtable}
-
-
-
-
+\begin{center}  
+    \captionof{table}{Tableau du dictionnaire des données} % Ajoute la légende à la liste des tableaux  
+    \label{tab:table_dictionnaire_data}  
+\end{center}  
 \subsection{Diagramme de classes}
-Le diagramme de classes permet de représenter les différentes entités du système et leurs relations. Il offre une vision claire de la structure et facilite la compréhension des interactions entre les objets.
+Le diagramme de classes permet de représenter les différentes entités du
+système et leurs relations. Il offre une vision claire de la structure et
+facilite la compréhension des interactions entre les objets.
 
 \begin{figure}[H]
     \centering
@@ -147,7 +120,9 @@ Le diagramme de classes permet de représenter les différentes entités du syst
 
 \section{Description des entités et relations}
 
-Le diagramme de classes représente un système de gestion des employés et de leurs activités professionnelles. Voici une description des entités principales et de leurs relations :
+Le diagramme de classes représente un système de gestion des employés et de
+leurs activités professionnelles. Voici une description des entités principales
+et de leurs relations :
 
 \subsection{Entités principales}
 
@@ -278,43 +253,42 @@ Le diagramme de classes représente un système de gestion des employés et de l
     \item path
 \end{itemize}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 \section{Technologies et outils}
-Les outils et technologies suivants ont été utilisés pour la conception du projet \textbf{OptiHR}. Chaque outil est accompagné d'une image et d'une description détaillée.
+Les outils et technologies suivants ont été utilisés pour la conception du
+projet \textbf{OptiHR}. Chaque outil est accompagné d'une image et d'une
+description détaillée.
 
 \vspace{1cm} % Ajoute un espace vertical
 
 \renewcommand{\arraystretch}{1.5} % Espacement entre les lignes du tableau
 
 \begin{center}
-\begin{tabular}{|m{4cm}|m{10cm}|}
-    \hline
-    \textbf{Technologie} & \textbf{Description} \\
-    \hline
-    
-    \includegraphics[width=3cm]{images/logo/uml.png} & \textbf{UML} : Utilisé pour la modélisation des systèmes et la conception des structures du projet. Il permet de représenter graphiquement les différentes interactions et processus du système. \\
-    \hline
-    
-    \includegraphics[width=3cm]{images/logo/modelio.png} & \textbf{Modelio} : Outil de modélisation UML permettant de créer des diagrammes tels que les diagrammes de classes, de séquence et d'activités. \\
-    \hline
- 
-  
-\end{tabular}
+    \begin{table}[h]  % Environnement table pour être listé dans la liste des tableaux
+       
+
+        \begin{tabular}{|m{4cm}|m{10cm}|}
+            \hline
+            \textbf{Technologie}                                 & \textbf{Description}                                                                                                                                                                             \\
+            \hline
+
+            \includegraphics[width=3cm]{images/logo/uml.png}     & \textbf{UML} : Utilisé pour la modélisation des systèmes et la conception des structures du projet. Il permet de représenter graphiquement les différentes interactions et processus du système. \\
+            \hline
+
+            \includegraphics[width=3cm]{images/logo/modelio.png} & \textbf{Modelio} : Outil de modélisation UML permettant de créer des diagrammes tels que les diagrammes de classes, de séquence et d'activités.                                                  \\
+            \hline
+
+        \end{tabular}
+        % \centering
+        \caption{Tableau des technologies et outils utilisés pour la conception} % La légende du tableau
+        \label{tab:technos_conception} % Étiquette pour référence
+    \end{table}
 \end{center}
 
 \section{Conclusion}
-La phase de conception pose les bases essentielles du projet en structurant l'architecture et en précisant les technologies et les modèles de données adoptés. Une conception rigoureuse garantit un développement fluide et efficace, tout en assurant la maintenance et l'évolutivité du système sur le long terme.
+La phase de conception pose les bases essentielles du projet en structurant
+l'architecture et en précisant les technologies et les modèles de données
+adoptés. Une conception rigoureuse garantit un développement fluide et
+efficace, tout en assurant la maintenance et l'évolutivité du système sur le
+long terme.
 
 \clearpage
