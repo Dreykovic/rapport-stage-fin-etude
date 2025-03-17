@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Fond -->
+  <rect width="800" height="600" fill="#ffffff" />
+  
+  <!-- Acteurs -->
+  <!-- Employé -->
+  <circle cx="100" cy="150" r="20" fill="#E1F5FE" stroke="#0288D1" stroke-width="2" />
+  <line x1="100" y1="170" x2="100" y2="220" stroke="#0288D1" stroke-width="2" />
+  <line x1="70" y1="190" x2="130" y2="190" stroke="#0288D1" stroke-width="2" />
+  <line x1="100" y1="220" x2="70" y2="250" stroke="#0288D1" stroke-width="2" />
+  <line x1="100" y1="220" x2="130" y2="250" stroke="#0288D1" stroke-width="2" />
+  <text x="100" y="280" text-anchor="middle" font-family="Arial" font-size="14" fill="#0288D1">Employé</text>
+  
+  <!-- Supérieur hiérarchique -->
+  <circle cx="100" cy="350" r="20" fill="#E8F5E9" stroke="#388E3C" stroke-width="2" />
+  <line x1="100" y1="370" x2="100" y2="420" stroke="#388E3C" stroke-width="2" />
+  <line x1="70" y1="390" x2="130" y2="390" stroke="#388E3C" stroke-width="2" />
+  <line x1="100" y1="420" x2="70" y2="450" stroke="#388E3C" stroke-width="2" />
+  <line x1="100" y1="420" x2="130" y2="450" stroke="#388E3C" stroke-width="2" />
+  <text x="100" y="480" text-anchor="middle" font-family="Arial" font-size="14" fill="#388E3C">Supérieur</text>
+  
+  <!-- GRH -->
+  <circle cx="700" cy="150" r="20" fill="#FFF3E0" stroke="#F57C00" stroke-width="2" />
+  <line x1="700" y1="170" x2="700" y2="220" stroke="#F57C00" stroke-width="2" />
+  <line x1="670" y1="190" x2="730" y2="190" stroke="#F57C00" stroke-width="2" />
+  <line x1="700" y1="220" x2="670" y2="250" stroke="#F57C00" stroke-width="2" />
+  <line x1="700" y1="220" x2="730" y2="250" stroke="#F57C00" stroke-width="2" />
+  <text x="700" y="280" text-anchor="middle" font-family="Arial" font-size="14" fill="#F57C00">GRH</text>
+  
+  <!-- DG -->
+  <circle cx="700" cy="350" r="20" fill="#F3E5F5" stroke="#7B1FA2" stroke-width="2" />
+  <line x1="700" y1="370" x2="700" y2="420" stroke="#7B1FA2" stroke-width="2" />
+  <line x1="670" y1="390" x2="730" y2="390" stroke="#7B1FA2" stroke-width="2" />
+  <line x1="700" y1="420" x2="670" y2="450" stroke="#7B1FA2" stroke-width="2" />
+  <line x1="700" y1="420" x2="730" y2="450" stroke="#7B1FA2" stroke-width="2" />
+  <text x="700" y="480" text-anchor="middle" font-family="Arial" font-size="14" fill="#7B1FA2">DG</text>
+  
+  <!-- Système -->
+  <rect x="250" y="50" width="300" height="500" rx="10" ry="10" fill="none" stroke="#000000" stroke-width="2" />
+  <text x="400" y="80" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold">Système de Gestion des Congés</text>
+  
+  <!-- Cas d'utilisation -->
+  <!-- Demander un congé -->
+  <ellipse cx="400" cy="130" rx="120" ry="30" fill="#E3F2FD" stroke="#1976D2" stroke-width="2" />
+  <text x="400" y="135" text-anchor="middle" font-family="Arial" font-size="14">Demander un congé</text>
+  
+  <!-- Annuler une demande -->
+  <ellipse cx="400" cy="200" rx="120" ry="30" fill="#E3F2FD" stroke="#1976D2" stroke-width="2" />
+  <text x="400" y="205" text-anchor="middle" font-family="Arial" font-size="14">Annuler une demande</text>
+  
+  <!-- Approuver (Supérieur) -->
+  <ellipse cx="400" cy="270" rx="120" ry="30" fill="#E8F5E9" stroke="#388E3C" stroke-width="2" />
+  <text x="400" y="275" text-anchor="middle" font-family="Arial" font-size="14">Approuver (Supérieur)</text>
+  
+  <!-- Approuver (GRH) -->
+  <ellipse cx="400" cy="340" rx="120" ry="30" fill="#FFF3E0" stroke="#F57C00" stroke-width="2" />
+  <text x="400" y="345" text-anchor="middle" font-family="Arial" font-size="14">Approuver (GRH)</text>
+  
+  <!-- Valider (DG) -->
+  <ellipse cx="400" cy="410" rx="120" ry="30" fill="#F3E5F5" stroke="#7B1FA2" stroke-width="2" />
+  <text x="400" y="415" text-anchor="middle" font-family="Arial" font-size="14">Valider (DG)</text>
+  
+  <!-- Consulter solde de congés -->
+  <ellipse cx="400" cy="480" rx="120" ry="30" fill="#E3F2FD" stroke="#1976D2" stroke-width="2" />
+  <text x="400" y="485" text-anchor="middle" font-family="Arial" font-size="14">Consulter solde de congés</text>
+  
+  <!-- Générer les rapports -->
+  <ellipse cx="400" cy="550" rx="120" ry="30" fill="#FFF3E0" stroke="#F57C00" stroke-width="2" />
+  <text x="400" y="555" text-anchor="middle" font-family="Arial" font-size="14">Générer les rapports</text>
+  
+  <!-- Associations -->
+  <!-- Employé - Demander -->
+  <line x1="130" y1="150" x2="280" y2="130" stroke="#000000" stroke-width="1.5" />
+  
+  <!-- Employé - Annuler -->
+  <line x1="130" y1="170" x2="280" y2="200" stroke="#000000" stroke-width="1.5" />
+  
+  <!-- Employé - Consulter -->
+  <line x1="130" y1="200" x2="280" y2="480" stroke="#000000" stroke-width="1.5" />
+  
+  <!-- Supérieur - Approuver (Supérieur) -->
+  <line x1="130" y1="350" x2="280" y2="270" stroke="#000000" stroke-width="1.5" />
+  
+  <!-- GRH - Approuver (GRH) -->
+  <line x1="670" y1="170" x2="520" y2="340" stroke="#000000" stroke-width="1.5" />
+  
+  <!-- GRH - Générer rapports -->
+  <line x1="670" y1="200" x2="520" y2="550" stroke="#000000" stroke-width="1.5" />
+  
+  <!-- DG - Valider -->
+  <line x1="670" y1="350" x2="520" y2="410" stroke="#000000" stroke-width="1.5" />
+</svg>

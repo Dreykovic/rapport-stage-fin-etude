@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Fond -->
+  <rect width="800" height="500" fill="#ffffff" />
+  
+  <!-- Acteurs -->
+  <!-- Employé -->
+  <circle cx="100" cy="150" r="20" fill="#E1F5FE" stroke="#0288D1" stroke-width="2" />
+  <line x1="100" y1="170" x2="100" y2="220" stroke="#0288D1" stroke-width="2" />
+  <line x1="70" y1="190" x2="130" y2="190" stroke="#0288D1" stroke-width="2" />
+  <line x1="100" y1="220" x2="70" y2="250" stroke="#0288D1" stroke-width="2" />
+  <line x1="100" y1="220" x2="130" y2="250" stroke="#0288D1" stroke-width="2" />
+  <text x="100" y="280" text-anchor="middle" font-family="Arial" font-size="14" fill="#0288D1">Employé</text>
+  
+  <!-- GRH -->
+  <circle cx="700" cy="150" r="20" fill="#FFF3E0" stroke="#F57C00" stroke-width="2" />
+  <line x1="700" y1="170" x2="700" y2="220" stroke="#F57C00" stroke-width="2" />
+  <line x1="670" y1="190" x2="730" y2="190" stroke="#F57C00" stroke-width="2" />
+  <line x1="700" y1="220" x2="670" y2="250" stroke="#F57C00" stroke-width="2" />
+  <line x1="700" y1="220" x2="730" y2="250" stroke="#F57C00" stroke-width="2" />
+  <text x="700" y="280" text-anchor="middle" font-family="Arial" font-size="14" fill="#F57C00">GRH</text>
+  
+  <!-- Système -->
+  <rect x="250" y="50" width="300" height="400" rx="10" ry="10" fill="none" stroke="#000000" stroke-width="2" />
+  <text x="400" y="80" text-anchor="middle" font-family="Arial" font-size="18" font-weight="bold">Système de Gestion des Dossiers</text>
+  
+  <!-- Cas d'utilisation -->
+  <!-- Consulter dossier personnel -->
+  <ellipse cx="400" cy="150" rx="140" ry="30" fill="#E3F2FD" stroke="#1976D2" stroke-width="2" />
+  <text x="400" y="155" text-anchor="middle" font-family="Arial" font-size="14">Consulter dossier personnel</text>
+  
+  <!-- Télécharger bulletins de paie -->
+  <ellipse cx="400" cy="220" rx="140" ry="30" fill="#E3F2FD" stroke="#1976D2" stroke-width="2" />
+  <text x="400" y="225" text-anchor="middle" font-family="Arial" font-size="14">Télécharger bulletins de paie</text>
+  
+  <!-- Demander documents administratifs -->
+  <ellipse cx="400" cy="290" rx="140" ry="30" fill="#E3F2FD" stroke="#1976D2" stroke-width="2" />
+  <text x="400" y="295" text-anchor="middle" font-family="Arial" font-size="14">Demander documents administratifs</text>
+  
+  <!-- Gérer les dossiers -->
+  <ellipse cx="400" cy="360" rx="140" ry="30" fill="#FFF3E0" stroke="#F57C00" stroke-width="2" />
+  <text x="400" y="365" text-anchor="middle" font-family="Arial" font-size="14">Gérer les dossiers</text>
+  
+  <!-- Traiter les demandes -->
+  <ellipse cx="400" cy="430" rx="140" ry="30" fill="#FFF3E0" stroke="#F57C00" stroke-width="2" />
+  <text x="400" y="435" text-anchor="middle" font-family="Arial" font-size="14">Traiter les demandes de documents</text>
+  
+  <!-- Associations -->
+  <!-- Employé - Consulter -->
+  <line x1="130" y1="150" x2="260" y2="150" stroke="#000000" stroke-width="1.5" />
+  
+  <!-- Employé - Télécharger -->
+  <line x1="130" y1="170" x2="260" y2="220" stroke="#000000" stroke-width="1.5" />
+  
+  <!-- Employé - Demander -->
+  <line x1="130" y1="200" x2="260" y2="290" stroke="#000000" stroke-width="1.5" />
+  
+  <!-- GRH - Gérer -->
+  <line x1="670" y1="170" x2="540" y2="360" stroke="#000000" stroke-width="1.5" />
+  
+  <!-- GRH - Traiter -->
+  <line x1="670" y1="200" x2="540" y2="430" stroke="#000000" stroke-width="1.5" />
+</svg>

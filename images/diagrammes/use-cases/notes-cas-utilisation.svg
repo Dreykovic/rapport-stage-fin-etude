@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Fond -->
+  <rect width="800" height="400" fill="#ffffff" />
+  
+  <!-- Acteurs -->
+  <!-- Employé -->
+  <circle cx="100" cy="150" r="20" fill="#E1F5FE" stroke="#0288D1" stroke-width="2" />
+  <line x1="100" y1="170" x2="100" y2="220" stroke="#0288D1" stroke-width="2" />
+  <line x1="70" y1="190" x2="130" y2="190" stroke="#0288D1" stroke-width="2" />
+  <line x1="100" y1="220" x2="70" y2="250" stroke="#0288D1" stroke-width="2" />
+  <line x1="100" y1="220" x2="130" y2="250" stroke="#0288D1" stroke-width="2" />
+  <text x="100" y="280" text-anchor="middle" font-family="Arial" font-size="14" fill="#0288D1">Employé</text>
+  
+  <!-- GRH -->
+  <circle cx="700" cy="150" r="20" fill="#FFF3E0" stroke="#F57C00" stroke-width="2" />
+  <line x1="700" y1="170" x2="700" y2="220" stroke="#F57C00" stroke-width="2" />
+  <line x1="670" y1="190" x2="730" y2="190" stroke="#F57C00" stroke-width="2" />
+  <line x1="700" y1="220" x2="670" y2="250" stroke="#F57C00" stroke-width="2" />
+  <line x1="700" y1="220" x2="730" y2="250" stroke="#F57C00" stroke-width="2" />
+  <text x="700" y="280" text-anchor="middle" font-family="Arial" font-size="14" fill="#F57C00">GRH</text>
+  
+  <!-- Système -->
+  <rect x="250" y="50" width="300" height="300" rx="10" ry="10" fill="none" stroke="#000000" stroke-width="2" />
+  <text x="400" y="80" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold">Système de Publication des Notes</text>
+  
+  <!-- Cas d'utilisation -->
+  <!-- Publier notes et informations -->
+  <ellipse cx="400" cy="150" rx="140" ry="30" fill="#FFF3E0" stroke="#F57C00" stroke-width="2" />
+  <text x="400" y="155" text-anchor="middle" font-family="Arial" font-size="14">Publier notes et informations</text>
+  
+  <!-- Consulter notes et informations -->
+  <ellipse cx="400" cy="220" rx="140" ry="30" fill="#E3F2FD" stroke="#1976D2" stroke-width="2" />
+  <text x="400" y="225" text-anchor="middle" font-family="Arial" font-size="14">Consulter notes et informations</text>
+  
+  <!-- Recevoir alertes et notifications -->
+  <ellipse cx="400" cy="290" rx="140" ry="30" fill="#E3F2FD" stroke="#1976D2" stroke-width="2" />
+  <text x="400" y="295" text-anchor="middle" font-family="Arial" font-size="14">Recevoir alertes et notifications</text>
+  
+  <!-- Associations -->
+  <!-- GRH - Publier -->
+  <line x1="670" y1="150" x2="540" y2="150" stroke="#000000" stroke-width="1.5" />
+  
+  <!-- Employé - Consulter -->
+  <line x1="130" y1="150" x2="260" y2="220" stroke="#000000" stroke-width="1.5" />
+  
+  <!-- Employé - Recevoir -->
+  <line x1="130" y1="180" x2="260" y2="290" stroke="#000000" stroke-width="1.5" />
+  
+  <!-- Relations d'inclusion -->
+  <path d="M 400 180 L 400 190" stroke="#000000" stroke-width="1.5" stroke-dasharray="5,5" marker-end="url(#arrowhead)" />
+  <text x="420" y="190" font-family="Arial" font-size="12" fill="#000000">«include»</text>
+  
+  <!-- Définition des marqueurs de flèche -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#000000" />
+    </marker>
+  </defs>
+</svg>
