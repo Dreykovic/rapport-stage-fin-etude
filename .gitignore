@@ -3,7 +3,7 @@
 *.fdb_latexmk
 *.log
 *.synctex.gz
-*.pdf
+main.pdf
 *.lot
 *.lof
 *.out

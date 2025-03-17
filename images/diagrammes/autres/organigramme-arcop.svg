@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 600">
+  <!-- Styles -->
+  <defs>
+    <style>
+      .box {
+        fill: #f0f8ff;
+        stroke: #4682b4;
+        stroke-width: 2;
+        rx: 6;
+        ry: 6;
+      }
+      .dg {
+        fill: #d1e7ff;
+      }
+      .direction {
+        fill: #e3f0ff;
+      }
+      .text {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        text-anchor: middle;
+      }
+      .bold {
+        font-family: Arial, sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        text-anchor: middle;
+      }
+      .title {
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+        text-anchor: middle;
+      }
+      .line {
+        stroke: #4682b4;
+        stroke-width: 1.5;
+      }
+    </style>
+  </defs>
+
+  <!-- Titre -->
+  <text x="350" y="30" class="title">ORGANIGRAMME DE L'ARCOP</text>
+
+  <!-- Structure principale -->
+  <!-- Direction Générale -->
+  <rect x="250" y="60" width="200" height="50" class="box dg" />
+  <text x="350" y="80" class="bold">DIRECTION GÉNÉRALE</text>
+  <text x="350" y="98" class="text">MOROU Touré Aftar (p.i.)</text>
+
+  <!-- Ligne centrale verticale -->
+  <line x1="350" y1="110" x2="350" y2="150" class="line" />
+  
+  <!-- Ligne horizontale -->
+  <line x1="100" y1="150" x2="600" y2="150" class="line" />
+  
+  <!-- Lignes verticales vers chaque direction -->
+  <line x1="100" y1="150" x2="100" y2="180" class="line" />
+  <line x1="225" y1="150" x2="225" y2="180" class="line" />
+  <line x1="350" y1="150" x2="350" y2="180" class="line" />
+  <line x1="475" y1="150" x2="475" y2="180" class="line" />
+  <line x1="600" y1="150" x2="600" y2="180" class="line" />
+  <line x1="600" y1="150" x2="600" y2="180" class="line" />
+  
+  <!-- Les six directions -->
+  <!-- DCRP -->
+  <rect x="25" y="180" width="150" height="70" class="box direction" />
+  <text x="100" y="205" class="bold">Direction de la</text>
+  <text x="100" y="220" class="bold">Communication et des</text>
+  <text x="100" y="235" class="bold">Relations Publiques</text>
+  <text x="100" y="250" class="text">(DCRP)</text>
+  
+  <!-- DIE -->
+  <rect x="150" y="280" width="150" height="70" class="box direction" />
+  <text x="225" y="305" class="bold">Direction des</text>
+  <text x="225" y="320" class="bold">Investigations et</text>
+  <text x="225" y="335" class="bold">Enquêtes</text>
+  <text x="225" y="350" class="text">(DIE)</text>
+  
+  <!-- DSAF -->
+  <rect x="275" y="180" width="150" height="70" class="box direction" />
+  <text x="350" y="205" class="bold">Direction des Services</text>
+  <text x="350" y="220" class="bold">Administratifs et</text>
+  <text x="350" y="235" class="bold">Financiers</text>
+  <text x="350" y="250" class="text">(DSAF)</text>
+  
+  <!-- DRAJ -->
+  <rect x="400" y="280" width="150" height="70" class="box direction" />
+  <text x="475" y="305" class="bold">Direction de la</text>
+  <text x="475" y="320" class="bold">Réglementation et des</text>
+  <text x="475" y="335" class="bold">Affaires Juridiques</text>
+  <text x="475" y="350" class="text">(DRAJ)</text>
+  
+  <!-- DFAT -->
+  <rect x="525" y="180" width="150" height="70" class="box direction" />
+  <text x="600" y="205" class="bold">Direction de la</text>
+  <text x="600" y="220" class="bold">Formation et des</text>
+  <text x="600" y="235" class="bold">Appuis Techniques</text>
+  <text x="600" y="250" class="text">(DFAT)</text>
+  
+  <!-- DSDSE -->
+  <rect x="275" y="380" width="150" height="70" class="box direction" />
+  <text x="350" y="405" class="bold">Direction des</text>
+  <text x="350" y="420" class="bold">Statistiques et de la</text>
+  <text x="350" y="435" class="bold">Documentation</text>
+  <text x="350" y="450" class="text">(DSD-SE)</text>
+  
+  <!-- Lignes supplémentaires -->
+  <line x1="225" y1="180" x2="225" y2="280" class="line" />
+  <line x1="475" y1="180" x2="475" y2="280" class="line" />
+  <line x1="350" y1="250" x2="350" y2="380" class="line" />
+  
+  <!-- Légende -->
+  <rect x="125" y="500" width="450" height="60" rx="10" ry="10" fill="white" stroke="#4682b4" stroke-width="1" />
+  <text x="350" y="520" class="bold">Composition de l'ARCOP selon le décret n° 2022-063/PR</text>
+  <text x="350" y="540" class="text">La Direction générale est l'organe exécutif, chargée de l'application des</text>
+  <text x="350" y="555" class="text">politiques générales et de la mise en œuvre des décisions du conseil de régulation</text>
+</svg>
