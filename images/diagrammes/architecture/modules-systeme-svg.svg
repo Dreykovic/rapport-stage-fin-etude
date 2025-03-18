@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <!-- Arrière-plan -->
+  <rect width="900" height="600" fill="#f8f9fa" />
+  
+  <!-- Titre -->
+  <text x="450" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">Modules du système OptiHR</text>
+  
+  <!-- Module Authentification -->
+  <rect x="50" y="100" width="180" height="150" rx="10" ry="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2" />
+  <text x="140" y="125" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold" fill="#1565c0">Authentification</text>
+  
+  <rect x="70" y="140" width="140" height="30" rx="5" ry="5" fill="#bbdefb" stroke="#1565c0" />
+  <text x="140" y="160" font-family="Arial" font-size="12" text-anchor="middle">Gestion utilisateurs</text>
+  
+  <rect x="70" y="180" width="140" height="30" rx="5" ry="5" fill="#bbdefb" stroke="#1565c0" />
+  <text x="140" y="200" font-family="Arial" font-size="12" text-anchor="middle">Gestion des rôles</text>
+  
+  <rect x="70" y="220" width="140" height="30" rx="5" ry="5" fill="#bbdefb" stroke="#1565c0" />
+  <text x="140" y="240" font-family="Arial" font-size="12" text-anchor="middle">Autorisations</text>
+  
+  <!-- Module GRH -->
+  <rect x="350" y="100" width="180" height="150" rx="10" ry="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" />
+  <text x="440" y="125" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold" fill="#2e7d32">Gestion RH</text>
+  
+  <rect x="370" y="140" width="140" height="30" rx="5" ry="5" fill="#c8e6c9" stroke="#2e7d32" />
+  <text x="440" y="160" font-family="Arial" font-size="12" text-anchor="middle">Employés</text>
+  
+  <rect x="370" y="180" width="140" height="30" rx="5" ry="5" fill="#c8e6c9" stroke="#2e7d32" />
+  <text x="440" y="200" font-family="Arial" font-size="12" text-anchor="middle">Départements</text>
+  
+  <rect x="370" y="220" width="140" height="30" rx="5" ry="5" fill="#c8e6c9" stroke="#2e7d32" />
+  <text x="440" y="240" font-family="Arial" font-size="12" text-anchor="middle">Postes</text>
+  
+  <!-- Module Absences -->
+  <rect x="650" y="100" width="180" height="150" rx="10" ry="10" fill="#fff3e0" stroke="#e65100" stroke-width="2" />
+  <text x="740" y="125" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold" fill="#e65100">Gestion Absences</text>
+  
+  <rect x="670" y="140" width="140" height="30" rx="5" ry="5" fill="#ffe0b2" stroke="#e65100" />
+  <text x="740" y="160" font-family="Arial" font-size="12" text-anchor="middle">Demandes de congés</text>
+  
+  <rect x="670" y="180" width="140" height="30" rx="5" ry="5" fill="#ffe0b2" stroke="#e65100" />
+  <text x="740" y="200" font-family="Arial" font-size="12" text-anchor="middle">Circuit validation</text>
+  
+  <rect x="670" y="220" width="140" height="30" rx="5" ry="5" fill="#ffe0b2" stroke="#e65100" />
+  <text x="740" y="240" font-family="Arial" font-size="12" text-anchor="middle">Soldes et statistiques</text>
+  
+  <!-- Module Documents -->
+  <rect x="200" y="350" width="180" height="150" rx="10" ry="10" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2" />
+  <text x="290" y="375" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold" fill="#6a1b9a">Gestion Documentaire</text>
+  
+  <rect x="220" y="390" width="140" height="30" rx="5" ry="5" fill="#e1bee7" stroke="#6a1b9a" />
+  <text x="290" y="410" font-family="Arial" font-size="12" text-anchor="middle">Bulletins de paie</text>
+  
+  <rect x="220" y="430" width="140" height="30" rx="5" ry="5" fill="#e1bee7" stroke="#6a1b9a" />
+  <text x="290" y="450" font-family="Arial" font-size="12" text-anchor="middle">Documents admin.</text>
+  
+  <rect x="220" y="470" width="140" height="30" rx="5" ry="5" fill="#e1bee7" stroke="#6a1b9a" />
+  <text x="290" y="490" font-family="Arial" font-size="12" text-anchor="middle">Archivage</text>
+  
+  <!-- Module Notifications -->
+  <rect x="500" y="350" width="180" height="150" rx="10" ry="10" fill="#e0f7fa" stroke="#00838f" stroke-width="2" />
+  <text x="590" y="375" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold" fill="#00838f">Notifications</text>
+  
+  <rect x="520" y="390" width="140" height="30" rx="5" ry="5" fill="#b2ebf2" stroke="#00838f" />
+  <text x="590" y="410" font-family="Arial" font-size="12" text-anchor="middle">Alertes système</text>
+  
+  <rect x="520" y="430" width="140" height="30" rx="5" ry="5" fill="#b2ebf2" stroke="#00838f" />
+  <text x="590" y="450" font-family="Arial" font-size="12" text-anchor="middle">Emails</text>
+  
+  <rect x="520" y="470" width="140" height="30" rx="5" ry="5" fill="#b2ebf2" stroke="#00838f" />
+  <text x="590" y="490" font-family="Arial" font-size="12" text-anchor="middle">Notes de service</text>
+  
+  <!-- Flèches de connexion -->
+  <!-- Auth -> Autres modules -->
+  <line x1="140" y1="250" x2="140" y2="300" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowhead)" />
+  <line x1="140" y1="300" x2="440" y2="300" stroke="#1565c0" stroke-width="2" />
+  <line x1="440" y1="300" x2="440" y2="250" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <line x1="440" y1="300" x2="740" y2="300" stroke="#1565c0" stroke-width="2" />
+  <line x1="740" y1="300" x2="740" y2="250" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <line x1="290" y1="300" x2="290" y2="350" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <line x1="590" y1="300" x2="590" y2="350" stroke="#1565c0" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- GRH -> Autres modules -->
+  <line x1="530" y1="175" x2="650" y2="175" stroke="#2e7d32" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <line x1="440" y1="250" x2="440" y2="320" stroke="#2e7d32" stroke-width="2" />
+  <line x1="440" y1="320" x2="290" y2="320" stroke="#2e7d32" stroke-width="2" />
+  <line x1="290" y1="320" x2="290" y2="350" stroke="#2e7d32" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Absences -> Notifications -->
+  <line x1="740" y1="250" x2="740" y2="425" stroke="#e65100" stroke-width="2" />
+  <line x1="740" y1="425" x2="680" y2="425" stroke="#e65100" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Marqueur pour les flèches -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 650">
+  <!-- Arrière-plan -->
+  <rect width="900" height="650" fill="#f8f9fa" />
+  
+  <!-- Titre -->
+  <text x="450" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">Architecture MVC du système OptiHR</text>
+
+  <!-- Bordure principale -->
+  <rect x="50" y="70" width="800" height="550" rx="10" ry="10" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5" />
+  <text x="450" y="95" font-family="Arial" font-size="16" text-anchor="middle">Système OptiHR</text>
+
+  <!-- Modèle MVC -->
+  <rect x="100" y="110" width="700" height="180" rx="10" ry="10" fill="#e8eaf6" stroke="#3f51b5" stroke-width="2" />
+  <text x="450" y="135" font-family="Arial" font-size="18" text-anchor="middle" font-weight="bold" fill="#3f51b5">Modèle (M)</text>
+  
+  <rect x="130" y="150" width="200" height="120" rx="8" ry="8" fill="#c5cae9" stroke="#3f51b5" />
+  <text x="230" y="170" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Entités</text>
+  <rect x="145" y="180" width="170" height="25" rx="4" ry="4" fill="#fff" stroke="#3f51b5" />
+  <text x="230" y="197" font-family="Arial" font-size="12" text-anchor="middle">Employee</text>
+  <rect x="145" y="210" width="170" height="25" rx="4" ry="4" fill="#fff" stroke="#3f51b5" />
+  <text x="230" y="227" font-family="Arial" font-size="12" text-anchor="middle">Absence</text>
+  <rect x="145" y="240" width="170" height="25" rx="4" ry="4" fill="#fff" stroke="#3f51b5" />
+  <text x="230" y="257" font-family="Arial" font-size="12" text-anchor="middle">Département</text>
+  
+  <rect x="350" y="150" width="200" height="120" rx="8" ry="8" fill="#c5cae9" stroke="#3f51b5" />
+  <text x="450" y="170" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Accès aux données</text>
+  <rect x="365" y="180" width="170" height="25" rx="4" ry="4" fill="#fff" stroke="#3f51b5" />
+  <text x="450" y="197" font-family="Arial" font-size="12" text-anchor="middle">Repositories</text>
+  <rect x="365" y="210" width="170" height="25" rx="4" ry="4" fill="#fff" stroke="#3f51b5" />
+  <text x="450" y="227" font-family="Arial" font-size="12" text-anchor="middle">ORM Eloquent</text>
+  <rect x="365" y="240" width="170" height="25" rx="4" ry="4" fill="#fff" stroke="#3f51b5" />
+  <text x="450" y="257" font-family="Arial" font-size="12" text-anchor="middle">Queries</text>
+  
+  <rect x="570" y="150" width="200" height="120" rx="8" ry="8" fill="#c5cae9" stroke="#3f51b5" />
+  <text x="670" y="170" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Logique métier</text>
+  <rect x="585" y="180" width="170" height="25" rx="4" ry="4" fill="#fff" stroke="#3f51b5" />
+  <text x="670" y="197" font-family="Arial" font-size="12" text-anchor="middle">Services</text>
+  <rect x="585" y="210" width="170" height="25" rx="4" ry="4" fill="#fff" stroke="#3f51b5" />
+  <text x="670" y="227" font-family="Arial" font-size="12" text-anchor="middle">Validation</text>
+  <rect x="585" y="240" width="170" height="25" rx="4" ry="4" fill="#fff" stroke="#3f51b5" />
+  <text x="670" y="257" font-family="Arial" font-size="12" text-anchor="middle">Events</text>
+
+  <!-- Contrôleur -->
+  <rect x="100" y="320" width="700" height="120" rx="10" ry="10" fill="#e0f2f1" stroke="#009688" stroke-width="2" />
+  <text x="450" y="345" font-family="Arial" font-size="18" text-anchor="middle" font-weight="bold" fill="#009688">Contrôleur (C)</text>
+  
+  <rect x="130" y="360" width="200" height="60" rx="8" ry="8" fill="#b2dfdb" stroke="#009688" />
+  <text x="230" y="380" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Contrôleurs HTTP</text>
+  <rect x="145" y="390" width="170" height="25" rx="4" ry="4" fill="#fff" stroke="#009688" />
+  <text x="230" y="407" font-family="Arial" font-size="12" text-anchor="middle">AbsenceController</text>
+  
+  <rect x="350" y="360" width="200" height="60" rx="8" ry="8" fill="#b2dfdb" stroke="#009688" />
+  <text x="450" y="380" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Middleware</text>
+  <rect x="365" y="390" width="170" height="25" rx="4" ry="4" fill="#fff" stroke="#009688" />
+  <text x="450" y="407" font-family="Arial" font-size="12" text-anchor="middle">Auth, CSRF, Validation</text>
+  
+  <rect x="570" y="360" width="200" height="60" rx="8" ry="8" fill="#b2dfdb" stroke="#009688" />
+  <text x="670" y="380" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Routes</text>
+  <rect x="585" y="390" width="170" height="25" rx="4" ry="4" fill="#fff" stroke="#009688" />
+  <text x="670" y="407" font-family="Arial" font-size="12" text-anchor="middle">web.php, api.php</text>
+
+  <!-- Vue -->
+  <rect x="100" y="470" width="700" height="120" rx="10" ry="10" fill="#fff3e0" stroke="#ff9800" stroke-width="2" />
+  <text x="450" y="495" font-family="Arial" font-size="18" text-anchor="middle" font-weight="bold" fill="#ff9800">Vue (V)</text>
+  
+  <rect x="130" y="510" width="200" height="60" rx="8" ry="8" fill="#ffe0b2" stroke="#ff9800" />
+  <text x="230" y="530" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Templates Blade</text>
+  <rect x="145" y="540" width="170" height="25" rx="4" ry="4" fill="#fff" stroke="#ff9800" />
+  <text x="230" y="557" font-family="Arial" font-size="12" text-anchor="middle">Layouts & Components</text>
+  
+  <rect x="350" y="510" width="200" height="60" rx="8" ry="8" fill="#ffe0b2" stroke="#ff9800" />
+  <text x="450" y="530" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">CSS/JavaScript</text>
+  <rect x="365" y="540" width="170" height="25" rx="4" ry="4" fill="#fff" stroke="#ff9800" />
+  <text x="450" y="557" font-family="Arial" font-size="12" text-anchor="middle">Bootstrap, jQuery</text>
+  
+  <rect x="570" y="510" width="200" height="60" rx="8" ry="8" fill="#ffe0b2" stroke="#ff9800" />
+  <text x="670" y="530" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Formulaires</text>
+  <rect x="585" y="540" width="170" height="25" rx="4" ry="4" fill="#fff" stroke="#ff9800" />
+  <text x="670" y="557" font-family="Arial" font-size="12" text-anchor="middle">Validation client-side</text>
+
+  <!-- Base de données -->
+  <ellipse cx="450" cy="630" rx="120" ry="40" fill="#eeeeee" stroke="#424242" stroke-width="2" />
+  <text x="450" y="635" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">PostgreSQL</text>
+
+  <!-- Flèches MVC -->
+  <!-- Contrôleur -> Modèle -->
+  <path d="M450,320 L450,290" stroke="#3949ab" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+  
+  <!-- Modèle -> Contrôleur -->
+  <path d="M380,290 L380,320" stroke="#00796b" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+  
+  <!-- Contrôleur -> Vue -->
+  <path d="M450,440 L450,470" stroke="#f57c00" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+  
+  <!-- Vue -> Contrôleur -->
+  <path d="M380,470 L380,440" stroke="#00796b" stroke-width="3" fill="none" marker-end="url(#arrowhead)" />
+  
+  <!-- Modèle -> Base de données -->
+  <path d="M450,290 C450,290 550,350 450,630" stroke="#616161" stroke-width="2" stroke-dasharray="5,5" fill="none" />
+  
+  <!-- Utilisateur externe -->
+  <circle cx="450" cy="30" r="0" /> <!-- Point de référence invisible pour l'utilisateur -->
+  <path d="M450,30 C450,30 300,30 300,470" stroke="#ff5722" stroke-width="2" stroke-dasharray="5,5" fill="none" marker-end="url(#arrowhead)" />
+  <path d="M300,590 C300,590 300,650 450,650" stroke="#ff5722" stroke-width="2" stroke-dasharray="5,5" fill="none" />
+  
+  <!-- Marqueur pour les flèches -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+  
+  <!-- Légende -->
+  <rect x="700" y="610" width="150" height="30" rx="5" ry="5" fill="#fff" stroke="#333" />
+  <text x="775" y="630" font-family="Arial" font-size="12" text-anchor="middle">© OptiHR ARCOP</text>
+</svg>
