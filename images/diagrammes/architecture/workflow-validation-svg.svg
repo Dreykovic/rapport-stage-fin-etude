@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400">
+  <!-- Arrière-plan -->
+  <rect width="900" height="400" fill="#f8f9fa" />
+  
+  <!-- Titre -->
+  <text x="450" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">Circuit de validation des demandes d'absence</text>
+  
+  <!-- Étapes du workflow -->
+  <!-- Étape 1: Soumission -->
+  <rect x="50" y="100" width="150" height="100" rx="10" ry="10" fill="#e3f2fd" stroke="#1565c0" stroke-width="2" />
+  <text x="125" y="140" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Soumission</text>
+  <text x="125" y="165" font-family="Arial" font-size="12" text-anchor="middle">Employé</text>
+  <text x="125" y="185" font-family="Arial" font-size="12" text-anchor="middle">Status: PENDING</text>
+  
+  <!-- Étape 2: Validation N+1 -->
+  <rect x="250" y="100" width="150" height="100" rx="10" ry="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" />
+  <text x="325" y="140" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Validation N+1</text>
+  <text x="325" y="165" font-family="Arial" font-size="12" text-anchor="middle">Supérieur hiérarchique</text>
+  <text x="325" y="185" font-family="Arial" font-size="12" text-anchor="middle">Status: MANAGER_APPROVED</text>
+  
+  <!-- Étape 3: Validation RH -->
+  <rect x="450" y="100" width="150" height="100" rx="10" ry="10" fill="#fff3e0" stroke="#e65100" stroke-width="2" />
+  <text x="525" y="140" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Validation RH</text>
+  <text x="525" y="165" font-family="Arial" font-size="12" text-anchor="middle">Service RH</text>
+  <text x="525" y="185" font-family="Arial" font-size="12" text-anchor="middle">Status: HR_APPROVED</text>
+  
+  <!-- Étape 4: Validation DG -->
+  <rect x="650" y="100" width="150" height="100" rx="10" ry="10" fill="#f3e5f5" stroke="#6a1b9a" stroke-width="2" />
+  <text x="725" y="140" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Validation DG</text>
+  <text x="725" y="165" font-family="Arial" font-size="12" text-anchor="middle">Direction Générale</text>
+  <text x="725" y="185" font-family="Arial" font-size="12" text-anchor="middle">Status: APPROVED</text>
+  
+  <!-- Étape 5: Notification -->
+  <rect x="350" y="260" width="150" height="100" rx="10" ry="10" fill="#e0f7fa" stroke="#00838f" stroke-width="2" />
+  <text x="425" y="300" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">Notification</text>
+  <text x="425" y="325" font-family="Arial" font-size="12" text-anchor="middle">Email + Système</text>
+  <text x="425" y="345" font-family="Arial" font-size="12" text-anchor="middle">Décision finale</text>
+  
+  <!-- Flèches du workflow -->
+  <!-- Soumission -> Validation N+1 -->
+  <line x1="200" y1="150" x2="250" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Validation N+1 -> Validation RH -->
+  <line x1="400" y1="150" x2="450" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Validation RH -> Validation DG -->
+  <line x1="600" y1="150" x2="650" y2="150" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Validation DG -> Notification -->
+  <line x1="725" y1="200" x2="725" y2="230" stroke="#333" stroke-width="2" />
+  <line x1="725" y1="230" x2="425" y2="230" stroke="#333" stroke-width="2" />
+  <line x1="425" y1="230" x2="425" y2="260" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Lignes de rejet -->
+  <!-- Rejet N+1 -->
+  <line x1="325" y1="200" x2="325" y2="230" stroke="#e53935" stroke-width="2" stroke-dasharray="5,5" />
+  <line x1="325" y1="230" x2="150" y2="230" stroke="#e53935" stroke-width="2" stroke-dasharray="5,5" />
+  <line x1="150" y1="230" x2="150" y2="200" stroke="#e53935" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead-red)" />
+  <text x="240" y="225" font-family="Arial" font-size="12" text-anchor="middle" fill="#e53935">Rejet</text>
+  
+  <!-- Rejet RH -->
+  <line x1="525" y1="200" x2="525" y2="230" stroke="#e53935" stroke-width="2" stroke-dasharray="5,5" />
+  <line x1="525" y1="230" x2="150" y2="230" stroke="#e53935" stroke-width="2" stroke-dasharray="5,5" />
+  <text x="340" y="225" font-family="Arial" font-size="12" text-anchor="middle" fill="#e53935">Rejet</text>
+  
+  <!-- Rejet DG -->
+  <line x1="650" y1="150" x2="650" y2="230" stroke="#e53935" stroke-width="2" stroke-dasharray="5,5" />
+  <text x="635" y="225" font-family="Arial" font-size="12" text-anchor="middle" fill="#e53935">Rejet</text>
+  
+  <!-- Notification -> Employé (Feedback) -->
+  <line x1="350" y1="310" x2="150" y2="310" stroke="#333" stroke-width="2" />
+  <line x1="150" y1="310" x2="150" y2="200" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Marqueurs pour les flèches -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e53935" />
+    </marker>
+  </defs>
+  
+  <!-- Légende -->
+  <rect x="650" y="310" width="200" height="70" rx="5" ry="5" fill="#fff" stroke="#333" />
+  <text x="750" y="330" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Légende</text>
+  
+  <line x1="670" y1="350" x2="700" y2="350" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="740" y="355" font-family="Arial" font-size="12" text-anchor="start">Approbation</text>
+  
+  <line x1="670" y1="370" x2="700" y2="370" stroke="#e53935" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead-red)" />
+  <text x="740" y="375" font-family="Arial" font-size="12" text-anchor="start">Rejet</text>
+</svg>
