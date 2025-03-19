@@ -1,0 +1,43 @@
+\subsection{Présentation de l'architecture globale}
+
+Le système OptiHR s'appuie sur une architecture MVC (Modèle-Vue-Contrôleur) robuste et évolutive, implémentée à l'aide du framework Laravel. Cette approche garantit une séparation claire des responsabilités entre les différentes couches de l'application.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/architecture/mvc_schema.png}
+    \caption{Architecture MVC du système OptiHR}
+    \label{fig:mvc_schema}
+\end{figure}
+
+\subsubsection{Structure de l'application}
+
+L'application est organisée en modules fonctionnels distincts, chacun regroupant les modèles, contrôleurs et vues nécessaires à une fonctionnalité spécifique :
+
+\begin{itemize}
+    \item \textbf{Module d'authentification} : Gestion des utilisateurs, rôles et permissions
+    \item \textbf{Module de gestion des employés} : Informations personnelles et administratives
+    \item \textbf{Module de gestion des absences} : Workflow de demande et validation des congés
+    \item \textbf{Module documentaire} : Stockage et gestion des documents administratifs
+    \item \textbf{Module de notifications} : Alertes et communications internes
+\end{itemize}
+
+Cette approche modulaire facilite la maintenance et l'évolution du système en isolant les différentes préoccupations fonctionnelles.
+
+\subsubsection{Sécurité et protection des données}
+
+La sécurité étant une priorité absolue pour un système manipulant des données sensibles, plusieurs mesures ont été mises en place :
+
+\begin{itemize}
+    \item \textbf{Authentification multi-niveaux} avec gestion fine des permissions
+    \item \textbf{Chiffrement des données sensibles} en base de données
+    \item \textbf{Protection contre les attaques CSRF} sur tous les formulaires
+    \item \textbf{Validation stricte des entrées utilisateur} pour prévenir les injections
+    \item \textbf{Journalisation des actions critiques} pour assurer la traçabilité
+\end{itemize}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/architecture/security_diagram.png}
+    \caption{Schéma des couches de sécurité implémentées}
+    \label{fig:security_diagram}
+\end{figure}
