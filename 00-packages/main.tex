@@ -1,0 +1,53 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel} % If you write in French
+\usepackage{xcolor,graphicx}
+
+
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=4cm, bottom=4cm}
+\usepackage{titlesec}
+\usepackage{lmodern}
+\usepackage{array}
+\usepackage{multirow}
+
+\usepackage[hidelinks]{hyperref} % Permet de rendre les liens cliquables sans les entourer d'un cadre coloré
+
+
+\usepackage{fancyhdr} % Pour personnaliser les en-têtes et pieds de page
+% Configuration des en-têtes et pieds de page
+\pagestyle{fancy}
+\setlength{\headheight}{15.35403pt}
+\addtolength{\topmargin}{-3.35403pt}
+\fancyhf{} % Efface les en-têtes et pieds de page par défaut
+\fancyhead[L]{\leftmark} % Affiche le nom du chapitre à gauche
+\fancyfoot[R]{\thepage} % Affiche le numéro de page au centre du pied de page
+
+\usepackage{enumitem}
+% Uniquement le premier niveau
+\setlist[itemize,1]{label={.}}
+% Deuxième niveau avec un point gras
+\setlist[itemize,2]{label={\boldmath$\cdot$}}
+
+
+
+\usepackage{longtable} % Pour permettre aux tableaux de se répartir sur plusieurs pages
+
+
+\renewcommand{\arraystretch}{1.5} % Espacement entre les lignes du tableau
+
+
+\usepackage{booktabs} % Pour un meilleur rendu du tableau
+\usepackage{float}
+\usepackage{caption}
+
+
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{listings}
+
+% Définition d'un style de terminal
+\newtcbox{\terminalbox}{on line, colback=black, colframe=black, boxrule=0pt, left=3pt, right=3pt, top=2pt, bottom=2pt, boxsep=3pt, sharp corners, enhanced}
+
+
+\usepackage{acronym} % Pour gérer les acronymes
