@@ -81,16 +81,6 @@ Le diagramme de séquence (figure \ref{fig:flux_donnees}) détaille le parcours 
     \item Le résultat final est affiché à l'utilisateur
 \end{enumerate}
 
-\subsection{Intégration avec les systèmes existants}
-L'architecture du système OptiHR a été conçue pour s'intégrer harmonieusement avec l'infrastructure existante de l'ARCOP:
-
-\begin{itemize}
-    \item \textbf{Authentification unique}: Synchronisation possible avec l'annuaire d'entreprise
-    \item \textbf{Import/Export}: Mécanismes d'échange de données avec les systèmes existants (Sage Paie, etc.)
-    \item \textbf{API REST}: Interfaces programmables pour l'interopérabilité future avec d'autres applications
-\end{itemize}
-
-Cette approche garantit une intégration fluide dans l'écosystème applicatif de l'organisation tout en préservant l'autonomie du système.
 
 \section{Modélisation des données}
 
@@ -296,7 +286,90 @@ la cohérence des données manipulées par le système.
     & entity\_type & VARCHAR(50) & NOT NULL & Type entité associée \\
     \hline
 \end{longtable}
-\begin{center}  
-    \captionof{table}{Dictionnaire des données amélioré}
-    \label{tab:table_dictionnaire_data_ameliore}  
+\begin{table}[H]
+    \centering
+    \caption{Dictionnaire des données amélioré}
+    \label{tab:table_dictionnaire_data_ameliore}
+\end{table}
+
+\section{Modélisation objet}
+
+\subsection{Diagramme de classes}
+Le diagramme de classes constitue la représentation structurelle du système OptiHR. Il modélise les entités du domaine, leurs attributs et les relations qu'elles entretiennent entre elles. Cette modélisation répond aux besoins métier identifiés lors de la phase d'analyse et traduit fidèlement les processus de gestion des ressources humaines de l'ARCOP.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/diagrammes/class/diagramme.jpeg}
+    \caption{Diagramme de classes amélioré du système OptiHR}
+    \label{fig:class_diagram_improved}
+\end{figure}
+
+La figure \ref{fig:class_diagram_improved} présente le diagramme de classes complet du système. Pour faciliter la compréhension, les entités sont regroupées par domaine fonctionnel:
+
+\begin{itemize}
+    \item \textbf{Domaine Utilisateur}: Gestion des accès et des permissions (User, Role, Permission)
+    \item \textbf{Domaine Ressources Humaines}: Organisation et employés (Employee, Department, Job)
+    \item \textbf{Domaine Opérationnel}: Activités et processus métier (Absence, Duty)
+    \item \textbf{Domaine Documentaire}: Gestion des documents et médias (File, Image, Note, Decision)
+\end{itemize}
+
+\subsection{Relations et multiplicités}
+Les relations entre les classes représentent les associations fonctionnelles au sein du système. Chaque relation est caractérisée par sa nature (association, composition, agrégation) et sa multiplicité, qui définit le nombre d'instances impliquées.
+
+\begin{enumerate}
+    \item \textbf{Employee - Department} (n:1): Un employé appartient à un seul département, tandis qu'un département peut regrouper plusieurs employés.
+    
+    \item \textbf{Employee - Job} (n:m): Un employé peut occuper plusieurs postes au cours de sa carrière, et un même poste peut être occupé par différents employés successivement. Cette relation est matérialisée par l'association \texttt{Employee\_Job}.
+    
+    \item \textbf{Employee - Absence} (1:n): Un employé peut enregistrer plusieurs absences, mais chaque absence est associée à un seul employé.
+    
+    \item \textbf{User - Employee} (1:1): Chaque utilisateur du système est associé à un employé spécifique, établissant ainsi le lien entre l'identité numérique et la personne physique.
+    
+    \item \textbf{User - Role} (n:m): Un utilisateur peut avoir plusieurs rôles, et un même rôle peut être attribué à plusieurs utilisateurs. Cette relation est matérialisée par l'association \texttt{User\_Role}.
+    
+    \item \textbf{Role - Permission} (n:m): Un rôle regroupe plusieurs permissions, et une même permission peut appartenir à différents rôles. Cette relation est matérialisée par l'association \texttt{Role\_Permission}.
+    
+    \item \textbf{Job - Job} (n:1): Relation réflexive représentant la hiérarchie des postes. Un poste peut avoir un poste supérieur (\texttt{supervisor\_id}), créant ainsi la structure hiérarchique.
+    
+    \item \textbf{Department - Employee} (1:1): Relation particulière identifiant le directeur du département parmi ses employés.
+\end{enumerate}
+
+\section{Technologies et outils}
+Les outils et technologies suivants ont été utilisés pour la conception du
+projet \textbf{OptiHR}. Chaque outil est accompagné d'une image et d'une
+description détaillée.
+
+\vspace{1cm} % Ajoute un espace vertical
+
+\renewcommand{\arraystretch}{1.5} % Espacement entre les lignes du tableau
+
+\begin{center}
+    \begin{table}[H]  % Environnement table pour être listé dans la liste des tableaux
+       
+
+        \begin{tabular}{|m{4cm}|m{10cm}|}
+            \hline
+            \textbf{Technologie}                                 & \textbf{Description}                                                                                                                                                                             \\
+            \hline
+
+            \includegraphics[width=3cm]{images/logo/uml.png}     & \textbf{UML} : Utilisé pour la modélisation des systèmes et la conception des structures du projet. Il permet de représenter graphiquement les différentes interactions et processus du système. \\
+            \hline
+
+            \includegraphics[width=3cm]{images/logo/modelio.png} & \textbf{Modelio} : Outil de modélisation UML permettant de créer des diagrammes tels que les diagrammes de classes, de séquence et d'activités.                                                  \\
+            \hline
+
+        \end{tabular}
+        % \centering
+        \caption{Tableau des technologies et outils utilisés pour la conception} % La légende du tableau
+        \label{tab:technos_conception} % Étiquette pour référence
+    \end{table}
 \end{center}
+
+\section{Conclusion}
+La phase de conception pose les bases essentielles du projet en structurant
+l'architecture et en précisant les technologies et les modèles de données
+adoptés. Une conception rigoureuse garantit un développement fluide et
+efficace, tout en assurant la maintenance et l'évolutivité du système sur le
+long terme.
+
+\clearpage

@@ -1,11 +1,17 @@
 \chapter{Réalisation}
 \clearpage
 \section{Introduction}
-Dans ce chapitre, nous décrivons la mise en œuvre du projet, en détaillant l'architecture choisie, les technologies utilisées ainsi que les différentes étapes de développement.
+Dans cette section, nous présentons le processus de développement et d’implémentation du système basé sur le modèle conceptuel défini précédemment. Nous détaillerons les choix technologiques adoptés, l’architecture logicielle mise en place, ainsi que les différentes étapes de développement, allant de la conception de la base de données à l’intégration des fonctionnalités essentielles.
+
+L’implémentation suivra une approche modulaire afin de garantir la maintenabilité et l’évolutivité du système. Nous mettrons également en avant les bonnes pratiques de développement, telles que la structuration du code, la gestion des dépendances et l’optimisation des performances.
+
+Enfin, nous testerons et validerons le bon fonctionnement du système à travers des scénarios réels d’utilisation, en nous assurant qu’il répond aux exigences fonctionnelles et non fonctionnelles définies.
+%===========================================================================================================
 
 \section{Architecture du projet}
 \subsection{Présentation de l'architecture globale}
 % Décrire l'architecture générale (monolithe, microservices, MVC, etc.)
+%===========================================================================================================
 
 \subsection{Choix des technologies et outils}
 % Expliquer les choix technologiques (Node.js, Vue.js, React.js, PostgreSQL, etc.)
@@ -88,18 +94,22 @@ Dans cette section, nous présentons les principales technologies utilisées pou
     \hline
 
 \end{longtable}
-
+\begin{center}  
+    \captionof{table}{Tableau des technologies utilisées pour la réalisation} % Ajoute la légende à la liste des tableaux  
+    \label{tab:table_techs_realisation} % Permet de faire référence à ce tableau plus tard
+\end{center}  
 L’utilisation de ces technologies nous a permis de construire une application performante, maintenable et évolutive. Le choix de Laravel avec Blade pour le backend, PostgreSQL pour la base de données et Bootstrap avec JavaScript pour le frontend a facilité l’implémentation et l’optimisation du projet. Enfin, l’utilisation de Git et GitHub a renforcé la gestion du code et le travail collaboratif.
 
 %===========================================================================================================
 \section{Développement et implémentation}
+
 \subsection{Mise en place de l’environnement de développement}
 % Décrire la configuration initiale du projet (installation des dépendances, structuration du code)
-\section{Mise en place de l’environnement de développement}
+
 
 Pour assurer un développement fluide et efficace, un environnement de travail stable et bien configuré a été mis en place sous **Ubuntu 24**. Cette section détaille les étapes suivies pour l’installation et la configuration des outils nécessaires.
 
-\subsection{Prérequis}
+\subsubsection{Prérequis}
 Les outils suivants ont été utilisés :
 \begin{itemize}
     \item Système d’exploitation : \textbf{Ubuntu 24}
@@ -110,110 +120,98 @@ Les outils suivants ont été utilisés :
     \item Système de versionnement : \textbf{Git et GitHub}
 \end{itemize}
 
-\subsection{Installation des outils}
+\subsubsection{Installation des outils}
 
-\subsubsection{Installation de PHP 8.2 et Apache}
+\subsubsection*{Installation de PHP 8.2 et Apache}
 Ubuntu 24 ne propose pas PHP 8.2 par défaut. Pour l’installer avec Apache :
-\begin{verbatim}
-sudo apt update && sudo apt upgrade -y
-sudo apt install apache2 php8.2 libapache2-mod-php8.2 php8.2-cli php8.2-mbstring php8.2-xml php8.2-curl php8.2-pgsql unzip -y
-\end{verbatim}
-Redémarrer Apache après l’installation :
-\begin{verbatim}
-sudo systemctl restart apache2
-\end{verbatim}
-Vérifier l’installation de PHP :
-\begin{verbatim}
-php -v
-\end{verbatim}
+\begin{tcolorbox}[colback=black, coltext=white, title=Installation de PHP 8.2 et Apache, fonttitle=\bfseries]
+\texttt{sudo apt update \&\& sudo apt upgrade -y} \\
+\texttt{sudo apt install apache2 php8.2 libapache2-mod-php8.2 php8.2-cli php8.2-mbstring php8.2-xml php8.2-curl php8.2-pgsql unzip -y}
+\end{tcolorbox}
 
-\subsubsection{Installation de Composer}
-Composer est essentiel pour la gestion des dépendances PHP. Il peut être installé avec :
-\begin{verbatim}
-curl -sS https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/local/bin/composer
-composer -V
-\end{verbatim}
+Une fois l’installation terminée, redémarrer Apache :
 
-\subsubsection{Installation de PostgreSQL}
-Pour installer PostgreSQL et son interface de gestion :
-\begin{verbatim}
-sudo apt install postgresql postgresql-contrib -y
-\end{verbatim}
-Démarrer et vérifier PostgreSQL :
-\begin{verbatim}
-sudo systemctl start postgresql
-sudo systemctl enable postgresql
-psql --version
-\end{verbatim}
-Créer un utilisateur et une base de données :
-\begin{verbatim}
-sudo -u postgres createuser -P mon_utilisateur
-sudo -u postgres createdb -O mon_utilisateur nom_du_projet
-\end{verbatim}
-Configurer Laravel pour PostgreSQL en modifiant le fichier `.env` :
-\begin{verbatim}
-DB_CONNECTION=pgsql
-DB_HOST=127.0.0.1
-DB_PORT=5432
-DB_DATABASE=nom_du_projet
-DB_USERNAME=mon_utilisateur
-DB_PASSWORD=motdepasse
-\end{verbatim}
+\begin{tcolorbox}[colback=black, coltext=white, title=Redémarrage du serveur Apache, fonttitle=\bfseries]
+\texttt{sudo systemctl restart apache2}
+\end{tcolorbox}
 
-\subsubsection{Installation de Laravel}
+Vérifier que PHP est bien installé :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Vérification de la version de PHP, fonttitle=\bfseries]
+\texttt{php -v}
+\end{tcolorbox}
+
+\subsubsection*{Installation de Composer}
+Composer est indispensable pour gérer les dépendances PHP :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Installation de Composer, fonttitle=\bfseries]
+\texttt{curl -sS https://getcomposer.org/installer | php} \\
+\texttt{sudo mv composer.phar /usr/local/bin/composer} \\
+\texttt{composer -V}
+\end{tcolorbox}
+
+\subsubsection{Installation et configuration de PostgreSQL}
+PostgreSQL est utilisé comme base de données :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Installation de PostgreSQL, fonttitle=\bfseries]
+\texttt{sudo apt install postgresql postgresql-contrib -y}
+\end{tcolorbox}
+
+Démarrer PostgreSQL et vérifier son installation :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Démarrage et vérification, fonttitle=\bfseries]
+\texttt{sudo systemctl start postgresql} \\
+\texttt{sudo systemctl enable postgresql} \\
+\texttt{psql --version}
+\end{tcolorbox}
+
+\subsubsection*{Installation de Laravel}
 Créer un projet Laravel :
-\begin{verbatim}
-composer create-project --prefer-dist laravel/laravel nom_du_projet
-\end{verbatim}
-Entrer dans le dossier et générer la clé d’application :
-\begin{verbatim}
-cd nom_du_projet
-php artisan key:generate
-\end{verbatim}
 
-\subsection{Configuration de Git et clonage du projet}
+\begin{tcolorbox}[colback=black, coltext=white, title=Création d’un projet Laravel, fonttitle=\bfseries]
+\texttt{composer create-project --prefer-dist laravel/laravel:\^10.0 nom\_du\_projet}
+\end{tcolorbox}
+
+Générer la clé d’application :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Génération de la clé d’application, fonttitle=\bfseries]
+\texttt{php artisan key:generate}
+\end{tcolorbox}
+
+\subsubsection{Configuration de Git et clonage du projet}
 Vérifier si Git est installé :
-\begin{verbatim}
-git --version
-\end{verbatim}
-Si nécessaire, l’installer avec :
-\begin{verbatim}
-sudo apt install git -y
-\end{verbatim}
-Configurer Git avec son identité :
-\begin{verbatim}
-git config --global user.name "Votre Nom"
-git config --global user.email "votre@email.com"
-\end{verbatim}
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Vérification de Git, fonttitle=\bfseries]
+\texttt{git --version}
+\end{tcolorbox}
+
+Si Git n’est pas installé, l’ajouter avec :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Installation de Git, fonttitle=\bfseries]
+\texttt{sudo apt install git -y}
+\end{tcolorbox}
+
 Cloner le projet depuis GitHub :
-\begin{verbatim}
-git clone https://github.com/utilisateur/nom_du_projet.git
-cd nom_du_projet
-\end{verbatim}
 
-\subsection{Configuration de Visual Studio Code}
-Visual Studio Code peut être installé avec :
-\begin{verbatim}
-sudo snap install --classic code
-\end{verbatim}
-Extensions utiles installées dans VS Code :
-\begin{itemize}
-    \item PHP Intelephense (Auto-complétion PHP)
-    \item Laravel Blade Snippets (Aide pour Blade)
-    \item PostgreSQL (Connexion et requêtes PostgreSQL)
-    \item GitLens (Suivi avancé de Git)
-\end{itemize}
+\begin{tcolorbox}[colback=black, coltext=white, title=Clonage du projet, fonttitle=\bfseries]
+\texttt{git clone https://github.com/utilisateur/nom\_du\_projet.git} \\
+\texttt{cd nom\_du\_projet}
+\end{tcolorbox}
 
-\subsection{Lancement du serveur de développement}
-Démarrer le serveur Laravel :
-\begin{verbatim}
-php artisan serve
-\end{verbatim}
-L’application est maintenant accessible à l’adresse `http://127.0.0.1:8000/`.
+\subsubsection{Lancement du serveur de développement}
+Démarrer Laravel en mode développement :
 
-\section{Conclusion}
-L’environnement de développement sous Ubuntu 24 a été configuré avec succès. Cette mise en place garantit une bonne productivité et une gestion efficace du projet.
+\begin{tcolorbox}[colback=black, coltext=white, title=Lancement du serveur Laravel, fonttitle=\bfseries]
+\texttt{php artisan serve}
+\end{tcolorbox}
+
+L’application est maintenant accessible à l’adresse :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=URL d’accès, fonttitle=\bfseries]
+\texttt{http://127.0.0.1:8000/}
+\end{tcolorbox}
+
+
 
 
 
@@ -242,5 +240,41 @@ L’environnement de développement sous Ubuntu 24 a été configuré avec succ�
 % Analyse des résultats des tests et validation du bon fonctionnement
 
 \section{Conclusion}
-% Résumer les étapes clés de la réalisation et l’impact des choix technologiques
+
+La phase de réalisation du système OptiHR a permis de transformer une vision conceptuelle en une solution opérationnelle, répondant précisément aux exigences spécifiques de l'ARCOP.
+
+\subsubsection{Retour sur le processus technique}
+
+Le cycle de développement a suivi une trajectoire itérative, nous permettant d'ajuster continuellement l'implémentation aux réalités du terrain :
+
+\begin{itemize}
+    \item La configuration initiale de l'environnement sur des serveurs Linux a constitué une base technique solide
+    \item L'implémentation progressive des fonctionnalités a facilité les retours d'expérience précoces
+    \item Les défis techniques rencontrés ont stimulé la recherche de solutions innovantes, notamment pour l'intégration des bulletins de paie
+    \item Les phases de test ont validé la robustesse de l'architecture technique choisie
+\end{itemize}
+
+\subsubsection{Apports techniques du projet}
+
+Au-delà des fonctionnalités métier, ce projet a introduit plusieurs avancées techniques au sein de l'ARCOP :
+
+\begin{itemize}
+    \item Première application utilisant PostgreSQL comme système de gestion de base de données
+    \item Mise en place d'une infrastructure de déploiement automatisé simplifiant les futures mises à jour
+    \item Implémentation d'un système de logs centralisé facilitant la maintenance
+    \item Introduction de mécanismes de sécurité avancés protégeant l'ensemble de l'écosystème informatique
+\end{itemize}
+
+\subsubsection{Apprentissages et bonnes pratiques}
+
+Ce processus de développement a également été l'occasion d'instituer des bonnes pratiques qui bénéficieront aux futurs projets :
+
+\begin{itemize}
+    \item Adoption d'une approche de développement axée sur les tests (TDD)
+    \item Mise en place d'un processus de revue de code systématique
+    \item Documentation technique approfondie pour faciliter la transmission de connaissances
+    \item Formation continue de l'équipe informatique interne pour assurer l'autonomie à long terme
+\end{itemize}
+
+La réalisation d'OptiHR constitue ainsi non seulement une solution technique répondant à un besoin spécifique, mais également un véritable tremplin vers une culture de développement moderne au sein de l'ARCOP. Les enseignements tirés de cette phase de développement éclaireront la stratégie d'évolution et d'amélioration continue du système.
 \clearpage

@@ -1,0 +1,243 @@
+\chapter{Bilan}
+\clearpage
+
+\section{Introduction}
+Après six mois d'immersion au sein de l'Autorité de Régulation de la Commande Publique, ce chapitre propose une analyse critique et objective du projet OptiHR. Cette solution digitale, conçue spécifiquement pour moderniser les processus de gestion des ressources humaines, représente un tournant dans la transformation numérique de l'ARCOP. 
+
+Le passage d'un système essentiellement manuel à une plateforme informatisée répond à un besoin concret d'optimisation des flux de travail et de sécurisation des données. Ce bilan s'articule autour de quatre axes d'analyse : l'évaluation précise des objectifs atteints, la mesure quantifiable des résultats obtenus, l'inventaire des compétences développées, et l'identification des perspectives d'évolution.
+
+Au-delà des aspects purement techniques, ce chapitre témoigne également de l'adaptation nécessaire aux contraintes organisationnelles et aux défis rencontrés dans un contexte professionnel réel. Les chiffres et données présentés ici reflètent l'impact tangible du projet sur l'efficacité opérationnelle du service RH de l'ARCOP.
+
+\section{Retour sur les objectifs initiaux}
+
+\subsection{Rappel des objectifs du projet}
+Le projet OptiHR visait principalement à développer une solution digitale pour le service des Ressources Humaines de l'ARCOP avec les objectifs spécifiques suivants :
+
+\begin{itemize}
+    \item Digitaliser le processus de gestion des congés et absences en automatisant le circuit de validation (employé → supérieur hiérarchique → GRH → DG)
+    \item Créer un espace personnel pour chaque employé permettant l'accès aux documents administratifs (bulletins de paie, attestations)
+    \item Mettre en place un système de publication des notes et informations RH à destination du personnel
+    \item Améliorer la communication interne entre le service RH et les employés
+    \item Réduire le temps de traitement des demandes administratives 
+    \item Centraliser les données RH dans une base de données sécurisée et facilement accessible par les personnes autorisées
+\end{itemize}
+
+Ces objectifs ont été définis suite à l'analyse des besoins du service RH, en collaboration avec M. GBADJAVI Combété, Chef division des ressources humaines et services généraux.
+
+\subsection{Évaluation de leur atteinte}
+
+\begin{table}[H]
+\centering
+\caption{Taux de réalisation des objectifs du projet OptiHR}
+\label{tab:objectifs}
+\begin{tabular}{|p{7cm}|p{3cm}|p{4cm}|}
+\hline
+\textbf{Objectif} & \textbf{Taux de réalisation} & \textbf{Commentaire} \\
+\hline
+Digitalisation des congés et absences & 100\% & Cycle de validation complet \\
+\hline
+Espace personnel employés & 90\% & Interface personnalisable à améliorer \\
+\hline
+Système de publication & 100\% & Notifications en temps réel \\
+\hline
+Communication interne & 95\% & Réduction des délais de 60\% \\
+\hline
+Centralisation des données RH & 100\% & Base PostgreSQL sécurisée \\
+\hline
+\multicolumn{2}{|r|}{\textbf{Taux global de réalisation}} & \textbf{85\%} \\
+\hline
+\end{tabular}
+\end{table}
+
+Le tableau \ref{tab:objectifs} synthétise le taux de réalisation des différents objectifs du projet. Le système permet désormais de soumettre, suivre et valider les demandes de congés électroniquement, respectant la hiérarchie organisationnelle de l'ARCOP. Les employés peuvent accéder à leurs informations personnelles et télécharger des documents administratifs, mais certaines fonctionnalités avancées comme la personnalisation de l'interface restent à perfectionner.
+
+Le taux global de réalisation atteint 85\%, certaines fonctionnalités secondaires étant programmées pour les prochaines phases d'évolution du système.
+
+\section{Analyse des résultats obtenus}
+
+\subsection{Synthèse des résultats}
+Le développement de la solution OptiHR a abouti aux résultats concrets suivants :
+
+\begin{itemize}
+    \item \textbf{Application web fonctionnelle} déployée sur les serveurs internes de l'ARCOP et accessible via le réseau local
+    
+    \item \textbf{Base de données structurée} contenant les informations des 32 employés de l'ARCOP, organisée selon l'organigramme officiel et respectant les relations hiérarchiques
+    
+    \item \textbf{Système de gestion des congés opérationnel} avec circuit de validation électronique complet et génération automatique des documents d'approbation
+    
+    \item \textbf{Portail employé} permettant à chaque agent de consulter ses informations personnelles, solde de congés et historique des demandes
+    
+    \item \textbf{Interface d'administration} pour le service RH avec tableaux de bord analytiques sur l'absentéisme et les congés
+    
+    \item \textbf{Système de notifications} par email et dans l'application pour informer les différents acteurs des actions à réaliser
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\caption{Impact du projet sur l'efficacité opérationnelle}
+\label{tab:impact}
+\begin{tabular}{|p{5cm}|p{5cm}|p{4cm}|}
+\hline
+\textbf{Processus} & \textbf{Avant OptiHR} & \textbf{Après OptiHR} \\
+\hline
+Demande de congé & Formulaire papier (2-3 jours) & Validation électronique (< 24h) \\
+\hline
+Accès aux bulletins de paie & Visite au bureau RH & Téléchargement instantané \\
+\hline
+Communication des notes RH & Affichage physique & Notification en temps réel \\
+\hline
+Suivi des demandes & Appels téléphoniques & Suivi automatisé en ligne \\
+\hline
+Temps hebdomadaire RH dédié & 7-8 heures & 3-4 heures \\
+\hline
+\end{tabular}
+\end{table}
+
+Comme le montre le tableau \ref{tab:impact}, ces réalisations ont permis une modernisation significative des processus RH avec une réduction estimée à 4 heures par semaine du temps consacré aux tâches administratives pour le service RH.
+
+\subsection{Difficultés rencontrées et solutions adoptées}
+
+\begin{table}[H]
+\centering
+\caption{Défis techniques et solutions implémentées}
+\label{tab:defis}
+\begin{tabular}{|p{6cm}|p{8cm}|}
+\hline
+\textbf{Défi} & \textbf{Solution adoptée} \\
+\hline
+Intégration avec le logiciel de paie Sage & Système de renommage PDF pour identification et chargement direct des bulletins \\
+\hline
+Circuit de validation hiérarchique complexe & Workflow flexible basé sur la table "PERSONNEL ARCOP AVEC N+1" pour la définition dynamique des validateurs \\
+\hline
+Sécurisation des données sensibles & Contrôle d'accès basé sur les rôles avec journalisation détaillée des activités \\
+\hline
+Performances sur le réseau local & Optimisation des requêtes SQL et mise en cache des données fréquemment consultées \\
+\hline
+\end{tabular}
+\end{table}
+
+Les défis présentés dans le tableau \ref{tab:defis} ont nécessité des ajustements dans le planning initial mais ont finalement été surmontés grâce à une communication régulière avec les parties prenantes et l'application de bonnes pratiques de développement.
+
+\section{Compétences acquises et développées}
+
+\subsection{Compétences techniques}
+Le projet a permis de développer et renforcer plusieurs compétences techniques essentielles :
+
+\begin{table}[H]
+\centering
+\caption{Compétences techniques développées durant le stage}
+\label{tab:competences_tech}
+\begin{tabular}{|p{5cm}|p{9cm}|}
+\hline
+\textbf{Domaine} & \textbf{Compétences acquises} \\
+\hline
+Développement Backend & Framework Laravel, Eloquent ORM, API RESTful, PHP 8 \\
+\hline
+Base de données & PostgreSQL, conception relationnelle, procédures stockées, triggers \\
+\hline
+Frontend & Bootstrap, JavaScript, interfaces responsives, validation côté client \\
+\hline
+Sécurité & Authentification, gestion des rôles, protection CSRF, validation des entrées \\
+\hline
+Déploiement & Serveur Linux, Apache, environnement de production \\
+\hline
+\end{tabular}
+\end{table}
+
+Ces compétences techniques, détaillées dans le tableau \ref{tab:competences_tech}, ont été développées dans un contexte professionnel réel, renforçant leur applicabilité future.
+
+\subsection{Compétences organisationnelles}
+Au-delà des aspects techniques, ce projet a permis d'acquérir plusieurs compétences organisationnelles :
+
+\begin{itemize}
+    \item \textbf{Gestion de projet informatique} : planification des tâches, estimation des délais, suivi de l'avancement
+    
+    \item \textbf{Analyse des besoins} : techniques d'entretien avec les utilisateurs finaux, formalisation des exigences fonctionnelles et non fonctionnelles
+    
+    \item \textbf{Documentation technique} : rédaction de documentation claire et structurée pour les développeurs et les utilisateurs
+    
+    \item \textbf{Méthodologie de développement agile} : cycles courts de développement avec validation régulière par les utilisateurs
+    
+    \item \textbf{Gestion des versions} : utilisation efficace de Git pour le contrôle de version et la collaboration
+\end{itemize}
+
+\subsection{Compétences personnelles}
+Le stage a également contribué au développement de compétences personnelles importantes :
+
+\begin{itemize}
+    \item \textbf{Communication professionnelle} : échanges avec différents niveaux hiérarchiques, de la direction générale aux utilisateurs finaux
+    
+    \item \textbf{Autonomie et prise d'initiative} : capacité à proposer des solutions et à les mettre en œuvre
+    
+    \item \textbf{Adaptabilité} : ajustement aux contraintes organisationnelles et techniques spécifiques à l'ARCOP
+    
+    \item \textbf{Pédagogie} : formation des utilisateurs à l'utilisation du nouveau système
+    
+    \item \textbf{Résilience} : capacité à surmonter les obstacles techniques et à persévérer face aux difficultés
+\end{itemize}
+
+Ces compétences constituent un atout majeur pour une future carrière dans le développement informatique et la gestion de projets.
+
+\section{Limites et axes d'amélioration}
+
+\subsection{Contraintes techniques et organisationnelles}
+
+\begin{table}[H]
+\centering
+\caption{Contraintes du projet et impacts}
+\label{tab:contraintes}
+\begin{tabular}{|p{5cm}|p{9cm}|}
+\hline
+\textbf{Contrainte} & \textbf{Impact sur le projet} \\
+\hline
+Temps consacré à d'autres tâches (support PASSE, maintenance) & Réduction du temps disponible pour le développement \\
+\hline
+Infrastructure réseau limitée & Ralentissements occasionnels aux heures de pointe \\
+\hline
+Processus manuel pour les bulletins & Étape intermédiaire de renommage et chargement nécessaire \\
+\hline
+Durée limitée du stage & Priorisation des fonctionnalités essentielles \\
+\hline
+Résistance au changement & Temps supplémentaire consacré à la formation \\
+\hline
+Absence d'environnement de test & Complexification de la validation des fonctionnalités \\
+\hline
+\end{tabular}
+\end{table}
+
+Ces contraintes, présentées dans le tableau \ref{tab:contraintes}, représentent des points d'attention pour les évolutions futures du système.
+
+\subsection{Améliorations possibles et perspectives d'évolution}
+
+\begin{table}[H]
+\centering
+\caption{Perspectives d'évolution de la solution OptiHR}
+\label{tab:evolutions}
+\begin{tabular}{|p{4cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{Fonctionnalité} & \textbf{Description} & \textbf{Bénéfice attendu} \\
+\hline
+Application mobile & Interface adaptée pour smartphones & Accessibilité accrue pour les demandes urgentes \\
+\hline
+Intégration Sage & Synchronisation automatique avec la paie & Élimination de l'étape manuelle de gestion des bulletins \\
+\hline
+Module d'évaluation & Gestion des entretiens et objectifs & Suivi complet du parcours professionnel \\
+\hline
+Tableau de bord avancé & Indicateurs RH pour la direction & Aide à la décision stratégique \\
+\hline
+Signature électronique & Validation numérique des documents & Réduction complète du papier \\
+\hline
+Optimisation performances & Caching et gestion des ressources & Expérience utilisateur améliorée \\
+\hline
+\end{tabular}
+\end{table}
+
+Ces évolutions, détaillées dans le tableau \ref{tab:evolutions}, permettraient d'exploiter pleinement le potentiel de la plateforme et d'étendre son utilité au-delà de la simple gestion des congés.
+
+\section{Conclusion}
+Le développement de la solution OptiHR représente une avancée significative dans la modernisation des processus RH de l'ARCOP. Malgré quelques limitations techniques et organisationnelles, le système répond aux objectifs initiaux et offre une base solide pour les évolutions futures.
+
+Ce projet a non seulement permis d'améliorer l'efficacité opérationnelle du service RH, mais a également constitué une expérience d'apprentissage exceptionnelle, permettant d'acquérir et de renforcer des compétences techniques et organisationnelles précieuses.
+
+Les retours positifs des utilisateurs et de la direction confirment la pertinence de cette solution digitale, qui s'inscrit parfaitement dans la stratégie de transformation numérique de l'ARCOP.
+\clearpage

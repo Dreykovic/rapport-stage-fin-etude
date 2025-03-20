@@ -1,0 +1,134 @@
+\subsection{Mise en place de l'environnement de développement}
+
+Pour assurer un développement efficace du projet OptiHR, j'ai configuré un environnement de développement complet et cohérent. Cette configuration a permis de garantir un flux de travail fluide et d'éviter les problèmes d'incompatibilité tout au long du cycle de développement.
+
+\subsubsection{Prérequis système}
+L'environnement de développement a été configuré avec les outils suivants :
+\begin{itemize}
+    \item Système d'exploitation : \textbf{Ubuntu 22.04 LTS}
+    \item Éditeur de code : \textbf{Visual Studio Code} avec extensions pour PHP, Laravel et Git
+    \item Serveur Web : \textbf{Apache 2.4}
+    \item Langage et framework : \textbf{PHP 8.1} et \textbf{Laravel 10}
+    \item Base de données : \textbf{PostgreSQL 14}
+    \item Gestion des dépendances : \textbf{Composer 2.5} et \textbf{npm 8.19}
+    \item Contrôle de version : \textbf{Git 2.34}
+\end{itemize}
+
+\subsubsection{Installation des composants essentiels}
+
+\paragraph{Configuration du serveur et PHP}
+L'installation de PHP et Apache a été réalisée selon les recommandations officielles pour garantir une compatibilité optimale avec Laravel :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Installation de PHP et Apache, fonttitle=\bfseries]
+\texttt{sudo apt update \&\& sudo apt upgrade -y} \\
+\texttt{sudo apt install apache2 php8.1 libapache2-mod-php8.1 php8.1-cli} \\
+\texttt{sudo apt install php8.1-mbstring php8.1-xml php8.1-curl php8.1-pgsql} \\
+\texttt{sudo apt install php8.1-gd php8.1-zip unzip -y}
+\end{tcolorbox}
+
+L'activation des modules PHP nécessaires a ensuite été effectuée :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Activation des modules PHP, fonttitle=\bfseries]
+\texttt{sudo phpenmod mbstring xml curl pgsql gd} \\
+\texttt{sudo systemctl restart apache2}
+\end{tcolorbox}
+
+\paragraph{Installation et configuration de PostgreSQL}
+PostgreSQL a été choisi pour sa robustesse et sa conformité ACID, particulièrement importante pour une application de gestion RH :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Installation de PostgreSQL, fonttitle=\bfseries]
+\texttt{sudo apt install postgresql postgresql-contrib -y} \\
+\texttt{sudo systemctl start postgresql} \\
+\texttt{sudo systemctl enable postgresql}
+\end{tcolorbox}
+
+Création de la base de données pour le projet :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Configuration de la base de données, fonttitle=\bfseries]
+\texttt{sudo -i -u postgres} \\
+\texttt{createuser --interactive --pwprompt} \\
+\texttt{createdb optirh -O optirh\_user} \\
+\texttt{exit}
+\end{tcolorbox}
+
+\paragraph{Installation de Composer}
+Composer a été installé pour gérer efficacement les dépendances PHP du projet :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Installation de Composer, fonttitle=\bfseries]
+\texttt{curl -sS https://getcomposer.org/installer | php} \\
+\texttt{sudo mv composer.phar /usr/local/bin/composer} \\
+\texttt{composer global require laravel/installer}
+\end{tcolorbox}
+
+\subsubsection{Configuration du projet OptiHR}
+
+\paragraph{Clonage et configuration initiale}
+Pour initialiser le projet, j'ai cloné le dépôt GitHub et configuré l'environnement :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Clonage du projet, fonttitle=\bfseries]
+\texttt{git clone https://github.com/Dreykovic/optirh.git} \\
+\texttt{cd optirh}
+\end{tcolorbox}
+
+Installation des dépendances :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Installation des dépendances, fonttitle=\bfseries]
+\texttt{composer install} \\
+\texttt{npm install} \\
+\texttt{npm run dev}
+\end{tcolorbox}
+
+Configuration de l'environnement Laravel :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Configuration de l'environnement, fonttitle=\bfseries]
+\texttt{cp .env.example .env} \\
+\texttt{php artisan key:generate}
+\end{tcolorbox}
+
+\paragraph{Configuration de la base de données}
+J'ai ensuite configuré le fichier .env pour la connexion à PostgreSQL :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Configuration de la connexion DB, fonttitle=\bfseries]
+\texttt{DB\_CONNECTION=pgsql} \\
+\texttt{DB\_HOST=127.0.0.1} \\
+\texttt{DB\_PORT=5432} \\
+\texttt{DB\_DATABASE=optirh} \\
+\texttt{DB\_USERNAME=optirh\_user} \\
+\texttt{DB\_PASSWORD=*****}
+\end{tcolorbox}
+
+Exécution des migrations pour créer les tables nécessaires :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Exécution des migrations, fonttitle=\bfseries]
+\texttt{php artisan migrate} \\
+\texttt{php artisan db:seed}
+\end{tcolorbox}
+
+\paragraph{Configuration du serveur de développement}
+Pour le développement local, j'ai utilisé le serveur intégré de Laravel :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Lancement du serveur de développement, fonttitle=\bfseries]
+\texttt{php artisan serve --host=0.0.0.0 --port=8000}
+\end{tcolorbox}
+
+Le serveur de développement est alors accessible à l'adresse \texttt{http://localhost:8000}
+
+\subsubsection{Bonnes pratiques de développement}
+Pour garantir la qualité du code, nous avons mis en place plusieurs pratiques collaboratives :
+
+\begin{itemize}
+    \item Travail en équipe de deux développeurs avec une répartition claire des tâches
+    \item Stratégie Git structurée avec trois niveaux :
+    \begin{itemize}
+        \item Branche \texttt{main} : version stable et production-ready du code
+        \item Branche \texttt{dev} : intégration et tests des nouvelles fonctionnalités
+        \item Branches \texttt{feature/*} : développement isolé de chaque fonctionnalité
+    \end{itemize}
+    \item Utilisation exclusive des pull requests pour l'intégration du code (\texttt{feature/*} → \texttt{dev} → \texttt{main})
+    \item Revue de code systématique avant chaque fusion
+    \item Standardisation du code avec PHP-CS-Fixer et configuration dans le projet
+    \item Documentation des méthodes et classes avec PHPDoc
+\end{itemize}
+
+Cette méthodologie rigoureuse a permis d'assurer un développement collaboratif efficace, d'éviter les conflits de code et de maintenir une qualité constante tout au long du projet OptiHR.
+\clearpage
