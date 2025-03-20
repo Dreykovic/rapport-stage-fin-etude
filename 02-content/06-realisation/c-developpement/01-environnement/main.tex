@@ -132,13 +132,21 @@ Le projet OptiHR suit une structure de dossiers conforme aux bonnes pratiques La
 Cette organisation modulaire a favorisé la séparation des responsabilités et facilité la collaboration pendant le développement du projet.
 
 \subsubsection{Bonnes pratiques de développement}
-Pour garantir la qualité du code, j'ai mis en place plusieurs pratiques :
+Pour garantir la qualité du code, nous avons mis en place plusieurs pratiques collaboratives :
 
 \begin{itemize}
-    \item Utilisation du système de branches Git avec une branche principale \texttt{main} et des branches \texttt{feature/*} pour chaque fonctionnalité
+    \item Travail en équipe de deux développeurs avec une répartition claire des tâches
+    \item Stratégie Git structurée avec trois niveaux :
+    \begin{itemize}
+        \item Branche \texttt{main} : version stable et production-ready du code
+        \item Branche \texttt{dev} : intégration et tests des nouvelles fonctionnalités
+        \item Branches \texttt{feature/*} : développement isolé de chaque fonctionnalité
+    \end{itemize}
+    \item Utilisation exclusive des pull requests pour l'intégration du code (\texttt{feature/*} → \texttt{dev} → \texttt{main})
+    \item Revue de code systématique avant chaque fusion
     \item Standardisation du code avec PHP-CS-Fixer et configuration dans le projet
     \item Documentation des méthodes et classes avec PHPDoc
-    \item Tests unitaires pour les composants critiques
 \end{itemize}
 
-Cette configuration robuste a permis d'assurer un développement efficace et cohérent tout au long du projet OptiHR.
+Cette méthodologie rigoureuse a permis d'assurer un développement collaboratif efficace, d'éviter les conflits de code et de maintenir une qualité constante tout au long du projet OptiHR.
+\clearpage
