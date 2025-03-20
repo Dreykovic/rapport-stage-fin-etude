@@ -1,110 +1,144 @@
-\subsection{Mise en place de l’environnement de développement}
-% Décrire la configuration initiale du projet (installation des dépendances, structuration du code)
+\subsection{Mise en place de l'environnement de développement}
 
+Pour assurer un développement efficace du projet OptiHR, j'ai configuré un environnement de développement complet et cohérent. Cette configuration a permis de garantir un flux de travail fluide et d'éviter les problèmes d'incompatibilité tout au long du cycle de développement.
 
-Pour assurer un développement fluide et efficace, un environnement de travail stable et bien configuré a été mis en place sous **Ubuntu 24**. Cette section détaille les étapes suivies pour l’installation et la configuration des outils nécessaires.
-
-\subsubsection{Prérequis}
-Les outils suivants ont été utilisés :
+\subsubsection{Prérequis système}
+L'environnement de développement a été configuré avec les outils suivants :
 \begin{itemize}
-    \item Système d’exploitation : \textbf{Ubuntu 24}
-    \item Éditeur de code : \textbf{Visual Studio Code}
-    \item Serveur Web et PHP : \textbf{Apache, PHP 8.2}
-    \item Base de données : \textbf{PostgreSQL}
-    \item Gestionnaire de paquets : \textbf{Composer (pour PHP) et npm (pour JavaScript)}
-    \item Système de versionnement : \textbf{Git et GitHub}
+    \item Système d'exploitation : \textbf{Ubuntu 22.04 LTS}
+    \item Éditeur de code : \textbf{Visual Studio Code} avec extensions pour PHP, Laravel et Git
+    \item Serveur Web : \textbf{Apache 2.4}
+    \item Langage et framework : \textbf{PHP 8.1} et \textbf{Laravel 10}
+    \item Base de données : \textbf{PostgreSQL 14}
+    \item Gestion des dépendances : \textbf{Composer 2.5} et \textbf{npm 8.19}
+    \item Contrôle de version : \textbf{Git 2.34}
 \end{itemize}
 
-\subsubsection{Installation des outils}
+\subsubsection{Installation des composants essentiels}
 
-\subsubsection*{Installation de PHP 8.2 et Apache}
-Ubuntu 24 ne propose pas PHP 8.2 par défaut. Pour l’installer avec Apache :
-\begin{tcolorbox}[colback=black, coltext=white, title=Installation de PHP 8.2 et Apache, fonttitle=\bfseries]
+\paragraph{Configuration du serveur et PHP}
+L'installation de PHP et Apache a été réalisée selon les recommandations officielles pour garantir une compatibilité optimale avec Laravel :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Installation de PHP et Apache, fonttitle=\bfseries]
 \texttt{sudo apt update \&\& sudo apt upgrade -y} \\
-\texttt{sudo apt install apache2 php8.2 libapache2-mod-php8.2 php8.2-cli php8.2-mbstring php8.2-xml php8.2-curl php8.2-pgsql unzip -y}
+\texttt{sudo apt install apache2 php8.1 libapache2-mod-php8.1 php8.1-cli} \\
+\texttt{sudo apt install php8.1-mbstring php8.1-xml php8.1-curl php8.1-pgsql} \\
+\texttt{sudo apt install php8.1-gd php8.1-zip unzip -y}
 \end{tcolorbox}
 
-Une fois l’installation terminée, redémarrer Apache :
+L'activation des modules PHP nécessaires a ensuite été effectuée :
 
-\begin{tcolorbox}[colback=black, coltext=white, title=Redémarrage du serveur Apache, fonttitle=\bfseries]
+\begin{tcolorbox}[colback=black, coltext=white, title=Activation des modules PHP, fonttitle=\bfseries]
+\texttt{sudo phpenmod mbstring xml curl pgsql gd} \\
 \texttt{sudo systemctl restart apache2}
 \end{tcolorbox}
 
-Vérifier que PHP est bien installé :
+\paragraph{Installation et configuration de PostgreSQL}
+PostgreSQL a été choisi pour sa robustesse et sa conformité ACID, particulièrement importante pour une application de gestion RH :
 
-\begin{tcolorbox}[colback=black, coltext=white, title=Vérification de la version de PHP, fonttitle=\bfseries]
-\texttt{php -v}
+\begin{tcolorbox}[colback=black, coltext=white, title=Installation de PostgreSQL, fonttitle=\bfseries]
+\texttt{sudo apt install postgresql postgresql-contrib -y} \\
+\texttt{sudo systemctl start postgresql} \\
+\texttt{sudo systemctl enable postgresql}
 \end{tcolorbox}
 
-\subsubsection*{Installation de Composer}
-Composer est indispensable pour gérer les dépendances PHP :
+Création de la base de données pour le projet :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Configuration de la base de données, fonttitle=\bfseries]
+\texttt{sudo -i -u postgres} \\
+\texttt{createuser --interactive --pwprompt} \\
+\texttt{createdb optirh -O optirh\_user} \\
+\texttt{exit}
+\end{tcolorbox}
+
+\paragraph{Installation de Composer}
+Composer a été installé pour gérer efficacement les dépendances PHP du projet :
 
 \begin{tcolorbox}[colback=black, coltext=white, title=Installation de Composer, fonttitle=\bfseries]
 \texttt{curl -sS https://getcomposer.org/installer | php} \\
 \texttt{sudo mv composer.phar /usr/local/bin/composer} \\
-\texttt{composer -V}
+\texttt{composer global require laravel/installer}
 \end{tcolorbox}
 
-\subsubsection{Installation et configuration de PostgreSQL}
-PostgreSQL est utilisé comme base de données :
+\subsubsection{Configuration du projet OptiHR}
 
-\begin{tcolorbox}[colback=black, coltext=white, title=Installation de PostgreSQL, fonttitle=\bfseries]
-\texttt{sudo apt install postgresql postgresql-contrib -y}
+\paragraph{Clonage et configuration initiale}
+Pour initialiser le projet, j'ai cloné le dépôt GitHub et configuré l'environnement :
+
+\begin{tcolorbox}[colback=black, coltext=white, title=Clonage du projet, fonttitle=\bfseries]
+\texttt{git clone https://github.com/Dreykovic/optirh.git} \\
+\texttt{cd optirh}
 \end{tcolorbox}
 
-Démarrer PostgreSQL et vérifier son installation :
+Installation des dépendances :
 
-\begin{tcolorbox}[colback=black, coltext=white, title=Démarrage et vérification, fonttitle=\bfseries]
-\texttt{sudo systemctl start postgresql} \\
-\texttt{sudo systemctl enable postgresql} \\
-\texttt{psql --version}
+\begin{tcolorbox}[colback=black, coltext=white, title=Installation des dépendances, fonttitle=\bfseries]
+\texttt{composer install} \\
+\texttt{npm install} \\
+\texttt{npm run dev}
 \end{tcolorbox}
 
-\subsubsection*{Installation de Laravel}
-Créer un projet Laravel :
+Configuration de l'environnement Laravel :
 
-\begin{tcolorbox}[colback=black, coltext=white, title=Création d’un projet Laravel, fonttitle=\bfseries]
-\texttt{composer create-project --prefer-dist laravel/laravel:\^10.0 nom\_du\_projet}
-\end{tcolorbox}
-
-Générer la clé d’application :
-
-\begin{tcolorbox}[colback=black, coltext=white, title=Génération de la clé d’application, fonttitle=\bfseries]
+\begin{tcolorbox}[colback=black, coltext=white, title=Configuration de l'environnement, fonttitle=\bfseries]
+\texttt{cp .env.example .env} \\
 \texttt{php artisan key:generate}
 \end{tcolorbox}
 
-\subsubsection{Configuration de Git et clonage du projet}
-Vérifier si Git est installé :
+\paragraph{Configuration de la base de données}
+J'ai ensuite configuré le fichier .env pour la connexion à PostgreSQL :
 
-\begin{tcolorbox}[colback=black, coltext=white, title=Vérification de Git, fonttitle=\bfseries]
-\texttt{git --version}
+\begin{tcolorbox}[colback=black, coltext=white, title=Configuration de la connexion DB, fonttitle=\bfseries]
+\texttt{DB\_CONNECTION=pgsql} \\
+\texttt{DB\_HOST=127.0.0.1} \\
+\texttt{DB\_PORT=5432} \\
+\texttt{DB\_DATABASE=optirh} \\
+\texttt{DB\_USERNAME=optirh\_user} \\
+\texttt{DB\_PASSWORD=*****}
 \end{tcolorbox}
 
-Si Git n’est pas installé, l’ajouter avec :
+Exécution des migrations pour créer les tables nécessaires :
 
-\begin{tcolorbox}[colback=black, coltext=white, title=Installation de Git, fonttitle=\bfseries]
-\texttt{sudo apt install git -y}
+\begin{tcolorbox}[colback=black, coltext=white, title=Exécution des migrations, fonttitle=\bfseries]
+\texttt{php artisan migrate} \\
+\texttt{php artisan db:seed}
 \end{tcolorbox}
 
-Cloner le projet depuis GitHub :
+\paragraph{Configuration du serveur de développement}
+Pour le développement local, j'ai utilisé le serveur intégré de Laravel :
 
-\begin{tcolorbox}[colback=black, coltext=white, title=Clonage du projet, fonttitle=\bfseries]
-\texttt{git clone https://github.com/utilisateur/nom\_du\_projet.git} \\
-\texttt{cd nom\_du\_projet}
+\begin{tcolorbox}[colback=black, coltext=white, title=Lancement du serveur de développement, fonttitle=\bfseries]
+\texttt{php artisan serve --host=0.0.0.0 --port=8000}
 \end{tcolorbox}
 
-\subsubsection{Lancement du serveur de développement}
-Démarrer Laravel en mode développement :
+Le serveur de développement est alors accessible à l'adresse \texttt{http://localhost:8000}
 
-\begin{tcolorbox}[colback=black, coltext=white, title=Lancement du serveur Laravel, fonttitle=\bfseries]
-\texttt{php artisan serve}
-\end{tcolorbox}
+\subsubsection{Organisation du code source}
+Le projet OptiHR suit une structure de dossiers conforme aux bonnes pratiques Laravel :
 
-L’application est maintenant accessible à l’adresse :
+\begin{itemize}
+    \item \textbf{app/} : Contient le code principal de l'application
+    \begin{itemize}
+        \item \textbf{Http/Controllers/} : Contrôleurs pour chaque module du système
+        \item \textbf{Models/} : Modèles Eloquent représentant les entités du système
+        \item \textbf{Services/} : Services métier implémentant la logique applicative
+    \end{itemize}
+    \item \textbf{database/} : Migrations et seeders pour la base de données
+    \item \textbf{resources/} : Fichiers Blade, CSS, JS et autres assets
+    \item \textbf{routes/} : Définition des routes de l'application
+    \item \textbf{tests/} : Tests automatisés pour valider les fonctionnalités
+\end{itemize}
 
-\begin{tcolorbox}[colback=black, coltext=white, title=URL d’accès, fonttitle=\bfseries]
-\texttt{http://127.0.0.1:8000/}
-\end{tcolorbox}
+Cette organisation modulaire a favorisé la séparation des responsabilités et facilité la collaboration pendant le développement du projet.
 
+\subsubsection{Bonnes pratiques de développement}
+Pour garantir la qualité du code, j'ai mis en place plusieurs pratiques :
 
+\begin{itemize}
+    \item Utilisation du système de branches Git avec une branche principale \texttt{main} et des branches \texttt{feature/*} pour chaque fonctionnalité
+    \item Standardisation du code avec PHP-CS-Fixer et configuration dans le projet
+    \item Documentation des méthodes et classes avec PHPDoc
+    \item Tests unitaires pour les composants critiques
+\end{itemize}
 
+Cette configuration robuste a permis d'assurer un développement efficace et cohérent tout au long du projet OptiHR.

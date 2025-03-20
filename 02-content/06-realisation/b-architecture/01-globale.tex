@@ -1,43 +1,120 @@
 \subsection{Présentation de l'architecture globale}
 
-Le système OptiHR s'appuie sur une architecture MVC (Modèle-Vue-Contrôleur) robuste et évolutive, implémentée à l'aide du framework Laravel. Cette approche garantit une séparation claire des responsabilités entre les différentes couches de l'application.
+Le système OptiHR adopte une architecture MVC (Modèle-Vue-Contrôleur)
+implémentée avec le framework Laravel, permettant une séparation claire des
+responsabilités entre les différentes couches de l'application.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{images/architecture/mvc_schema.png}
-    \caption{Architecture MVC du système OptiHR}
-    \label{fig:mvc_schema}
-\end{figure}
+\subsubsection{Architecture MVC}
+L'architecture MVC s'articule autour de trois composants principaux :
+
+\begin{itemize}
+    \item \textbf{Modèle} : Représente les données et la logique métier de l'application. Dans notre implémentation, les modèles sont matérialisés par des classes Eloquent qui interagissent avec la base de données PostgreSQL.
+
+    \item \textbf{Vue} : Gère l'interface utilisateur et la présentation des données. Nous utilisons le moteur de template Blade, couplé à Bootstrap pour créer une interface responsive et ergonomique.
+
+    \item \textbf{Contrôleur} : Agit comme intermédiaire entre le Modèle et la Vue, traitant les requêtes HTTP, manipulant les données via les modèles et retournant les vues appropriées.
+\end{itemize}
 
 \subsubsection{Structure de l'application}
+L'application est organisée selon les standards Laravel, avec une structure de
+répertoires claire :
 
-L'application est organisée en modules fonctionnels distincts, chacun regroupant les modèles, contrôleurs et vues nécessaires à une fonctionnalité spécifique :
+\begin{tcolorbox}[colback=black!5!white, colframe=black!75!white, title=Structure du projet OptiHR, fonttitle=\bfseries]
+    \texttt{
+        app/ \\
+        |-- Http/ \\
+        |   |-- Controllers/  \quad \# Contrôleurs (Absence, Employee, Document, etc.) \\
+        |   |-- Middleware/   \quad \# Middlewares d'authentification et sécurité \\
+        |   `-- Requests/     \quad \# Classes de validation des formulaires \\
+        |-- Models/           \quad \# Modèles Eloquent (Absence, Department, etc.) \\
+        |-- Services/         \quad \# Services spécialisés (AbsencePdfService, etc.) \\
+        |-- Console/          \quad \# Commandes Artisan (UpdateAbsenceBalance, etc.) \\
+        |-- Mail/             \quad \# Templates d'emails (AbsenceRequestUpdated, etc.) \\
+        |-- Observers/        \quad \# Observateurs de modèles \\
+        `-- Providers/        \quad \# Service providers Laravel \\
+        \\
+        bootstrap/ \\
+        |-- app.php           \quad \# Point d'entrée de l'application \\
+        `-- cache/            \quad \# Cache de configuration \\
+        \\
+        config/               \quad \# Fichiers de configuration \\
+        \\
+        database/ \\
+        |-- migrations/       \quad \# Structure des tables \\
+        |-- seeders/          \quad \# Données initiales \\
+        `-- factories/        \quad \# Factories pour les tests \\
+        \\
+        lang/                 \quad \# Fichiers de traduction (en, fr) \\
+    }
+\end{tcolorbox}
 
-\begin{itemize}
-    \item \textbf{Module d'authentification} : Gestion des utilisateurs, rôles et permissions
-    \item \textbf{Module de gestion des employés} : Informations personnelles et administratives
-    \item \textbf{Module de gestion des absences} : Workflow de demande et validation des congés
-    \item \textbf{Module documentaire} : Stockage et gestion des documents administratifs
-    \item \textbf{Module de notifications} : Alertes et communications internes
-\end{itemize}
+\vspace{0.5cm}
 
-Cette approche modulaire facilite la maintenance et l'évolution du système en isolant les différentes préoccupations fonctionnelles.
+\begin{tcolorbox}[colback=black!5!white, colframe=black!75!white, title=Suite de la structure du projet OptiHR, fonttitle=\bfseries]
+    \texttt{
+        Modules/ \\
+        |-- Recours/          \quad \# Module de gestion des recours \\
+        |   |-- App/          \quad \# Logique métier du module \\
+        |   |-- Database/     \quad \# Migrations et seeders spécifiques \\
+        |   |-- resources/    \quad \# Vues et assets du module \\
+        |   `-- routes/       \quad \# Routes spécifiques au module \\
+        \\
+        public/ \\
+        |-- app-js/           \quad \# Scripts JavaScript spécifiques \\
+        |-- assets/           \quad \# Assets statiques (CSS, bundles, fonts) \\
+        |-- index.php         \quad \# Point d'entrée HTTP \\
+        `-- storage/          \quad \# Fichiers publics (lien symbolique) \\
+        \\
+        resources/ \\
+        |-- css/              \quad \# Styles CSS source \\
+        |-- js/               \quad \# Scripts JavaScript source \\
+        |-- lang/             \quad \# Traductions additionnelles \\
+        `-- views/            \quad \# Templates Blade \\
+        |-- components/   \quad \# Composants réutilisables \\
+        |-- emails/       \quad \# Templates d'emails \\
+        |-- errors/       \quad \# Pages d'erreur \\
+        |-- pages/        \quad \# Pages principales \\
+        |-- partials/     \quad \# Fragments réutilisables \\
+        `-- pdf/          \quad \# Templates pour génération PDF \\
+    }
+\end{tcolorbox}
 
-\subsubsection{Sécurité et protection des données}
+\vspace{0.5cm}
 
-La sécurité étant une priorité absolue pour un système manipulant des données sensibles, plusieurs mesures ont été mises en place :
+\begin{tcolorbox}[colback=black!5!white, colframe=black!75!white, title=Fin de la structure du projet OptiHR, fonttitle=\bfseries]
+    \texttt{
+        routes/ \\
+        |-- web.php           \quad \# Routes web principales \\
+        |-- api.php           \quad \# Routes API \\
+        `-- channels.php      \quad \# Routes de diffusion WebSockets \\
+        \\
+        storage/ \\
+        |-- app/              \quad \# Fichiers uploadés \\
+        |-- framework/        \quad \# Fichiers générés par Laravel \\
+        `-- logs/             \quad \# Journaux d'événements \\
+        \\
+        tests/                \quad \# Tests automatisés \\
+        \\
+        vendor/               \quad \# Dépendances (Composer) \\
+    }
+\end{tcolorbox}
 
-\begin{itemize}
-    \item \textbf{Authentification multi-niveaux} avec gestion fine des permissions
-    \item \textbf{Chiffrement des données sensibles} en base de données
-    \item \textbf{Protection contre les attaques CSRF} sur tous les formulaires
-    \item \textbf{Validation stricte des entrées utilisateur} pour prévenir les injections
-    \item \textbf{Journalisation des actions critiques} pour assurer la traçabilité
-\end{itemize}
+\subsubsection{Flux de données}
+Le flux de données dans l'application suit un parcours standard dans
+l'architecture MVC :
 
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.7\textwidth]{images/architecture/security_diagram.png}
-    \caption{Schéma des couches de sécurité implémentées}
-    \label{fig:security_diagram}
-\end{figure}
+\begin{enumerate}
+    \item L'utilisateur envoie une requête HTTP à l'application via son navigateur.
+    \item La requête est acheminée vers le contrôleur approprié selon la définition des
+          routes.
+    \item Le contrôleur traite la requête, fait appel aux services et modèles
+          nécessaires.
+    \item Les modèles interagissent avec la base de données PostgreSQL via Eloquent ORM.
+    \item Le contrôleur prépare les données et les transmet à la vue.
+    \item La vue génère le HTML qui est renvoyé au navigateur de l'utilisateur.
+\end{enumerate}
+
+Cette architecture modulaire facilite la maintenance, les tests et
+l'évolutivité du système, tout en permettant une séparation claire des
+responsabilités.
+\clearpage

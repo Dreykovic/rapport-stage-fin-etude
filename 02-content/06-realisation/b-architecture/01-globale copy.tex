@@ -1,0 +1,62 @@
+\subsection{Présentation de l'architecture globale}
+
+Le système OptiHR adopte une architecture MVC (Modèle-Vue-Contrôleur) implémentée avec le framework Laravel, permettant une séparation claire des responsabilités entre les différentes couches de l'application.
+
+\subsubsection{Architecture MVC}
+L'architecture MVC s'articule autour de trois composants principaux :
+
+\begin{itemize}
+    \item \textbf{Modèle} : Représente les données et la logique métier de l'application. Dans notre implémentation, les modèles sont matérialisés par des classes Eloquent qui interagissent avec la base de données PostgreSQL.
+    
+    \item \textbf{Vue} : Gère l'interface utilisateur et la présentation des données. Nous utilisons le moteur de template Blade, couplé à Bootstrap pour créer une interface responsive et ergonomique.
+    
+    \item \textbf{Contrôleur} : Agit comme intermédiaire entre le Modèle et la Vue, traitant les requêtes HTTP, manipulant les données via les modèles et retournant les vues appropriées.
+\end{itemize}
+
+\subsubsection{Structure de l'application}
+L'application est organisée selon les standards Laravel, avec une structure de répertoires claire :
+
+\begin{tcolorbox}[colback=black!5!white, colframe=black!75!white, title=Structure du projet OptiHR, fonttitle=\bfseries]
+\texttt{
+app/ \\
+|-- Http/ \\
+|   |-- Controllers/  \quad \# Contrôleurs de l'application \\
+|   |-- Middleware/   \quad \# Middlewares personnalisés \\
+|   `-- Requests/     \quad \# Classes de validation des requêtes \\
+|-- Models/           \quad \# Modèles Eloquent \\
+|-- Services/         \quad \# Services métier \\
+|-- Repositories/     \quad \# Couche d'accès aux données \\
+|-- Providers/        \quad \# Service providers Laravel \\
+`-- Events/           \quad \# Événements et listeners \\
+\\
+database/ \\
+|-- migrations/       \quad \# Migrations de base de données \\
+|-- seeders/          \quad \# Seeders pour les données de test \\
+`-- factories/        \quad \# Factories pour les tests \\
+\\
+resources/ \\
+|-- views/            \quad \# Templates Blade \\
+|-- js/               \quad \# Scripts JavaScript \\
+`-- css/              \quad \# Styles CSS \\
+\\
+routes/ \\
+|-- web.php           \quad \# Routes web de l'application \\
+`-- api.php           \quad \# Routes API (utilisées pour AJAX) \\
+\\
+tests/                \quad \# Tests automatisés \\
+}
+\end{tcolorbox}
+
+\subsubsection{Flux de données}
+Le flux de données dans l'application suit un parcours standard dans l'architecture MVC :
+
+\begin{enumerate}
+    \item L'utilisateur envoie une requête HTTP à l'application via son navigateur.
+    \item La requête est acheminée vers le contrôleur approprié selon la définition des routes.
+    \item Le contrôleur traite la requête, fait appel aux services et modèles nécessaires.
+    \item Les modèles interagissent avec la base de données PostgreSQL via Eloquent ORM.
+    \item Le contrôleur prépare les données et les transmet à la vue.
+    \item La vue génère le HTML qui est renvoyé au navigateur de l'utilisateur.
+\end{enumerate}
+
+Cette architecture modulaire facilite la maintenance, les tests et l'évolutivité du système, tout en permettant une séparation claire des responsabilités.
