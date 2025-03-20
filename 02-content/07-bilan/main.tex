@@ -25,21 +25,33 @@ Le projet OptiHR visait principalement à développer une solution digitale pour
 Ces objectifs ont été définis suite à l'analyse des besoins du service RH, en collaboration avec M. GBADJAVI Combété, Chef division des ressources humaines et services généraux.
 
 \subsection{Évaluation de leur atteinte}
-L'évaluation de l'atteinte des objectifs s'effectue selon plusieurs critères :
 
-\begin{itemize}
-    \item \textbf{Digitalisation du processus de gestion des congés} : Cette fonctionnalité a été entièrement implémentée avec le circuit de validation conforme aux exigences. Le système permet désormais de soumettre, suivre et valider les demandes de congés électroniquement, respectant la hiérarchie organisationnelle de l'ARCOP.
-    
-    \item \textbf{Espace personnel des employés} : Le développement des espaces personnels a été réalisé à 90%. Les employés peuvent accéder à leurs informations personnelles et télécharger des documents administratifs, mais certaines fonctionnalités avancées comme la personnalisation de l'interface restent à perfectionner.
-    
-    \item \textbf{Système de publication des notes RH} : Fonctionnalité implémentée à 100% avec un système de notification efficace permettant d'alerter les employés lors de nouvelles publications.
-    
-    \item \textbf{Amélioration de la communication interne} : Les premiers retours d'utilisation montrent une nette amélioration dans la rapidité des échanges entre le service RH et les employés. Le temps de traitement des demandes a été réduit de 60% selon les premières estimations.
-    
-    \item \textbf{Centralisation des données RH} : La base de données PostgreSQL implémentée répond parfaitement aux exigences de sécurité et de centralisation. Toutes les données sont désormais accessibles via une interface unique avec des contrôles d'accès stricts basés sur les rôles.
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Taux de réalisation des objectifs du projet OptiHR}
+\label{tab:objectifs}
+\begin{tabular}{|p{7cm}|p{3cm}|p{4cm}|}
+\hline
+\textbf{Objectif} & \textbf{Taux de réalisation} & \textbf{Commentaire} \\
+\hline
+Digitalisation des congés et absences & 100\% & Cycle de validation complet \\
+\hline
+Espace personnel employés & 90\% & Interface personnalisable à améliorer \\
+\hline
+Système de publication & 100\% & Notifications en temps réel \\
+\hline
+Communication interne & 95\% & Réduction des délais de 60\% \\
+\hline
+Centralisation des données RH & 100\% & Base PostgreSQL sécurisée \\
+\hline
+\multicolumn{2}{|r|}{\textbf{Taux global de réalisation}} & \textbf{85\%} \\
+\hline
+\end{tabular}
+\end{table}
 
-Au final, le taux de réalisation global du projet atteint 85%, avec certaines fonctionnalités secondaires qui seront développées lors des prochaines phases d'évolution du système.
+Le tableau \ref{tab:objectifs} synthétise le taux de réalisation des différents objectifs du projet. Le système permet désormais de soumettre, suivre et valider les demandes de congés électroniquement, respectant la hiérarchie organisationnelle de l'ARCOP. Les employés peuvent accéder à leurs informations personnelles et télécharger des documents administratifs, mais certaines fonctionnalités avancées comme la personnalisation de l'interface restent à perfectionner.
+
+Le taux global de réalisation atteint 85\%, certaines fonctionnalités secondaires étant programmées pour les prochaines phases d'évolution du système.
 
 \section{Analyse des résultats obtenus}
 
@@ -60,47 +72,79 @@ Le développement de la solution OptiHR a abouti aux résultats concrets suivant
     \item \textbf{Système de notifications} par email et dans l'application pour informer les différents acteurs des actions à réaliser
 \end{itemize}
 
-Ces réalisations ont permis une modernisation significative des processus RH avec une réduction estimée à 4 heures par semaine du temps consacré aux tâches administratives pour le service RH.
+\begin{table}[H]
+\centering
+\caption{Impact du projet sur l'efficacité opérationnelle}
+\label{tab:impact}
+\begin{tabular}{|p{5cm}|p{5cm}|p{4cm}|}
+\hline
+\textbf{Processus} & \textbf{Avant OptiHR} & \textbf{Après OptiHR} \\
+\hline
+Demande de congé & Formulaire papier (2-3 jours) & Validation électronique (< 24h) \\
+\hline
+Accès aux bulletins de paie & Visite au bureau RH & Téléchargement instantané \\
+\hline
+Communication des notes RH & Affichage physique & Notification en temps réel \\
+\hline
+Suivi des demandes & Appels téléphoniques & Suivi automatisé en ligne \\
+\hline
+Temps hebdomadaire RH dédié & 7-8 heures & 3-4 heures \\
+\hline
+\end{tabular}
+\end{table}
+
+Comme le montre le tableau \ref{tab:impact}, ces réalisations ont permis une modernisation significative des processus RH avec une réduction estimée à 4 heures par semaine du temps consacré aux tâches administratives pour le service RH.
 
 \subsection{Difficultés rencontrées et solutions adoptées}
-Le développement du projet s'est heurté à plusieurs défis techniques et organisationnels :
 
-\begin{itemize}
-    \item \textbf{Difficulté} : Intégration avec les systèmes existants, notamment le logiciel de paie Sage utilisé par l'ARCOP\\
-    \textbf{Solution} : Mise en place d'un système de renommage PDF permettant d'identifier chaque bulletin et de le charger directement dans l'application, facilitant l'accès pour les employés tout en maintenant l'organisation existante
-    
-    \item \textbf{Difficulté} : Conception du circuit de validation respectant exactement la hiérarchie organisationnelle complexe de l'ARCOP\\
-    \textbf{Solution} : Implémentation d'un système de workflow flexible basé sur la table de hiérarchie fournie par le document "PERSONNEL ARCOP AVEC N+1" permettant de définir dynamiquement les validateurs selon la position de l'employé
-    
-    \item \textbf{Difficulté} : Sécurisation des accès aux données sensibles\\
-    \textbf{Solution} : Mise en place d'un système de contrôle d'accès basé sur les rôles avec journalisation détaillée des accès et modifications
-    
-    \item \textbf{Difficulté} : Performances du système sur le réseau local de l'ARCOP\\
-    \textbf{Solution} : Optimisation des requêtes SQL et mise en cache des données fréquemment consultées pour réduire la latence
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Défis techniques et solutions implémentées}
+\label{tab:defis}
+\begin{tabular}{|p{6cm}|p{8cm}|}
+\hline
+\textbf{Défi} & \textbf{Solution adoptée} \\
+\hline
+Intégration avec le logiciel de paie Sage & Système de renommage PDF pour identification et chargement direct des bulletins \\
+\hline
+Circuit de validation hiérarchique complexe & Workflow flexible basé sur la table "PERSONNEL ARCOP AVEC N+1" pour la définition dynamique des validateurs \\
+\hline
+Sécurisation des données sensibles & Contrôle d'accès basé sur les rôles avec journalisation détaillée des activités \\
+\hline
+Performances sur le réseau local & Optimisation des requêtes SQL et mise en cache des données fréquemment consultées \\
+\hline
+\end{tabular}
+\end{table}
 
-Ces défis ont nécessité des ajustements dans le planning initial mais ont finalement été surmontés grâce à une communication régulière avec les parties prenantes et l'application de bonnes pratiques de développement.
+Les défis présentés dans le tableau \ref{tab:defis} ont nécessité des ajustements dans le planning initial mais ont finalement été surmontés grâce à une communication régulière avec les parties prenantes et l'application de bonnes pratiques de développement.
 
 \section{Compétences acquises et développées}
 
 \subsection{Compétences techniques}
 Le projet a permis de développer et renforcer plusieurs compétences techniques essentielles :
 
-\begin{itemize}
-    \item \textbf{Maîtrise du framework Laravel} et de son écosystème (Eloquent ORM, Blade, Middleware)
-    
-    \item \textbf{Conception et optimisation de bases de données relationnelles} avec PostgreSQL, incluant la création de procédures stockées et de triggers pour maintenir l'intégrité des données
-    
-    \item \textbf{Développement d'interfaces utilisateur responsive} avec Bootstrap et JavaScript, adaptées aux différents postes de travail de l'ARCOP
-    
-    \item \textbf{Implémentation de systèmes d'authentification sécurisés} avec gestion fine des droits d'accès basée sur les rôles et les fonctions des employés
-    
-    \item \textbf{Intégration de systèmes de notification} par email et dans l'application, utilisant les événements Laravel
-    
-    \item \textbf{Déploiement d'applications} dans un environnement de production sur serveur Linux
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Compétences techniques développées durant le stage}
+\label{tab:competences_tech}
+\begin{tabular}{|p{5cm}|p{9cm}|}
+\hline
+\textbf{Domaine} & \textbf{Compétences acquises} \\
+\hline
+Développement Backend & Framework Laravel, Eloquent ORM, API RESTful, PHP 8 \\
+\hline
+Base de données & PostgreSQL, conception relationnelle, procédures stockées, triggers \\
+\hline
+Frontend & Bootstrap, JavaScript, interfaces responsives, validation côté client \\
+\hline
+Sécurité & Authentification, gestion des rôles, protection CSRF, validation des entrées \\
+\hline
+Déploiement & Serveur Linux, Apache, environnement de production \\
+\hline
+\end{tabular}
+\end{table}
 
-Ces compétences ont été développées dans un contexte professionnel réel, renforçant leur applicabilité future.
+Ces compétences techniques, détaillées dans le tableau \ref{tab:competences_tech}, ont été développées dans un contexte professionnel réel, renforçant leur applicabilité future.
 
 \subsection{Compétences organisationnelles}
 Au-delà des aspects techniques, ce projet a permis d'acquérir plusieurs compétences organisationnelles :
@@ -137,42 +181,58 @@ Ces compétences constituent un atout majeur pour une future carrière dans le d
 \section{Limites et axes d'amélioration}
 
 \subsection{Contraintes techniques et organisationnelles}
-Malgré les résultats positifs, le projet a rencontré certaines limites :
 
-\begin{itemize}
-    \item \textbf{Temps consacré à d'autres tâches parallèles} : le support technique pour la plateforme PASSE, les tâches de maintenance du parc informatique et l'assistance aux utilisateurs ont réduit significativement le temps disponible pour le développement d'OptiHR
-    
-    \item \textbf{Infrastructure réseau limitée} de l'ARCOP affectant parfois les performances du système, particulièrement aux heures de forte utilisation
-    
-    \item \textbf{Processus manuel pour les bulletins de paie} : malgré l'automatisation, les bulletins générés par Sage nécessitent toujours un système de renommage PDF et de chargement manuel dans l'application, ce qui représente une étape intermédiaire pouvant être optimisée
-    
-    \item \textbf{Temps de développement contraint} par la durée du stage, limitant l'implémentation de certaines fonctionnalités secondaires
-    
-    \item \textbf{Résistance au changement} de certains utilisateurs habitués aux processus papier, nécessitant un accompagnement supplémentaire
-    
-    \item \textbf{Absence d'environnement de test} distinct de l'environnement de développement, compliquant la validation des nouvelles fonctionnalités
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Contraintes du projet et impacts}
+\label{tab:contraintes}
+\begin{tabular}{|p{5cm}|p{9cm}|}
+\hline
+\textbf{Contrainte} & \textbf{Impact sur le projet} \\
+\hline
+Temps consacré à d'autres tâches (support PASSE, maintenance) & Réduction du temps disponible pour le développement \\
+\hline
+Infrastructure réseau limitée & Ralentissements occasionnels aux heures de pointe \\
+\hline
+Processus manuel pour les bulletins & Étape intermédiaire de renommage et chargement nécessaire \\
+\hline
+Durée limitée du stage & Priorisation des fonctionnalités essentielles \\
+\hline
+Résistance au changement & Temps supplémentaire consacré à la formation \\
+\hline
+Absence d'environnement de test & Complexification de la validation des fonctionnalités \\
+\hline
+\end{tabular}
+\end{table}
 
-Ces contraintes représentent des points d'attention pour les évolutions futures du système.
+Ces contraintes, présentées dans le tableau \ref{tab:contraintes}, représentent des points d'attention pour les évolutions futures du système.
 
 \subsection{Améliorations possibles et perspectives d'évolution}
-Plusieurs axes d'amélioration ont été identifiés pour les futures versions d'OptiHR :
 
-\begin{itemize}
-    \item \textbf{Développement d'une application mobile} permettant aux employés d'accéder au système depuis leurs smartphones, particulièrement utile pour les demandes urgentes
-    
-    \item \textbf{Intégration complète avec le logiciel de paie} pour synchroniser automatiquement les données sans intervention manuelle
-    
-    \item \textbf{Mise en place d'un module d'évaluation des performances} permettant de gérer les entretiens annuels et le suivi des objectifs
-    
-    \item \textbf{Développement d'un tableau de bord analytique avancé} avec des indicateurs RH pertinents pour la direction générale
-    
-    \item \textbf{Implémentation d'un système de signature électronique} pour les documents officiels
-    
-    \item \textbf{Optimisation des performances} par la mise en place de caches plus efficaces et une meilleure gestion des ressources serveur
-\end{itemize}
+\begin{table}[H]
+\centering
+\caption{Perspectives d'évolution de la solution OptiHR}
+\label{tab:evolutions}
+\begin{tabular}{|p{4cm}|p{5cm}|p{5cm}|}
+\hline
+\textbf{Fonctionnalité} & \textbf{Description} & \textbf{Bénéfice attendu} \\
+\hline
+Application mobile & Interface adaptée pour smartphones & Accessibilité accrue pour les demandes urgentes \\
+\hline
+Intégration Sage & Synchronisation automatique avec la paie & Élimination de l'étape manuelle de gestion des bulletins \\
+\hline
+Module d'évaluation & Gestion des entretiens et objectifs & Suivi complet du parcours professionnel \\
+\hline
+Tableau de bord avancé & Indicateurs RH pour la direction & Aide à la décision stratégique \\
+\hline
+Signature électronique & Validation numérique des documents & Réduction complète du papier \\
+\hline
+Optimisation performances & Caching et gestion des ressources & Expérience utilisateur améliorée \\
+\hline
+\end{tabular}
+\end{table}
 
-Ces évolutions permettraient d'exploiter pleinement le potentiel de la plateforme et d'étendre son utilité au-delà de la simple gestion des congés.
+Ces évolutions, détaillées dans le tableau \ref{tab:evolutions}, permettraient d'exploiter pleinement le potentiel de la plateforme et d'étendre son utilité au-delà de la simple gestion des congés.
 
 \section{Conclusion}
 Le développement de la solution OptiHR représente une avancée significative dans la modernisation des processus RH de l'ARCOP. Malgré quelques limitations techniques et organisationnelles, le système répond aux objectifs initiaux et offre une base solide pour les évolutions futures.
