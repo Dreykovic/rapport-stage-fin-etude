@@ -3,7 +3,7 @@
   <rect width="800" height="500" fill="#f8f9fa" />
   
   <!-- Titre -->
-  <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">Flux de données dans l'application OptiHR</text>
+  <text x="400" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">Flux de données dans l'application </text>
   
   <!-- Lignes verticales pour les participants -->
   <line x1="100" y1="100" x2="100" y2="450" stroke="#ddd" stroke-width="2" stroke-dasharray="5,5" />
