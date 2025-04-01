@@ -27,6 +27,112 @@ Le code source du projet a été organisé selon la structure suivante :
 
 
 
+
+
+
+
+\begin{tcolorbox}[title=Structure du projet Laravel,
+    breakable=true,  % Allow the box to break across pages
+    width=\textwidth, % Full width
+    before skip=10pt,
+    after skip=10pt,
+    colback=white,
+    colframe=black!75]
+\begin{lstlisting}[basicstyle=\small\ttfamily, % Smaller font size
+     breaklines=true,   % Break long lines
+     postbreak=\mbox{\textcolor{red}{$\hookrightarrow$}\space}, % Show break symbol
+     columns=flexible,   % Better spacing
+     keepspaces=true]    % Preserve spaces
+.
++-- app
+|   +-- Config
+|   |   +-- ActivityLogActions.php
+|   +-- Console
+|   |   +-- Commands
+|   |   |   +-- CleanupActivityLogs.php
+|   |   |   +-- SendDailyAppealReminderEmail.php
+|   |   |   +-- UpdateAbsenceBalance.php
+|   |   |   +-- UpdateAppealDayCount.php
+|   |   +-- Kernel.php
+|   +-- Exceptions
+|   |   +-- Handler.php
+|   +-- Http
+|   |   +-- Controllers
+|   |   |   +-- ActivityLogController.php
+|   |   |   +-- AuthController.php
+|   |   |   +-- Controller.php
+|   |   |   +-- HomeController.php
+|   |   |   +-- OptiHR
+|   |   |   |   +-- AbsenceController.php
+|   |   |   |   +-- AbsenceTypeController.php
+|   |   |   |   +-- ...
+|   |   |   +-- Recours
+|   |   |   |   +-- DacController.php
+|   |   |   |   +-- RecoursController.php
+|   |   |   |   +-- StatsController.php
+|   |   |   +-- RoleController.php
+|   |   |   +-- UserController.php
+|   |   +-- Kernel.php
+|   |   +-- Middleware
+|   |   +-- Requests
+|   |       +-- StoreAccountRequest.php
+|   +-- Jobs
+|   |   +-- CleanupActivityLogsJob.php
+|   +-- Mail
+|   |   +-- AbsenceRequestCreated.php
+|   +-- Models
+|   |   +-- ActivityLog.php
+|   |   +-- OptiHR
+|   |   |   +-- Absence.php
+|   |   |   +-- AbsenceType.php
+|   |   |   +-- ...
+|   |   +-- Recours
+|   |   |   +-- Appeal.php
+|   |   |   +-- ...
+|   |   +-- User.php
+|   +-- Observers
+|   |   +-- EmployeeObserver.php
+|   +-- Providers
+|   +-- Services
+|   +-- Traits
+|   |   +-- LogsActivity.php
+|   +-- Utils
+|       +-- helpers.php
++-- architecture.txt
++-- artisan
++-- bootstrap/
++-- composer.json
++-- composer.lock
++-- database/
++-- lang/
++-- package.json
++-- package-lock.json
++-- palette.scss
++-- phpunit.xml
++-- README.md
++-- resources
+|   +-- css/
+|   +-- js/
+|   +-- lang/
+|   +-- views
+|       +-- auth
+|       +-- base.blade.php
+|       +-- components
+|       +-- errors
+|       +-- modules
+|       |   +-- gateway
+|       |   +-- opti-hr
+|       |   |   +-- emails
+|       |   |   +-- pages
+|       |   |   +-- partials
+|       |   |   +-- pdf
++-- routes
++-- tests
++-- vite.config.js
++-- vite-module-loader.js
+\end{lstlisting}
+\end{tcolorbox}
+
 Cette organisation du code source a permis de maintenir une séparation claire des responsabilités tout en facilitant la maintenance et l'évolution du système.
 
 \subsection{Choix des technologies et outils}
