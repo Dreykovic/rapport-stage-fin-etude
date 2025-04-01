@@ -1,4 +1,67 @@
 \chapter{Expression des besoins}
 \clearpage
+
+\section{Projets de digitalisation}
+
+\subsection{Présentation générale des projets}
+L'ARCOP a entrepris une démarche de transformation numérique visant à optimiser ses processus internes et à améliorer la qualité de service. Deux projets majeurs s'inscrivent dans cette initiative :
+\begin{enumerate}
+    \item \textbf{OptiHR} : Solution de gestion des ressources humaines
+    \item \textbf{Gestion des Recours} : Système de suivi et traitement des recours
+\end{enumerate}
+
+Ces projets répondent à des besoins spécifiques de l'ARCOP tout en partageant des exigences techniques communes, notamment en termes d'infrastructure, de sécurité et de compatibilité.
+
+\subsection{Exigences techniques communes}
+\subsubsection{Technologies et architecture}
+\begin{itemize}
+    \item \textbf{Framework backend} : Laravel pour la gestion efficace de la logique serveur
+    \item \textbf{Base de données} : PostgreSQL avec Eloquent ORM
+    \item \textbf{Frontend} : Blade pour des interfaces utilisateur dynamiques et fluides
+\end{itemize}
+
+\subsubsection{Sécurité}
+\begin{itemize}
+    \item Chiffrement des données sensibles
+    \item Gestion des accès par rôles
+    \item Journalisation des actions des utilisateurs
+\end{itemize}
+
+\subsubsection{Hébergement}
+\begin{itemize}
+    \item Déploiement sur les serveurs internes de l'ARCOP
+\end{itemize}
+
+\subsubsection{Exigences non fonctionnelles communes}
+\paragraph{Fiabilité}
+\begin{itemize}
+    \item Disponibilité de 99.9\% (hors maintenance planifiée)
+    \item Sauvegarde quotidienne des données avec restauration possible
+\end{itemize}
+
+\paragraph{Utilisabilité}
+\begin{itemize}
+    \item Interface intuitive avec courbe d'apprentissage minimale
+    \item Documentation utilisateur complète (guides et tutoriels)
+\end{itemize}
+
+\paragraph{Compatibilité}
+\begin{itemize}
+    \item \textbf{Navigateurs} : Compatibilité avec Chrome, Firefox, Safari et Edge (versions récentes)
+    \item \textbf{Mobile} : Interfaces responsives accessibles depuis les navigateurs mobiles
+\end{itemize}
+
+\paragraph{Scalabilité}
+Capacité à gérer un nombre croissant d'utilisateurs et de données sans dégradation des performances
+
 \input{02-content/04-presentation-projet/a-optihr/main.tex}
 \input{02-content/04-presentation-projet/b-recours/main.tex}
+
+
+
+\section{Conclusion}
+Ces projets de digitalisation représentent des avancées significatives pour l'ARCOP dans sa démarche de modernisation. OptiHR et le système de Gestion des Recours répondent à des besoins métier spécifiques tout en s'intégrant dans une architecture technique commune et cohérente.
+
+Ces solutions ont été conçues avec une attention particulière portée à l'expérience utilisateur, à la sécurité et à l'évolutivité. La prochaine étape consistera à concevoir l'architecture détaillée des systèmes et à élaborer les diagrammes UML pour modéliser les interactions entre les différents modules.
+
+\clearpage
