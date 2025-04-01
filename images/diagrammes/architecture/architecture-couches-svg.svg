@@ -3,11 +3,11 @@
   <rect width="900" height="650" fill="#f8f9fa" />
   
   <!-- Titre -->
-  <text x="450" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">Architecture MVC du système OptiHR</text>
+  <text x="450" y="40" font-family="Arial" font-size="24" text-anchor="middle" font-weight="bold">Architecture MVC du système OptiHR et Gestion de Recours</text>
 
   <!-- Bordure principale -->
   <rect x="50" y="70" width="800" height="550" rx="10" ry="10" fill="none" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5" />
-  <text x="450" y="95" font-family="Arial" font-size="16" text-anchor="middle">Système OptiHR</text>
+  <text x="450" y="95" font-family="Arial" font-size="16" text-anchor="middle"></text>
 
   <!-- Modèle MVC -->
   <rect x="100" y="110" width="700" height="180" rx="10" ry="10" fill="#e8eaf6" stroke="#3f51b5" stroke-width="2" />
@@ -112,5 +112,5 @@
   
   <!-- Légende -->
   <rect x="700" y="610" width="150" height="30" rx="5" ry="5" fill="#fff" stroke="#333" />
-  <text x="775" y="630" font-family="Arial" font-size="12" text-anchor="middle">© OptiHR ARCOP</text>
+  <text x="775" y="630" font-family="Arial" font-size="12" text-anchor="middle">© ARCOP MAN</text>
 </svg>

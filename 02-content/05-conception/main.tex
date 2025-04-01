@@ -7,68 +7,55 @@ Elle permet de traduire les besoins fonctionnels identifiés en une architecture
 Cette étape définit non seulement l'architecture globale et les composants principaux du système, 
 mais aussi les interactions entre les différents modules.
 
-La conception du système OptiHR s'inscrit dans une démarche méthodique visant à garantir 
-la qualité, la maintenabilité et l'évolutivité de la solution. Une attention particulière 
-a été portée à la modélisation des données et à l'organisation des classes pour refléter 
-fidèlement les processus métier de l'ARCOP.
+Dans le cadre de ce projet, nous avons opté pour une approche intégrée où les fonctionnalités OptiHR et Gestion des Recours sont déployées au sein d'un portail d'applications unique, développé avec Laravel. Cette décision architecturale permet de mutualiser les composants techniques communs tout en offrant une expérience utilisateur cohérente et une maintenance simplifiée.
 
-\section{Architecture du système}
+\section{Architecture du portail d'applications}
 
-\subsection{Architecture globale}
-Le système OptiHR adopte une architecture en couches qui permet une séparation claire des responsabilités:
+\subsection{Portail d'applications unifié}
+Le portail d'applications constitue le point d'entrée unique du système et permet d'accéder aux différents modules fonctionnels (OptiHR et Gestion des Recours). Cette approche présente plusieurs avantages :
 
 \begin{itemize}
-    \item \textbf{Couche Présentation}: Interfaces utilisateur accessibles via navigateur web, incluant les templates Blade, les feuilles de style CSS et le code JavaScript.
-    \item \textbf{Couche Application}: Logique métier et traitement des requêtes via les contrôleurs Laravel et les services métier.
-    \item \textbf{Couche Persistance}: Stockage et récupération des données à travers l'ORM Eloquent et la base de données PostgreSQL.
+    \item \textbf{Authentification unifiée} : Les utilisateurs s'authentifient une seule fois pour accéder à l'ensemble des fonctionnalités auxquelles ils ont droit.
+    \item \textbf{Expérience utilisateur cohérente} : Interface graphique homogène à travers les différentes fonctionnalités.
+    \item \textbf{Partage des composants communs} : Réutilisation des classes et services entre les modules.
+    \item \textbf{Administration centralisée} : Gestion des utilisateurs, rôles et permissions au sein d'un système unique.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/diagrammes/architecture/architecture-couches.pdf}
+    \caption{Architecture en couches du portail d'applications}
+    \label{fig:architecture_couches}
+\end{figure}
+
+\subsection{Architecture globale}
+Le portail d'applications adopte une architecture en couches qui permet une séparation claire des responsabilités :
+
+\begin{itemize}
+    \item \textbf{Couche Présentation} : Interfaces utilisateur accessibles via navigateur web, incluant les templates Blade, les feuilles de style CSS et le code JavaScript.
+    \item \textbf{Couche Application} : Logique métier et traitement des requêtes via les contrôleurs Laravel et les services métier.
+    \item \textbf{Couche Persistance} : Stockage et récupération des données à travers l'ORM Eloquent et la base de données PostgreSQL.
 \end{itemize}
 
 Cette architecture en trois couches favorise la modularité et facilite la maintenance du code en isolant 
 les changements à des zones spécifiques du système.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{images/diagrammes/architecture/architecture-couches.pdf}
-    \caption{Architecture en couches du système OptiHR}
-    \label{fig:architecture_couches}
-\end{figure}
-
-La figure \ref{fig:architecture_couches} illustre comment les différentes couches interagissent entre elles, avec un flux de données descendant pour les requêtes et ascendant pour les réponses. Les flèches représentent les dépendances entre les composants.
-
-\subsection{Découpage modulaire du système}
-Pour favoriser la maintenabilité et l'évolutivité, le système OptiHR est conçu selon une approche 
-modulaire qui sépare les différentes préoccupations fonctionnelles:
-
-\begin{enumerate}
-    \item \textbf{Module d'authentification et autorisations}: Gestion des utilisateurs, des rôles et des permissions.
-    \item \textbf{Module GRH}: Gestion des employés, des départements et de la documentation.
-    \item \textbf{Module de gestion des absences}: Demandes de congés, workflow d'approbation et suivi.
-    \item \textbf{Module de notifications}: Alertes système, notifications par email et notes de service.
-    \item \textbf{Module documentaire}: Bulletins de paie, documents administratifs et archivage.
-\end{enumerate}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{images/diagrammes/architecture/modules-systeme.pdf}
-    \caption{Organisation modulaire du système OptiHR}
-    \label{fig:modules_systeme}
-\end{figure}
-
-Cette organisation modulaire, illustrée dans la figure \ref{fig:modules_systeme}, permet d'isoler les fonctionnalités 
-et de faciliter les évolutions futures du système en minimisant les impacts entre modules.
+\subsection{Organisation structurelle du projet}
+Le projet Laravel est organisé selon une structure modulaire qui permet de séparer clairement les fonctionnalités des deux applications tout en partageant les composants communs.
+Cette organisation permet un développement modulaire où chaque équipe peut travailler indépendamment sur son module, tout en bénéficiant des composants partagés.
 
 \subsection{Flux de données et interactions}
 Les interactions entre les composants suivent un flux standardisé qui garantit la cohérence des opérations
-et facilite le débogage:
+et facilite le débogage :
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{images/diagrammes/architecture/flux-donnees.pdf}
-    \caption{Flux de données dans l'application OptiHR}
+    \caption{Flux de données dans le portail d'applications}
     \label{fig:flux_donnees}
 \end{figure}
 
-Le diagramme de séquence (figure \ref{fig:flux_donnees}) détaille le parcours d'une requête typique à travers les différentes couches du système:
+Le diagramme de séquence (figure \ref{fig:flux_donnees}) détaille le parcours d'une requête typique à travers les différentes couches du système :
 
 \begin{enumerate}
     \item L'utilisateur interagit avec l'interface (Vue)
@@ -81,295 +68,204 @@ Le diagramme de séquence (figure \ref{fig:flux_donnees}) détaille le parcours 
     \item Le résultat final est affiché à l'utilisateur
 \end{enumerate}
 
-
-\section{Modélisation des données}
-
-\subsection{Dictionnaire de données}
-Le dictionnaire de données ci-dessous détaille les structures de stockage avec leurs attributs, 
-types, contraintes et descriptions. Cette documentation précise garantit l'intégrité et 
-la cohérence des données manipulées par le système.
-
-\renewcommand{\arraystretch}{1.3} % Améliore l'espacement du tableau
-
-\begin{longtable}{|p{2.5cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
-    \hline
-    \textbf{Table} & \textbf{Attribut} & \textbf{Type SQL} & \textbf{Contrainte} & \textbf{Description} \\
-    \hline
-    \endfirsthead
-
-    \hline
-    \textbf{Table} & \textbf{Attribut} & \textbf{Type SQL} & \textbf{Contrainte} & \textbf{Description} \\
-    \hline
-    \endhead
-
-    % User
-    \multirow{5}{*}{\textbf{User}} & id & INT & PK, AUTO\_INCREMENT & Identifiant unique \\
-    \cline{2-5}
-    & username & VARCHAR(50) & NOT NULL, UNIQUE & Nom d'utilisateur \\
-    \cline{2-5}
-    & password & VARCHAR(255) & NOT NULL & Mot de passe haché \\
-    \cline{2-5}
-    & active & BOOLEAN & NOT NULL, DEFAULT TRUE & Statut du compte \\
-    \cline{2-5}
-    & employee\_id & INT & FK(Employee.id) & Référence à l'employé \\
-    \hline
-
-    % Employee
-    \multirow{12}{*}{\textbf{Employee}} & id & INT & PK, AUTO\_INCREMENT & Identifiant unique \\
-    \cline{2-5}
-    & first\_name & VARCHAR(50) & NOT NULL & Prénom \\
-    \cline{2-5}
-    & last\_name & VARCHAR(50) & NOT NULL & Nom de famille \\
-    \cline{2-5}
-    & phone\_number & VARCHAR(20) & NULL & Numéro de téléphone \\
-    \cline{2-5}
-    & email & VARCHAR(100) & NOT NULL, UNIQUE & Adresse email \\
-    \cline{2-5}
-    & address1 & VARCHAR(255) & NULL & Adresse principale \\
-    \cline{2-5}
-    & address2 & VARCHAR(255) & NULL & Adresse secondaire \\
-    \cline{2-5}
-    & city & VARCHAR(50) & NULL & Ville \\
-    \cline{2-5}
-    & country & VARCHAR(50) & NULL & Pays \\
-    \cline{2-5}
-    & state & VARCHAR(50) & NULL & Région ou état \\
-    \cline{2-5}
-    & bank\_name & VARCHAR(100) & NULL & Nom de la banque \\
-    \cline{2-5}
-    & rib & VARCHAR(50) & NULL & RIB \\
-    \cline{2-5}
-    & department\_id & INT & FK(Department.id) & Département \\
-    \hline
-
-    % Department
-    \multirow{3}{*}{\textbf{Department}} & id & INT & PK, AUTO\_INCREMENT & Identifiant unique \\
-    \cline{2-5}
-    & name & VARCHAR(100) & NOT NULL, UNIQUE & Nom du département \\
-    \cline{2-5}
-    & director\_id & INT & FK(Employee.id), NULL & Directeur \\
-    \hline
-
-    % Role
-    \multirow{2}{*}{\textbf{Role}} & id & INT & PK, AUTO\_INCREMENT & Identifiant unique \\
-    \cline{2-5}
-    & name & VARCHAR(50) & NOT NULL, UNIQUE & Nom du rôle \\
-    \hline
-
-    % Permission
-    \multirow{2}{*}{\textbf{Permission}} & id & INT & PK, AUTO\_INCREMENT & Identifiant unique \\
-    \cline{2-5}
-    & name & VARCHAR(50) & NOT NULL, UNIQUE & Nom de la permission \\
-    \hline
-
-    % Role_Permission
-    \multirow{2}{*}{\textbf{Role\_Permission}} & role\_id & INT & PK, FK(Role.id) & Référence au rôle \\
-    \cline{2-5}
-    & permission\_id & INT & PK, FK(Permission.id) & Référence à la permission \\
-    \hline
-
-    % User_Role
-    \multirow{2}{*}{\textbf{User\_Role}} & user\_id & INT & PK, FK(User.id) & Référence à l'utilisateur \\
-    \cline{2-5}
-    & role\_id & INT & PK, FK(Role.id) & Référence au rôle \\
-    \hline
-
-    % File
-    \multirow{6}{*}{\textbf{File}} & id & INT & PK, AUTO\_INCREMENT & Identifiant unique \\
-    \cline{2-5}
-    & name & VARCHAR(255) & NOT NULL & Nom du fichier \\
-    \cline{2-5}
-    & url & VARCHAR(255) & NOT NULL & URL du fichier \\
-    \cline{2-5}
-    & mime\_type & VARCHAR(100) & NOT NULL & Type MIME \\
-    \cline{2-5}
-    & path & VARCHAR(255) & NOT NULL & Chemin d'accès \\
-    \cline{2-5}
-    & upload\_date & DATETIME & NOT NULL & Date d'upload \\
-    \cline{2-5}
-    & employee\_id & INT & FK(Employee.id) & Propriétaire \\
-    \hline
-
-    % Duty
-    \multirow{5}{*}{\textbf{Duty}} & id & INT & PK, AUTO\_INCREMENT & Identifiant unique \\
-    \cline{2-5}
-    & duration & VARCHAR(50) & NOT NULL & Durée de la mission \\
-    \cline{2-5}
-    & begin\_date & DATE & NOT NULL & Date de début \\
-    \cline{2-5}
-    & type & VARCHAR(50) & NOT NULL & Type de mission \\
-    \cline{2-5}
-    & etat & VARCHAR(50) & NOT NULL & État de la mission \\
-    \cline{2-5}
-    & employee\_id & INT & FK(Employee.id) & Employé concerné \\
-    \hline
-
-    % Job
-    \multirow{3}{*}{\textbf{Job}} & id & INT & PK, AUTO\_INCREMENT & Identifiant unique \\
-    \cline{2-5}
-    & title & VARCHAR(100) & NOT NULL & Intitulé du poste \\
-    \cline{2-5}
-    & supervisor\_id & INT & FK(Job.id), NULL & Poste supérieur \\
-    \hline
-
-    % Employee_Job
-    \multirow{2}{*}{\textbf{Employee\_Job}} & employee\_id & INT & PK, FK(Employee.id) & Référence à l'employé \\
-    \cline{2-5}
-    & job\_id & INT & PK, FK(Job.id) & Référence au poste \\
-    \hline
-
-    % Absence
-    \multirow{12}{*}{\textbf{Absence}} & id & INT & PK, AUTO\_INCREMENT & Identifiant unique \\
-    \cline{2-5}
-    & day\_requested & INT & NOT NULL & Jours demandés \\
-    \cline{2-5}
-    & start\_date & DATE & NOT NULL & Date de début \\
-    \cline{2-5}
-    & end\_date & DATE & NOT NULL & Date de fin \\
-    \cline{2-5}
-    & address & VARCHAR(255) & NULL & Adresse durant l'absence \\
-    \cline{2-5}
-    & date\_of\_application & DATE & NOT NULL & Date de la demande \\
-    \cline{2-5}
-    & status & VARCHAR(20) & NOT NULL & Statut de l'absence \\
-    \cline{2-5}
-    & date\_of\_approval & DATE & NULL & Date d'approbation \\
-    \cline{2-5}
-    & type\_of\_absence & VARCHAR(50) & NOT NULL & Type d'absence \\
-    \cline{2-5}
-    & reasons & TEXT & NULL & Raisons de l'absence \\
-    \cline{2-5}
-    & proof & VARCHAR(255) & NULL & Justificatif \\
-    \cline{2-5}
-    & comment & TEXT & NULL & Commentaire \\
-    \cline{2-5}
-    & employee\_id & INT & FK(Employee.id) & Employé concerné \\
-    \hline
-
-    % Note
-    \multirow{4}{*}{\textbf{Note}} & id & INT & PK, AUTO\_INCREMENT & Identifiant unique \\
-    \cline{2-5}
-    & message & TEXT & NOT NULL & Contenu de la note \\
-    \cline{2-5}
-    & file & VARCHAR(255) & NULL & Fichier joint \\
-    \cline{2-5}
-    & publish\_date & DATETIME & NOT NULL & Date de publication \\
-    \cline{2-5}
-    & author\_id & INT & FK(Employee.id) & Auteur de la note \\
-    \hline
-
-    % Decision
-    \multirow{5}{*}{\textbf{Decision}} & id & INT & PK, AUTO\_INCREMENT & Identifiant unique \\
-    \cline{2-5}
-    & number & VARCHAR(20) & NOT NULL & Numéro de décision \\
-    \cline{2-5}
-    & year & VARCHAR(4) & NOT NULL & Année de la décision \\
-    \cline{2-5}
-    & date & DATE & NOT NULL & Date de la décision \\
-    \cline{2-5}
-    & content & TEXT & NOT NULL & Contenu de la décision \\
-    \hline
-
-    % Image
-    \multirow{6}{*}{\textbf{Image}} & id & INT & PK, AUTO\_INCREMENT & Identifiant unique \\
-    \cline{2-5}
-    & name & VARCHAR(255) & NOT NULL & Nom de l'image \\
-    \cline{2-5}
-    & url & VARCHAR(255) & NOT NULL & URL de l'image \\
-    \cline{2-5}
-    & mime\_type & VARCHAR(100) & NOT NULL & Type MIME \\
-    \cline{2-5}
-    & path & VARCHAR(255) & NOT NULL & Chemin d'accès \\
-    \cline{2-5}
-    & entity\_id & INT & NOT NULL & ID entité associée \\
-    \cline{2-5}
-    & entity\_type & VARCHAR(50) & NOT NULL & Type entité associée \\
-    \hline
-\end{longtable}
-\begin{table}[H]
-    \centering
-    \caption{Dictionnaire des données amélioré}
-    \label{tab:table_dictionnaire_data_ameliore}
-\end{table}
-
-\section{Modélisation objet}
-
-\subsection{Diagramme de classes}
-Le diagramme de classes constitue la représentation structurelle du système OptiHR. Il modélise les entités du domaine, leurs attributs et les relations qu'elles entretiennent entre elles. Cette modélisation répond aux besoins métier identifiés lors de la phase d'analyse et traduit fidèlement les processus de gestion des ressources humaines de l'ARCOP.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{images/diagrammes/class/diagramme.jpeg}
-    \caption{Diagramme de classes amélioré du système OptiHR}
-    \label{fig:class_diagram_improved}
-\end{figure}
-
-La figure \ref{fig:class_diagram_improved} présente le diagramme de classes complet du système. Pour faciliter la compréhension, les entités sont regroupées par domaine fonctionnel:
+\subsection{Authentification et autorisations}
+Le module d'authentification et d'autorisation constitue un élément central du portail, permettant de :
 
 \begin{itemize}
-    \item \textbf{Domaine Utilisateur}: Gestion des accès et des permissions (User, Role, Permission)
-    \item \textbf{Domaine Ressources Humaines}: Organisation et employés (Employee, Department, Job)
-    \item \textbf{Domaine Opérationnel}: Activités et processus métier (Absence, Duty)
-    \item \textbf{Domaine Documentaire}: Gestion des documents et médias (File, Image, Note, Decision)
+    \item Gérer les utilisateurs et leurs accès de manière centralisée
+    \item Attribuer des rôles et permissions différents selon les modules
+    \item Contrôler l'accès aux fonctionnalités via un système de middleware
 \end{itemize}
 
-\subsection{Relations et multiplicités}
-Les relations entre les classes représentent les associations fonctionnelles au sein du système. Chaque relation est caractérisée par sa nature (association, composition, agrégation) et sa multiplicité, qui définit le nombre d'instances impliquées.
-
-\begin{enumerate}
-    \item \textbf{Employee - Department} (n:1): Un employé appartient à un seul département, tandis qu'un département peut regrouper plusieurs employés.
-    
-    \item \textbf{Employee - Job} (n:m): Un employé peut occuper plusieurs postes au cours de sa carrière, et un même poste peut être occupé par différents employés successivement. Cette relation est matérialisée par l'association \texttt{Employee\_Job}.
-    
-    \item \textbf{Employee - Absence} (1:n): Un employé peut enregistrer plusieurs absences, mais chaque absence est associée à un seul employé.
-    
-    \item \textbf{User - Employee} (1:1): Chaque utilisateur du système est associé à un employé spécifique, établissant ainsi le lien entre l'identité numérique et la personne physique.
-    
-    \item \textbf{User - Role} (n:m): Un utilisateur peut avoir plusieurs rôles, et un même rôle peut être attribué à plusieurs utilisateurs. Cette relation est matérialisée par l'association \texttt{User\_Role}.
-    
-    \item \textbf{Role - Permission} (n:m): Un rôle regroupe plusieurs permissions, et une même permission peut appartenir à différents rôles. Cette relation est matérialisée par l'association \texttt{Role\_Permission}.
-    
-    \item \textbf{Job - Job} (n:1): Relation réflexive représentant la hiérarchie des postes. Un poste peut avoir un poste supérieur (\texttt{supervisor\_id}), créant ainsi la structure hiérarchique.
-    
-    \item \textbf{Department - Employee} (1:1): Relation particulière identifiant le directeur du département parmi ses employés.
-\end{enumerate}
+Le système de rôles et permissions est conçu pour être granulaire, permettant d'accorder des droits spécifiques par module. Par exemple, un utilisateur pourrait avoir un rôle d'administrateur dans OptiHR mais un simple rôle de consultation dans Gestion des Recours.
 
 \section{Technologies et outils}
 Les outils et technologies suivants ont été utilisés pour la conception du
-projet \textbf{OptiHR}. Chaque outil est accompagné d'une image et d'une
-description détaillée.
-
-\vspace{1cm} % Ajoute un espace vertical
+projet. Chaque outil est accompagné d'une description détaillée.
 
 \renewcommand{\arraystretch}{1.5} % Espacement entre les lignes du tableau
 
 \begin{center}
-    \begin{table}[H]  % Environnement table pour être listé dans la liste des tableaux
-       
-
+    \begin{table}[H]
         \begin{tabular}{|m{4cm}|m{10cm}|}
             \hline
             \textbf{Technologie}                                 & \textbf{Description}                                                                                                                                                                             \\
             \hline
-
             \includegraphics[width=3cm]{images/logo/uml.png}     & \textbf{UML} : Utilisé pour la modélisation des systèmes et la conception des structures du projet. Il permet de représenter graphiquement les différentes interactions et processus du système. \\
             \hline
-
             \includegraphics[width=3cm]{images/logo/modelio.png} & \textbf{Modelio} : Outil de modélisation UML permettant de créer des diagrammes tels que les diagrammes de classes, de séquence et d'activités.                                                  \\
             \hline
-
         \end{tabular}
-        % \centering
-        \caption{Tableau des technologies et outils utilisés pour la conception} % La légende du tableau
-        \label{tab:technos_conception} % Étiquette pour référence
+        \caption{Tableau des technologies et outils utilisés pour la conception}
+        \label{tab:technos_conception}
     \end{table}
 \end{center}
 
+\section{Module OptiHR}
+
+\subsection{Découpage fonctionnel}
+Le module OptiHR au sein du portail est subdivisé en plusieurs composants fonctionnels :
+
+\begin{enumerate}
+    \item \textbf{Gestion des employés} : Profils, informations personnelles et professionnelles
+    \item \textbf{Gestion des absences} : Demandes de congés, workflow d'approbation et suivi
+    \item \textbf{Gestion documentaire} : Bulletins de paie, documents administratifs et archivage
+    \item \textbf{Communication interne} : Notes de service, alertes et notifications
+\end{enumerate}
+
+
+Cette organisation modulaire permet d'isoler les fonctionnalités et de faciliter les évolutions futures du système en minimisant les impacts entre composants.
+
+\subsection{Modélisation des données}
+
+\subsubsection{Diagramme conceptuel de données}
+Le diagramme ci-dessous présente les principales entités du module OptiHR et leurs relations :
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/diagrammes/class/diagramme.jpeg}
+    \caption{Diagramme de classes du module OptiHR}
+    \label{fig:class_diagram_optihr}
+\end{figure}
+
+\subsubsection{Entités principales}
+Les entités clés du module OptiHR sont :
+
+\begin{itemize}
+    \item \textbf{Employee} : Informations personnelles et professionnelles des employés
+    \item \textbf{Department} : Départements de l'organisation avec leurs hiérarchies
+    \item \textbf{Job} : Postes et relations hiérarchiques
+    \item \textbf{Absence} : Demandes de congés et d'absences avec leur workflow d'approbation
+    \item \textbf{Note} : Communications internes et notes de service
+    \item \textbf{File} : Documents administratifs et pièces jointes
+\end{itemize}
+
+\subsection{Circuit de validation des absences}
+Un aspect essentiel du module OptiHR est le workflow de validation des demandes d'absence qui respecte la hiérarchie de l'ARCOP :
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/diagrammes/architecture/workflow-validation-svg.pdf}
+    \caption{Circuit de validation des demandes d'absence}
+    \label{fig:workflow_validation}
+\end{figure}
+
+Ce workflow garantit que chaque demande d'absence suit un parcours de validation conforme à l'organisation hiérarchique de l'ARCOP, avec des statuts clairement définis à chaque étape du processus.
+
+\section{Module Gestion des Recours}
+
+\subsection{Découpage fonctionnel}
+Le module Gestion des Recours comprend les composants fonctionnels suivants :
+
+\begin{enumerate}
+    \item \textbf{Enregistrement des recours} : Saisie et suivi des recours déposés
+    \item \textbf{Traitement des dossiers} : Processus d'analyse et de décision
+    \item \textbf{Reporting et statistiques} : Tableaux de bord et indicateurs de performance
+    \item \textbf{Alertes et notifications} : Suivi des délais et rappels
+\end{enumerate}
+
+\subsection{Modélisation des données}
+
+\subsubsection{Diagramme conceptuel de données}
+Le diagramme suivant présente les principales entités du module Gestion des Recours et leurs relations :
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/diagrammes/class/Diagramme de classe recours.png}
+    \caption{Diagramme de classes du module Gestion des Recours}
+    \label{fig:class_diagram_recours}
+\end{figure}
+
+\subsubsection{Entités principales}
+Les entités clés du module Gestion des Recours sont :
+
+\begin{itemize}
+    \item \textbf{Appeal} : Recours déposés avec leurs caractéristiques et statuts
+    \item \textbf{Applicant} : Requérants ayant déposé des recours
+    \item \textbf{Authority} : Autorités contractantes concernées par les recours
+    \item \textbf{Dac} : Dossiers d'Appel à Concurrence liés aux recours
+    \item \textbf{Decision} : Décisions rendues suite à l'analyse des recours
+\end{itemize}
+
+\subsection{Processus de traitement des recours}
+Le traitement d'un recours suit un processus précis qui comprend les étapes suivantes :
+
+\begin{enumerate}
+    \item \textbf{Réception et enregistrement} : Saisie des informations du recours
+    \item \textbf{Analyse de recevabilité} : Vérification des critères formels
+    \item \textbf{Étude au fond} : Analyse détaillée du dossier
+    \item \textbf{Prise de décision} : Délibération et établissement de la décision
+    \item \textbf{Notification} : Information des parties concernées
+    \item \textbf{Archivage} : Conservation du dossier avec sa décision
+\end{enumerate}
+
+Ce processus est accompagné d'un système d'alertes qui signale les dépassements de délais réglementaires pour garantir le traitement dans les temps impartis.
+
+\section{Intégration et points de convergence}
+
+\subsection{Composants partagés}
+Plusieurs composants du portail sont partagés entre les deux modules fonctionnels :
+
+\begin{itemize}
+    \item \textbf{Système d'authentification} : Gestion unifiée des utilisateurs et connexions
+    \item \textbf{Moteur de notifications} : Système d'alertes et de notifications
+    \item \textbf{Gestionnaire de documents} : Stockage et récupération des fichiers
+    \item \textbf{Interface utilisateur} : Composants UI réutilisables (dashboard, tableaux, formulaires)
+    \item \textbf{Services utilitaires} : Journalisation, gestion des dates, formatage, etc.
+\end{itemize}
+
+\subsection{Points d'intégration}
+Bien que les deux modules gèrent des processus métier distincts, certains points d'intégration ont été identifiés :
+
+\begin{itemize}
+    \item \textbf{Tableau de bord unifié} : Vue d'ensemble combinant les indicateurs des deux modules
+    \item \textbf{Notifications consolidées} : Centre de notifications regroupant les alertes des deux modules
+    \item \textbf{Recherche globale} : Possibilité de rechercher dans les deux modules simultanément
+    \item \textbf{Rapports croisés} : Possibilité de générer des rapports combinant des données des deux modules
+\end{itemize}
+
+\section{Considérations techniques}
+
+\subsection{Déploiement et environnements}
+Le portail d'applications est conçu pour être déployé sur l'infrastructure interne de l'ARCOP selon une stratégie à plusieurs environnements :
+
+\begin{itemize}
+    \item \textbf{Environnement de développement} : Pour le développement actif et les tests unitaires
+    \item \textbf{Environnement de test} : Pour les tests d'intégration et les validations fonctionnelles
+    \item \textbf{Environnement de production} : Pour l'utilisation par les utilisateurs finaux
+\end{itemize}
+
+\subsection{Performance et scalabilité}
+Pour garantir des performances optimales du portail, plusieurs techniques sont mises en œuvre :
+
+\begin{itemize}
+    \item \textbf{Mise en cache} : Utilisation du système de cache de Laravel pour les données fréquemment consultées
+    \item \textbf{Optimisation des requêtes} : Utilisation judicieuse des eager loading pour réduire le nombre de requêtes
+    \item \textbf{Pagination} : Limitation des résultats par page pour les listes volumineuses
+    \item \textbf{Traitements asynchrones} : Utilisation des queues Laravel pour les tâches lourdes (génération de rapports, envoi massif de notifications)
+\end{itemize}
+
+\subsection{Sécurité}
+La sécurité du portail est assurée par plusieurs mécanismes :
+
+\begin{itemize}
+    \item \textbf{Authentification robuste} : Utilisation de Laravel Sanctum avec politique de mots de passe forts
+    \item \textbf{Autorisations granulaires} : Système de rôles et permissions précis avec vérifications à plusieurs niveaux
+    \item \textbf{Protection CSRF} : Jetons CSRF pour toutes les requêtes POST
+    \item \textbf{Validation des entrées} : Validation côté serveur de toutes les données entrantes
+    \item \textbf{Journalisation} : Traçabilité des actions sensibles pour faciliter les audits
+\end{itemize}
+
 \section{Conclusion}
-La phase de conception pose les bases essentielles du projet en structurant
-l'architecture et en précisant les technologies et les modèles de données
-adoptés. Une conception rigoureuse garantit un développement fluide et
-efficace, tout en assurant la maintenance et l'évolutivité du système sur le
-long terme.
+La conception d'un portail d'applications unique intégrant les modules OptiHR et Gestion des Recours représente une approche optimale pour répondre aux besoins de l'ARCOP. Cette architecture offre plusieurs avantages significatifs :
+
+\begin{itemize}
+    \item \textbf{Cohérence technique} : Utilisation des mêmes technologies et pratiques de développement
+    \item \textbf{Expérience utilisateur unifiée} : Interface homogène et navigation fluide entre les modules
+    \item \textbf{Efficacité opérationnelle} : Authentification unique et partage des composants communs
+    \item \textbf{Maintenance simplifiée} : Base de code centralisée facilitant les évolutions et corrections
+\end{itemize}
+
+Cette approche intégrée, tout en conservant une séparation logique des préoccupations métier, permettra à l'ARCOP de disposer d'une solution moderne, évolutive et parfaitement adaptée à ses processus organisationnels.
 
 \clearpage
