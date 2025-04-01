@@ -1,6 +1,44 @@
 \section{Problèmes rencontrés et solutions adoptées}
+
 \subsection{Difficultés techniques}
-% Problèmes liés aux technologies utilisées, performances, compatibilité
+
+\subsubsection{Gestion des relations hiérarchiques complexes}
+La modélisation des relations hiérarchiques pour le workflow de validation des congés s'est avérée complexe en raison de la structure organisationnelle de l'ARCOP. Ce défi a été résolu par :
+
+\begin{itemize}
+    \item L'implémentation d'un modèle de données flexible permettant de représenter les relations N+1
+    \item Le développement d'un algorithme recursif pour déterminer le chemin de validation approprié
+    \item La création d'un système de règles configurable pour gérer les cas particuliers
+\end{itemize}
+
+\subsubsection{Performance des requêtes de filtrage des recours}
+Les fonctionnalités de filtrage avancé des recours ont initialement entraîné des problèmes de performance lors du traitement de grands volumes de données. Ces problèmes ont été résolus par :
+
+\begin{itemize}
+    \item L'optimisation des requêtes SQL avec des index appropriés
+    \item L'implémentation d'un système de mise en cache des résultats fréquemment consultés
+    \item Le chargement progressif (lazy loading) des données dans l'interface utilisateur
+    \item La pagination efficace des résultats de recherche
+\end{itemize}
 
 \subsection{Optimisation et amélioration du code}
-% Améliorations mises en place pour optimiser le projet
+
+\subsubsection{Refactorisation des contrôleurs}
+Au cours du développement, nous avons constaté que certains contrôleurs devenaient trop volumineux et difficiles à maintenir. Une refactorisation a été entreprise pour :
+
+\begin{itemize}
+    \item Appliquer le principe de responsabilité unique (SRP)
+    \item Extraire la logique métier vers des classes de services dédiées
+    \item Standardiser la gestion des erreurs et des réponses
+    \item Améliorer la testabilité du code
+\end{itemize}
+
+\subsubsection{Mise en place d'un système de cache}
+Pour améliorer les performances globales de l'application, nous avons implémenté une stratégie de mise en cache :
+
+\begin{itemize}
+    \item Cache de requêtes pour les données statiques ou rarement modifiées
+    \item Cache de vues pour les éléments d'interface fréquemment utilisés
+    \item Mise en cache des résultats de calculs coûteux (statistiques, tableaux de bord)
+    \item Implémentation de l'invalidation intelligente du cache lors des modifications
+\end{itemize}

@@ -1,6 +1,78 @@
 \section{Tests et validation}
+
 \subsection{Stratégie de test}
-% Présentation des tests utilisés (unitaires, intégration, end-to-end)
+Une approche de test complète a été mise en place pour garantir la qualité et la fiabilité du système :
+
+\begin{itemize}
+    \item \textbf{Tests unitaires} : Validation des composants individuels (services, modèles, helpers)
+    \item \textbf{Tests d'intégration} : Vérification des interactions entre les différents modules
+    \item \textbf{Tests fonctionnels} : Validation du comportement des fonctionnalités complètes
+    \item \textbf{Tests d'acceptation} : Vérification de la conformité aux exigences utilisateur
+\end{itemize}
+
+Pour les tests automatisés, nous avons utilisé PHPUnit, le framework de test intégré à Laravel, complété par des outils spécifiques :
+
+\begin{itemize}
+    \item Laravel Dusk pour les tests de navigateur
+    \item Mockery pour l'isolation des dépendances
+    \item Faker pour la génération de données de test
+\end{itemize}
 
 \subsection{Résultats des tests}
-% Analyse des résultats des tests et validation du bon fonctionnement
+Les résultats des tests ont été très satisfaisants, avec :
+
+\begin{itemize}
+    \item Une couverture de code supérieure à 80\% pour les composants critiques
+    \item La détection et correction précoce de plusieurs problèmes potentiels
+    \item La validation complète des workflows métier complexes
+    \item La vérification de la compatibilité avec les navigateurs cibles
+\end{itemize}
+
+Les tests ont également permis d'identifier et de corriger des problèmes d'utilisabilité, notamment :
+
+\begin{itemize}
+    \item L'amélioration des messages d'erreur et de confirmation
+    \item L'optimisation des formulaires pour une saisie plus efficace
+    \item La simplification de certains processus jugés trop complexes par les utilisateurs finaux
+\end{itemize}
+\section{Déploiement et mise en production}
+
+\subsection{Stratégie de déploiement}
+Le déploiement du portail d'applications a été réalisé en suivant une approche progressive :
+
+\begin{itemize}
+    \item \textbf{Environnement de préproduction} : Mise en place d'un environnement identique à la production pour les tests finaux
+    \item \textbf{Migration des données} : Importation des données existantes (employés, structure organisationnelle, historique des recours)
+    \item \textbf{Déploiement progressif} : Mise en service module par module pour minimiser les risques
+    \item \textbf{Période de transition} : Fonctionnement en parallèle des anciens et nouveaux systèmes durant une période définie
+\end{itemize}
+
+\subsection{Configuration de l'environnement de production}
+L'environnement de production a été configuré sur les serveurs internes de l'ARCOP avec une attention particulière portée à :
+
+\begin{itemize}
+    \item \textbf{Performances} : Optimisation du serveur web et de la base de données
+    \item \textbf{Sécurité} : Mise en place de certificats SSL, pare-feu et politiques d'accès restrictives
+    \item \textbf{Sauvegarde} : Configuration de sauvegardes quotidiennes automatisées
+    \item \textbf{Surveillance} : Implémentation d'outils de monitoring pour détecter les anomalies
+\end{itemize}
+
+\subsection{Formation des utilisateurs}
+Pour assurer une adoption réussie du portail, un programme de formation complet a été mis en place :
+
+\begin{itemize}
+    \item \textbf{Ateliers pratiques} pour les différents groupes d'utilisateurs (RH, direction, employés)
+    \item \textbf{Documentation utilisateur} détaillée avec des guides pas à pas
+    \item \textbf{Vidéos tutorielles} pour les fonctionnalités principales
+    \item \textbf{Formation des administrateurs} pour la gestion quotidienne du système
+\end{itemize}
+
+\subsection{Maintenance et évolution}
+Un plan de maintenance et d'évolution a été établi pour assurer la pérennité du système :
+
+\begin{itemize}
+    \item \textbf{Mises à jour de sécurité} automatisées pour les composants critiques
+    \item \textbf{Procédures de déploiement} standardisées pour les futures mises à jour
+    \item \textbf{Cycles d'amélioration continue} basés sur les retours utilisateurs
+    \item \textbf{Planification des évolutions futures} en fonction des besoins émergents de l'ARCOP
+\end{itemize}
